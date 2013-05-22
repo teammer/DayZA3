@@ -1,0 +1,16 @@
+Zoombies and submods were made by the Zoombies Development Team. All Rights Reserved
+----------------------------------------------------------------
+Launcher created by Pwnoz0r
+
+Team:
+Pwnoz0r (Project Lead)
+TheVisad (Main Programmer) #AFK FROM "DayZA3-Chernarus".
+Papzzz(Server Side Management) #The bug fix champion.
+
+Project sponsored by HFBServers.com
+If you would like to buy a server, do so here: http://hfbservers.com/games/arma3
+
+Credits:
+Dean Hall and the DayZMod Team for developing "DayZ".
+----------------------------------------------------------------
+5/1/13
