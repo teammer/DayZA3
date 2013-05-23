@@ -3,12 +3,12 @@ _item spawn player_wearClothes;
 TODO: female
 */
 private["_item","_isFemale","_itemNew","_item","_onLadder","_model","_hasclothesitem","_config","_text"];
-_item = _this;
+_item = (_this select 3) select 0;
 call gear_ui_init;
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 if (_onLadder) exitWith {cutText [(localize "str_player_21") , "PLAIN DOWN"]};
 
-_hasclothesitem = _this in magazines player;
+_hasclothesitem = _item in magazines player;
 _config = configFile >> "CfgMagazines";
 _text = getText (_config >> _item >> "displayName");
 
