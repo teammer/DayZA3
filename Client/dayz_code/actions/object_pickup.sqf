@@ -34,6 +34,7 @@ if (_classname == "MeleeMachete") then {
 		player addMagazine 'Machete_swing';
 };
 
+_hasMeleeNo = ((_classname != "MeleeMachete") and (_classname != "MeleeCrowbar") and (_classname != "MeleeHatchet"));								
 _broken = false;
 if(_classname == "WoodenArrow") then {
 	if (20 > random 100) then {
@@ -69,6 +70,7 @@ if (_isOk) then {
 		};
 	};
 } else {
+if (_hasMeleeNo) then {
 	_holder setVariable["claimed",0,true];
 	cutText [localize "STR_DAYZ_CODE_2", "PLAIN DOWN"];
 	if (_classname == "MeleeCrowbar") then {
@@ -79,6 +81,21 @@ if (_isOk) then {
 	};
 	if (_classname == "MeleeMachete") then {
 			player removeMagazine 'Machete_swing';
+	};
+	} else {
+	deleteVehicle _holder;
+	if (_classname in ["MeleeHatchet","MeleeCrowbar","MeleeMachete"]) then {
+
+		if (_type == "cfgWeapons") then {
+			_muzzles = getArray(configFile >> "cfgWeapons" >> _classname >> "muzzles");
+			//_wtype = ((weapons player) select 0);
+			if (count _muzzles > 1) then {
+				player selectWeapon (_muzzles select 0);
+			} else {
+				player selectWeapon _classname;
+			};
+		};
+	};
 	};
 };
 
