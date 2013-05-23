@@ -7,6 +7,8 @@ Team:
 Pwnoz0r (Project Lead)
 TheVisad (Main Programmer) #AFK FROM "DayZA3-Chernarus".
 Papzzz(Server Side Management) #The bug fix champion.
+
+Community Developers:
 Mistad (contribution to fixing bugs)
 
 Project sponsored by HFBServers.com
