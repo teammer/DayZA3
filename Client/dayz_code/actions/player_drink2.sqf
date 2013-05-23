@@ -9,8 +9,14 @@ if (vehicle player != player) exitWith {cutText ["You may not drink while in a v
 //Force players to wait 3 mins to drink again
 //if (dayz_lastDrink < 180) exitWith {cutText ["You may not drink, your not thirsty", "PLAIN DOWN"]};
 
+_itemorignal2 = ["ItemSodaCoke","ItemSodaPepsi","ItemSodaMdew","ItemWaterbottle"];
 _itemorignal = "ItemSodaPepsi";
-_hasdrinkitem = _itemorignal in magazines player;
+{
+if (_x in _itemorignal2) then {
+_itemorignal = _x;
+_hasdrinkitem = true;
+};
+} forEach (magazines player);
 _hasoutput = _itemorignal in drink_with_output;
 
 _config = configFile >> "CfgMagazines" >> _itemorignal;
