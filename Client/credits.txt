@@ -5,8 +5,8 @@ Launcher created by Pwnoz0r
 
 Team:
 Pwnoz0r (Project Lead)
-TheVisad (Main Programmer) #AFK FROM "DayZA3-Chernarus".
-Papzzz(Server Side Management) #The bug fix champion.
+hungoverfurball (Project Management)
+Papzzz (Server Side Management)
 
 Community Developers:
 Mistad (contribution to fixing bugs)
