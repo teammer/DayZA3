@@ -52,28 +52,7 @@ if (random 1 > 0.7) then {
 if (_nearByPlayer) then {
 	deleteVehicle _agent;
 };
-/*
-//_agent setVariable["host",player,true];
-if (!_doLoiter) then {
-	_agent setPosATL _position;
-	_agent setDir round(random 180);
-	if (_nearByPlayer) then {
-		deleteVehicle _agent;
-	};
-} else {
-	if (_nearByPlayer) then {
-		_attempt = 0;
-		while {_nearByPlayer} do {
-			_position = [_position,0,20,10,0,20,0] call BIS_fnc_findSafePos;
-			_agent setPos _position;
-			_nearByPlayer = ({isPlayer _x} count (_position nearEntities ["CAManBase",30]) > 0);
-			_attempt = _attempt + 1;
-			if (_attempt > 10) exitWith {};
-		};
-		_agent setPos _position;
-	};
-};
-*/
+
 if (isNull _agent) exitWith {
 	dayz_spawnZombies = dayz_spawnZombies - 1;
 };
@@ -99,6 +78,13 @@ if (_rnd > 0.3) then {
 		};
 	};
 };
+
+//Start A3 items fix
+removeWeapon "ItemMap";
+removeWeapon "ItemWatch";
+removeWeapon "ItemCompass";
+removeAllItems _agent;
+//End A3 items fix
 
 //Start behavior
 _id = [_position,_agent] execFSM "\z\AddOns\dayz_code\system\zombie_agent.fsm";
