@@ -12,16 +12,27 @@ _holder setVariable["claimed",_playerID,true];
 if(_classname isKindOf "TrapBear") exitwith {deleteVehicle _holder;};
 
 player playActionNow "PutDown";
+if (_classname == "ItemCrowbar") then {
+	player addWeapon 'MeleeCrowbar';
+	_classname = 'MeleeCrowbar';
+};
 if (_classname == "MeleeCrowbar") then {
 	player addMagazine 'crowbar_swing';
+};
+if (_classname == "ItemHatchet") then {
+	player addWeapon 'MeleeHatchet';
+	_classname = 'MeleeHatchet';
 };
 if (_classname == "MeleeHatchet") then {
 		player addMagazine 'hatchet_swing';
 };
+if (_classname == "ItemMachete") then {
+	player addWeapon 'MeleeMachete';
+	_classname = 'MeleeMachete';
+};
 if (_classname == "MeleeMachete") then {
 		player addMagazine 'Machete_swing';
 };
-
 
 _broken = false;
 if(_classname == "WoodenArrow") then {

@@ -128,11 +128,11 @@ if (_canPickLight and !dayz_hasLight) then {
 	//Allow player to nom nom
 	if(_hasFood) then {
 		if(dayz_hunger > 0) then {
-			dayz_hunger = player addAction [format["<t color='#FF0000'>Eat%1</t>"], "\z\addons\dayz_code\actions\player_eat.sqf",[_getTextZ], 1, false, true, "", "'FoodCanBakedBeans' in magazines player"];
+			dayz_hunger = player addAction [format["<t color='#FF0000'>Eat%1</t>"], "\z\addons\dayz_code\actions\player_eat.sqf",[_getTextZ], 1, false, true, "", true];
 		};
 	} else	{
 		player removeAction dayz_hunger;
-		dayz_hunger = 0;
+		//dayz_hunger = 0;
 	};
 
 	_drinkItems = no_output_drink + drink_with_output;
@@ -146,11 +146,11 @@ if (_canPickLight and !dayz_hasLight) then {
 	//Allow player to slurp slurp
 	if(_hasDrink) then {
     	if(dayz_thirst > 0) then {
-        	dayz_thirst = player addAction [format["<t color='#FF0000'>Drink%1</t>"], "\z\addons\dayz_code\actions\player_drink2.sqf",[_getTextZ], 1, false, true, "", "'ItemSodaPepsi' in magazines player"];
+        	dayz_thirst = player addAction [format["<t color='#FF0000'>Drink%1</t>"], "\z\addons\dayz_code\actions\player_drink2.sqf",[_getTextZ], 1, false, true, "", true];
     	};
 	} else {
     	player removeAction dayz_thirst;
-    	dayz_thirst = 0;
+    	//dayz_thirst = 0;
 	};
 
 	//Allow placing of tents
