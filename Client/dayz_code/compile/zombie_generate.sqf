@@ -80,10 +80,13 @@ if (_rnd > 0.3) then {
 };
 
 //Start A3 items fix
-removeWeapon "ItemMap";
-removeWeapon "ItemWatch";
-removeWeapon "ItemCompass";
+_agent removeWeapon "ItemMap";
+_agent removeWeapon "ItemWatch";
+_agent removeWeapon "ItemCompass";
+removeAllWeapons _agent;
 removeAllItems _agent;
+removeUniform _agent;
+removeAllAssignedItems _agent;
 //End A3 items fix
 
 //Start behavior
