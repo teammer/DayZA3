@@ -9,7 +9,8 @@ hungoverfurball (Project Management)
 Papzzz (Server Side Management)
 
 Community Contributors:
-Mistad (fixing bugs)
+Mistad (Fixing Bugs)
+rotcehdnih (Inventory fix)
 
 Project sponsored by HFBServers.com
 If you would like to buy a server, do so here: http://hfbservers.com/games/arma3

@@ -41,7 +41,7 @@ class CfgMods
 		hidePicture = 0;
 		hideName = 0;
 		action = "http://www.zoombiesmod.com";
-		version = "0.1.3.2";
+		version = "0.1.4";
 		hiveVersion = 0.96; //0.93
 	};
 	class DZ_InitWorld
@@ -224,7 +224,7 @@ class RscStructuredTextGUI: RscStructuredText
 class CfgSurvival {
 	class Inventory {
 		class Default {
-			magazines[] = {"ItemBandage","ItemTent"};
+			magazines[] = {"ItemBandage"};
 			vest = "V_PlateCarrier1_cbr";
 			//weapons[] = {"Makarov"};
 			//weapons[] = {"ItemFlashlight"};

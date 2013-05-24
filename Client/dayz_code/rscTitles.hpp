@@ -141,7 +141,7 @@ class RscDisplayMain : RscStandardDisplay
 		class DAYZ_Version : CA_Version
 		{
 			idc = -1;
-			text = "Zoombies [DayZA3 - Chernarus] 0.1.3.2";
+			text = "Zoombies [DayZA3 - Chernarus] 0.1.4";
 			y = "(SafeZoneH + SafeZoneY) - (1 - 0.95)";
 		};
 	/*
