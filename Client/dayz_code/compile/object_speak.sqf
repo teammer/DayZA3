@@ -45,7 +45,5 @@ if ((round(random _chance) == _chance) or (_chance == 0)) then {
 	_sound = "z_" + _type + "_" + str(_rnd);
 	if (_local) then {
 		_unit say [_sound, _dis];
-	} else {
-		[nil,_unit,rSAY,[_sound, _dis]] call RE;
 	};
 };
