@@ -18,9 +18,7 @@ private ["_characterID","_temp","_currentWpn","_magazines","_force","_isNewPos",
 //"UPDATE: B 1-1-B:1 (THE BEAST) REMOTE"
 
 _character = 	_this select 0;
-_unit = player;
-//_magazines =	_this select 1;
-_magazines = vestItems _unit;
+_magazines = vestItems _character;
 _force =	_this select 2;
 _force =	true;
 
