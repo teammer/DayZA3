@@ -8,8 +8,8 @@ Pwnoz0r (Project Lead)
 hungoverfurball (Project Management)
 Papzzz (Server Side Management)
 
-Community Developers:
-Mistad (contribution to fixing bugs)
+Community Contributors:
+Mistad (fixing bugs)
 
 Project sponsored by HFBServers.com
 If you would like to buy a server, do so here: http://hfbservers.com/games/arma3
