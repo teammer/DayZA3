@@ -148,7 +148,7 @@ if (_canPickLight and !dayz_hasLight) then {
 
 	//Allow player to slurp slurp
 	if(_vehicle == player and _hasDrink) then {
-    	if((dayz_thirst > 0) and (dayz_thirst2 > 0)) then {
+    	if((dayz_thirst > 0) and (dayz_thirst2 < 0)) then {
         	dayz_thirst2 = player addAction [format["<t color='#FF0000'>Drink%1</t>"], "\z\addons\dayz_code\actions\player_drink2.sqf",[_getTextZ], 1, false, true, "", "player == player"];
     	};
 	} else {
