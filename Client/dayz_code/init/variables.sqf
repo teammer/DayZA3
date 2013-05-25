@@ -207,6 +207,11 @@ dayz_resetSelfActions = {
 	s_getFood = 			-1;
 	s_getDrink =			-1;
 	s_doTent = 				-1;
+	s_doClothes1 = 				-1;
+	s_doClothes2 = 				-1;
+	s_doClothes3 = 				-1;
+	dayz_hunger2 = 				-1;
+	dayz_thirst2 = 				-1;
 };
 call dayz_resetSelfActions;
 

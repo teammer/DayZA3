@@ -24,8 +24,8 @@ private ["_playerUID"];
 private ["_weapons","_magazines","_primweapon","_secweapon"];
 	_weapons 	= weapons player;
 	_magazines	= call player_countmagazines; //magazines player;
-
-	if ( (_playerUID == dayz_playerUID) && (count _magazines == 0) && (count (magazines player) > 0 )) exitWith {cutText ["can't count magazines!", "PLAIN DOWN"]};
+	_magazines = vestItems player;
+//	if ( (_playerUID == dayz_playerUID) && (count _magazines == 0) && (count (magazines player) > 0 )) exitWith {cutText ["can't count magazines!", "PLAIN DOWN"]};
 
 
 //	if ( count _magazines == 0 ) exitWith {cutText ["can't count magazines!", "PLAIN DOWN"]};
@@ -90,6 +90,8 @@ private ["_newBackpackType","_backpackWpn","_backpackMag"];
 //Clear New Character
 	{_newUnit removeMagazine _x;} forEach  magazines _newUnit;
 	removeAllWeapons _newUnit;	
+    removeUniform _newUnit;
+    removeHeadgear _newUnit;
 
 //Equip New Charactar
 	{

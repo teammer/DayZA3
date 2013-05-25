@@ -33,6 +33,9 @@ _armsBroke = 		player getVariable ["hit_hands", 0] >= 1;
 _hasBandage = 		"ItemBandage" in items player;
 _hasMorphine = 		"ItemMorphine" in items player;
 _hasPainkillers = 	"ItemPainkiller" in items player;
+_hasClothes1 = 		"Skin_Sniper1_DZ" in items player; //Ghillie
+_hasClothes2 = 		"Skin_Camo1_DZ" in items player; //Camo
+_hasClothes3 = 		"Skin_Survivor2_DZ" in items player; //Survivor
 //FOOD
 //_hasFood = 			["FoodCanBakedBeans", "FoodCanSardines", "FoodCanFrankBeans", "FoodCanPasta", "FoodSteakCooked"];
 //_hasFood2 = 		"FoodCanSardines" in items player;
@@ -88,7 +91,7 @@ if (_canPickLight and !dayz_hasLight) then {
 //Start of A3 Scroll functions by Papzzz and Pwnoz0r
 
 	//Allow player to use Morphine
-	if (_unit == player and _legsBroke and _armsBroke and _hasMorphine) then {
+	if (_vehicle == player and _legsBroke and _armsBroke and _hasMorphine) then {
 		if (s_player_morphineA3 < 0) then {
 			s_player_morphineA3 = player addAction [format["<t color='#FF0000'>Use Morphine%1</t>"], "\z\addons\dayz_code\medical\morphine.sqf",[_unit], 1, true, true, "", "'ItemMorphine' in magazines player"];
 		};
@@ -98,7 +101,7 @@ if (_canPickLight and !dayz_hasLight) then {
 	};
 
 	//Allow player to use Painkillers
-	if (_unit == player and _inPain and _hasPainkillers) then {
+	if (_vehicle == player and _inPain and _hasPainkillers) then {
 		if (s_player_painkillerA3 < 0) then {
 			s_player_painkillerA3 = player addAction [format["<t color='#FF0000'>Use Painkillers%1</t>"], "\z\addons\dayz_code\medical\painkiller.sqf",[_unit], 1, true, true, "", "'ItemPainkiller' in magazines player"];
 		};
@@ -108,7 +111,7 @@ if (_canPickLight and !dayz_hasLight) then {
 	};
 
 	//Allow player to bandage
-	if (_unit == player and _injured and _hasBandage) then {
+	if (_vehicle == player and _injured and _hasBandage) then {
 		if (s_player_bandageA3 < 0) then {
 			s_player_bandageA3 = player addAction [format["<t color='#FF0000'>Use Bandage%1</t>"], "\z\addons\dayz_code\medical\bandageSelf.sqf",[_unit], 1, true, true, "", "'ItemBandage' in magazines player"];
 		};
@@ -126,13 +129,13 @@ if (_canPickLight and !dayz_hasLight) then {
 		} forEach _foodItems; 
 	
 	//Allow player to nom nom
-	if(_hasFood) then {
-		if(dayz_hunger > 0) then {
-			dayz_hunger = player addAction [format["<t color='#FF0000'>Eat%1</t>"], "\z\addons\dayz_code\actions\player_eat.sqf",[_getTextZ], 1, false, true, "", true];
+	if(_vehicle == player and _hasFood) then {
+		if((dayz_hunger > 0) and (dayz_hunger2 < 0)) then {
+			dayz_hunger2 = player addAction [format["<t color='#FF0000'>Eat%1</t>"], "\z\addons\dayz_code\actions\player_eat.sqf",[_getTextZ], 1, false, true, "", "player == player"];
 		};
 	} else	{
-		player removeAction dayz_hunger;
-		//dayz_hunger = 0;
+		player removeAction dayz_hunger2;
+		dayz_hunger2 = -1;
 	};
 
 	_drinkItems = no_output_drink + drink_with_output;
@@ -144,23 +147,43 @@ if (_canPickLight and !dayz_hasLight) then {
 		} forEach _drinkItems; 
 
 	//Allow player to slurp slurp
-	if(_hasDrink) then {
-    	if(dayz_thirst > 0) then {
-        	dayz_thirst = player addAction [format["<t color='#FF0000'>Drink%1</t>"], "\z\addons\dayz_code\actions\player_drink2.sqf",[_getTextZ], 1, false, true, "", true];
+	if(_vehicle == player and _hasDrink) then {
+    	if((dayz_thirst > 0) and (dayz_thirst2 > 0)) then {
+        	dayz_thirst2 = player addAction [format["<t color='#FF0000'>Drink%1</t>"], "\z\addons\dayz_code\actions\player_drink2.sqf",[_getTextZ], 1, false, true, "", "player == player"];
     	};
 	} else {
-    	player removeAction dayz_thirst;
-    	//dayz_thirst = 0;
+    	player removeAction dayz_thirst2;
+    	dayz_thirst2 = -1;
 	};
 
 	//Allow placing of tents
-	if(_unit == player and _hasTent) then {
+	if(_vehicle == player and _hasTent) then {
 		if(s_doTent < 0) then {
 			s_doTent = player addAction [format["<t color='#FF0000'>Pitch Tent%1</t>"], "z\addons\dayz_code\actions\tent_pitch.sqf"];
 		};
 	} else	{
 		player removeAction s_doTent;
 		s_doTent = -1;
+	};
+		
+	//Allow changing of clothes
+	if(_vehicle == player and (_hasClothes1 or _hasClothes2 or _hasClothes3)) then {
+		if((s_doClothes1 < 0) and (_hasClothes1)) then {
+			s_doClothes1 = player addAction [format["<t color='#FF0000'>Wear Ghillie Suit</t>"], "z\addons\dayz_code\actions\player_wearClothes.sqf", ["Skin_Sniper1_DZ"]];
+		};
+		if((s_doClothes2 < 0) and (_hasClothes2)) then {
+			s_doClothes2 = player addAction [format["<t color='#FF0000'>Wear Camo Clothing</t>"], "z\addons\dayz_code\actions\player_wearClothes.sqf", ["Skin_Camo1_DZ"]];
+		};
+		if((s_doClothes3 < 0) and (_hasClothes3)) then {
+			s_doClothes3 = player addAction [format["<t color='#FF0000'>Wear Survival Clothing</t>"], "z\addons\dayz_code\actions\player_wearClothes.sqf", ["Skin_Survivor2_DZ"]];
+		};
+	} else	{
+		player removeAction s_doClothes1;
+		s_doClothes1 = -1;
+		player removeAction s_doClothes2;
+		s_doClothes2 = -1;
+		player removeAction s_doClothes3;
+		s_doClothes3 = -1;
 	};
 //End of A3 Scroll functions
 
