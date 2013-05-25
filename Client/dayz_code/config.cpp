@@ -650,7 +650,8 @@ class CfgBuildingLoot {
 			{"ItemSandbag","magazine"},
 			{"Sa58P_EP1","weapon"},
 			{"Sa58V_EP1","weapon"},
-			{"BAF_L85A2_RIS_Holo","weapon"}
+			{"BAF_L85A2_RIS_Holo","weapon"},
+			{"NVGoggles","weapon"}
 		};
 		itemChance[] =	{
 			0.05,
@@ -686,7 +687,8 @@ class CfgBuildingLoot {
 			0.02,
 			0.03,
 			0.03,
-			0.01
+			0.01,
+			0.04
 		};
 	};
 	class MilitarySpecial: Default {
@@ -727,7 +729,7 @@ class CfgBuildingLoot {
 			{"AmmoBoxSmall_556","object"},
 			{"AmmoBoxSmall_762","object"},
 
-			//{"NVGoggles","weapon"},
+			{"NVGoggles","weapon"},
 			{"Binocular","weapon"},
 			{"ItemFlashlightRed","military"},
 			{"ItemKnife","military"},
@@ -774,7 +776,7 @@ class CfgBuildingLoot {
 			0.08,
 			0.04,
 			0.02,
-			//0.01, //NVGoggles
+			0.02, //NVGoggles
 			0.10,
 			0.05,
 			0.15,
