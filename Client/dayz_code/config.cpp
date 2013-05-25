@@ -423,7 +423,7 @@ class CfgBuildingLoot {
 			0.11,
 			0.17,
 			0.06,
-			0.03
+			0.1
 		};
 	};
 	class Supermarket: Default {
@@ -818,7 +818,7 @@ class CfgBuildingLoot {
 			0.06,
 			0.03,
 			2.00,
-			0.03,
+			0.1,
 			0.04,
 			3.00
 		};
