@@ -47,9 +47,7 @@ _hasClothes3 = 		"Skin_Survivor2_DZ" in items player; //Survivor
 //_hasDrink2 =		"ItemSodaPepsi" in items player;
 //_hasDrink3 =		"ItemSodaMdew" in items player;
 
-_messing =   		player getVariable["messing",[0,0]];
-dayz_hunger =    	_messing select 0;
-dayz_thirst =   	_messing select 1;
+
 _getTextZ =     getText (_config >> "displayName");
 //End of Code
 _hasKnife = 	"ItemKnife" in items player;
