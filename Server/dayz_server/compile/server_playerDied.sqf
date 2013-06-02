@@ -20,7 +20,7 @@ if (_killerName != "nil") then
 {
 	_weapon = _victim getVariable["AttackedByWeapon", "nil"];
 	_distance = _victim getVariable["AttackedFromDistance", "nil"];
-
+	_displayname = getText (configFile >> 'CfgWeapons' >> _weapon >> 'displayName');
 	if (_victimName == _killerName) then 
 	{
 		_message = format["%1 killed himself",_victimName];
@@ -29,7 +29,7 @@ if (_killerName != "nil") then
 	else 
 	{
 		_killerPlayerID = getPlayerUID _killer;
-		_message = format["%1 was killed by %2 with weapon %3 from %4m",_victimName, _killerName, _weapon, _distance];
+		_message = format["%1 was killed by %2 ( %3 | %4m )",_victimName, _killerName, _displayname, _distance];
 		_loc_message = format["PKILL: %1 (%5) was killed by %2 (%6) with weapon %3 from %4m", _victimName, _killerName, _weapon, _distance, _playerID, _killerPlayerID];
 	};
 
