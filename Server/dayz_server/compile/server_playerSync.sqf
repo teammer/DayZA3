@@ -1,4 +1,4 @@
-private ["_characterID","_temp","_currentWpn","_magazines","_force","_isNewPos","_humanity","_isNewGear","_currentModel","_modelChk","_playerPos","_playerGear","_playerBackp","_backpack","_killsB","_killsH","_medical","_isNewMed","_character","_timeSince","_charPos","_isInVehicle","_distanceFoot","_lastPos","_kills","_headShots","_timeGross","_timeLeft","_onLadder","_isTerminal","_currentAnim","_muzzles","_array","_key","_lastTime","_config","_currentState","_pos"];
+private ["_characterID","_temp","_currentWpn","_magazines","_force","_isNewPos","_humanity","_isNewGear","_currentModel","_modelChk","_playerPos","_playerGear","_playerBackp","_backpack","_killsB","_killsH","_medical","_isNewMed","_character","_timeSince","_charPos","_isInVehicle","_distanceFoot","_lastPos","_kills","_headShots","_timeGross","_timeLeft","_onLadder","_isTerminal","_currentAnim","_muzzles","_array","_key","_lastTime","_config","_currentState","_pos","_otheritems","_backy"];
 //[player,array]
 //diag_log ("UPDATE: " + str(_this) );
 
@@ -18,6 +18,8 @@ private ["_characterID","_temp","_currentWpn","_magazines","_force","_isNewPos",
 //"UPDATE: B 1-1-B:1 (THE BEAST) REMOTE"
 
 _character = 	_this select 0;
+_backy = backpackItems _character;
+_otheritems = assignedItems _character;
 _magazines = vestItems _character;
 _force =	_this select 2;
 _force =	true;
@@ -95,14 +97,14 @@ if (_characterID != "0") then {
 	};
 	if (!_isNewGear) then {
 		//diag_log ("gear..."); sleep 0.05;
-		_playerGear = [weapons _character,_magazines];
-		diag_log ("playerGear: " +str(_playerGear));
+		_playerGear = [weapons _character + _otheritems ,_magazines];		
+		diag_log ("playerGear: " +str(_playerGear) + "_backy gear: " +str(_backy));
 		_backpack = unitBackpack _character;
 		_playerBackp = [typeOf _backpack,getWeaponCargo _backpack,getMagazineCargo _backpack];
 	} else {
 		//diag_log ("gear..."); sleep 0.05;
-		_playerGear = [weapons _character,_magazines];
-		diag_log ("playerGear: " +str(_playerGear));
+		_playerGear = [weapons _character + _otheritems ,_magazines];		
+		diag_log ("playerGear: " +str(_playerGear) + "_backy gear: " +str(_backy));
 		_backpack = unitBackpack _character;
 		_playerBackp = [typeOf _backpack,getWeaponCargo _backpack,getMagazineCargo _backpack];
 	};
