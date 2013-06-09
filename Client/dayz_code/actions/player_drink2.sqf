@@ -79,3 +79,6 @@ _display = uiNamespace getVariable 'DAYZ_GUI_display';
 (_display displayCtrl 1302) ctrlShow true;
 
 cutText [format[(localize  "str_player_consumed"),_text], "PLAIN DOWN"];
+
+        player removeAction dayz_thirst2;
+    	dayz_thirst2 = -1;
