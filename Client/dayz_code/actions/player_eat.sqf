@@ -90,3 +90,6 @@ if (r_player_blood / r_player_bloodTotal >= 0.2) then {
     (_display displayCtrl 1300) ctrlShow true;
 };
 cutText [format[(localize  "str_player_consumed"),_text], "PLAIN DOWN"];
+
+        player removeAction dayz_hunger2;
+        dayz_hunger2 = -1;
