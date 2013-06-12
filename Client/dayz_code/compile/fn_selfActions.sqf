@@ -100,7 +100,7 @@ if (_canPickLight and !dayz_hasLight) then {
 	};
 	if (_vehicle == player and _hasAntibiotic) then {
 		if (s_player_antibioticA3 < 0) then {
-			s_player_antibioticA3 = player addAction [format["<t color='#FF0000'>Use Antibiotics%1</t>"], "\z\addons\dayz_code\medical\morphine.sqf",[_unit], 1, true, true, "", "'ItemAntibiotic' in magazines player"];
+			s_player_antibioticA3 = player addAction [format["<t color='#FF0000'>Use Antibiotics%1</t>"], "\z\addons\dayz_code\medical\antibiotics.sqf",[_unit], 1, true, true, "", "'ItemAntibiotic' in magazines player"];
 		};
 	} else {
 		player removeAction s_player_antibioticA3;
