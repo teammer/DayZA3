@@ -1,4 +1,4 @@
-Zoombies and submods were made by the Zoombies Development Team. All Rights Reserved
+Zoombies and submods of it were made by the Zoombies Development Team. All Rights Reserved
 All in ArmA(AiA) was created by kju. If you would like to learn more about AiA please do so here: http://forums.bistudio.com/showthread.php?152706-All-in-Arma-(AiA)-TKOH-OA-A2-A1-merge-with-A3
 ----------------------------------------------------------------
 Launcher created by Pwnoz0r
@@ -6,10 +6,9 @@ Launcher created by Pwnoz0r
 Team:
 Pwnoz0r (Project Lead)
 hungoverfurball (Project Management)
-Papzzz (Server Side Management)
+MistaD (Head Developer)
 
 Community Contributors:
-Mistad (Fixing Bugs)
 rotcehdnih (Inventory fix)
 
 Project sponsored by HFBServers.com
