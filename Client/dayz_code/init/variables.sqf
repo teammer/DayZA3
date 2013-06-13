@@ -213,6 +213,7 @@ dayz_resetSelfActions = {
 	s_doClothes3 = 				-1;
 	dayz_hunger2 = 				-1;
 	dayz_thirst2 = 				-1;
+	dayz_hunger3 =                          -1;
 };
 call dayz_resetSelfActions;
 
