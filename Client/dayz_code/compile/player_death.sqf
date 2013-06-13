@@ -119,6 +119,8 @@ if (count _array > 0) then {
 _body setVariable["combattimeout", 0, true];
 
 //["dayzFlies",player] call broadcastRpcCallAll;
+		dayzFlies = [player];
+		publicVariable "dayzFlies";
 sleep 2;
 
 1 cutRsc ["DeathScreen","BLACK OUT",3];
