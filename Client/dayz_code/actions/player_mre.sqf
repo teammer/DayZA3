@@ -53,3 +53,5 @@ cutText [format[(localize  "str_player_consumed"),_text], "PLAIN DOWN"];
 
         player removeAction dayz_mre;
         dayz_mre = -1;
+        player removeAction dayz_mre2;
+    	dayz_mre2 = -1;
