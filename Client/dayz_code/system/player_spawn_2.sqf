@@ -125,7 +125,7 @@ while {true} do {
 	if (_refObj == player) then {
 	_hunger = +((((r_player_bloodTotal - r_player_blood) / r_player_bloodTotal) * 5) + (_speed / 2) + dayz_myLoad) * 8;
     } else {
-	_hunger = +((((r_player_bloodTotal - r_player_blood) / r_player_bloodTotal) * 5) + dayz_myLoad) * 9;
+	_hunger = +((((r_player_bloodTotal - r_player_blood) / r_player_bloodTotal) * 5)) * 6;
     };
 	if (time - dayz_panicCooldown < 120) then {
 		_hunger = _hunger * 2;
