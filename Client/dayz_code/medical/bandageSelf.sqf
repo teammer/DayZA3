@@ -6,7 +6,7 @@ r_action = false;
 
 if (vehicle player == player) then {
 	//not in a vehicle
-	player playActionNow "Gear";
+	player playActionNow "Medic";
 };
 
 if (_unit == player) then {
