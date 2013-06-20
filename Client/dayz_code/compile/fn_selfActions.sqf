@@ -37,6 +37,7 @@ _hasAntibiotic =	"ItemAntibiotic" in items player;
 _hasClothes1 = 		"Skin_Sniper1_DZ" in items player; //Ghillie
 _hasClothes2 = 		"Skin_Camo1_DZ" in items player; //Camo
 _hasClothes3 = 		"Skin_Survivor2_DZ" in items player; //Survivor
+_hasMRE =		"FoodMRE" in items player;
 //FOOD
 //_hasFood = 			["FoodCanBakedBeans", "FoodCanSardines", "FoodCanFrankBeans", "FoodCanPasta", "FoodSteakCooked"];
 //_hasFood2 = 		"FoodCanSardines" in items player;
@@ -174,6 +175,28 @@ if (_canPickLight and !dayz_hasLight) then {
     	dayz_thirst2 = -1;
 	};
 
+	//Allow consuming of an MRE
+	if(_vehicle == player and _hasMRE) then {
+		if ((r_player_blood < 10000) and (dayz_mre2 < 0)) then {
+		
+		player removeAction dayz_mre;
+		dayz_mre = -1;
+		dayz_mre2 = player addAction [format["<t color='#FF0000'>Use MRE%1</t>"], "\z\addons\dayz_code\actions\player_mre.sqf",[_getTextZ], 1, false, true, "", "player == player"];
+		
+		} else if ((r_player_blood >= 10000) and (dayz_mre < 0)) then {
+		player removeAction dayz_mre2;
+		dayz_mre = -1;
+		if((dayz_hunger < 0.86) or (dayz_thirst < 0.86)) then {
+			dayz_mre2 = player addAction [format["<t color='#FF0000'>Use MRE%1</t>"], "\z\addons\dayz_code\actions\player_mre.sqf",[_getTextZ], 1, false, true, "", "player == player"];
+		};
+		};
+	} else {
+    	player removeAction dayz_mre;
+    	dayz_mre = -1;
+    	player removeAction dayz_mre2;
+    	dayz_mre2 = -1;
+	};
+	
 	//Allow placing of tents
 	if(_vehicle == player and _hasTent) then {
 		if(s_doTent < 0) then {
