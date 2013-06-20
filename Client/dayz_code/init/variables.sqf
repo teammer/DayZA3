@@ -214,6 +214,8 @@ dayz_resetSelfActions = {
 	dayz_hunger2 = 				-1;
 	dayz_thirst2 = 				-1;
 	dayz_hunger3 =                          -1;
+	dayz_mre =				-1;
+	dayz_mre2 =				-1;
 };
 call dayz_resetSelfActions;
 
