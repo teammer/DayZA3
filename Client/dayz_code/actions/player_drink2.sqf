@@ -9,7 +9,7 @@ if (vehicle player != player) exitWith {cutText ["You may not drink while in a v
 //Force players to wait 3 mins to drink again
 //if (dayz_lastDrink < 180) exitWith {cutText ["You may not drink, your not thirsty", "PLAIN DOWN"]};
 
-_itemorignal2 = ["ItemSodaCoke","ItemSodaPepsi","ItemSodaMdew","ItemWaterbottle"];
+_itemorignal2 = no_output_drink + drink_with_output;
 _itemorignal = "ItemSodaPepsi";
 {
 if (_x in _itemorignal2) then {
