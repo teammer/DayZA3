@@ -59,7 +59,7 @@ if (_hasPatient and !r_drag_sqf and !r_action and !_inVehicle and !r_player_unco
 	_hasEtool = 	"ItemEtool" in weapons player;
 	_hasWire = 		"ItemWire" in magazines player;
 	_hasPainkillers = 	"ItemPainkiller" in magazines player;
-
+/*
 	//Allow no matter what
 	if(_injured and _hasBandage) then {
 		//player addAction [localize "str_actions_medical_04", "\z\addons\dayz_code\medical\bandage.sqf",[_unit], 0, true, true, "", "'ItemBandage' in magazines player"];
@@ -67,6 +67,7 @@ if (_hasPatient and !r_drag_sqf and !r_action and !_inVehicle and !r_player_unco
 		r_player_actions set [count r_player_actions,_action];
 		//hint format["EXTRA BUTT - %1", _hasBandage];
 	};
+*/
 
 	//Allow player to drag
 	if(_unconscious) then {
@@ -89,15 +90,14 @@ if (_hasPatient and !r_drag_sqf and !r_action and !_inVehicle and !r_player_unco
 		_action = _unit addAction [format[localize "str_actions_medical_03",_vehType], "\z\addons\dayz_code\medical\load\load_act.sqf",[player,_vehicle,_unit], 0, true, true];
 		r_player_actions set [count r_player_actions,_action];
 	};
-/*
+
 	//Allow player to bandage
 	if(_injured and _hasBandage) then {
 		r_action = true;
-		//_unit setdamage 0.8;
-		_action = _unit addAction [localize "str_actions_medical_04", "\z\addons\dayz_code\medical\bandage.sqf",[_unit], 0, true, true, "", "'ItemBandage' in magazines player"];
+		_action = _unit addAction [localize "str_actions_medical_04", "\z\addons\dayz_code\medical\bandage.sqf",[_unit], 0, true, true];
 		r_player_actions set [count r_player_actions,_action];
 	};
-*/
+
 	//Allow player to give Epinephrine
 	if(_unconscious and _hasEpi) then {
 		r_action = true;
