@@ -6,6 +6,7 @@ BIS_MPF_remoteExecutionServer = {
 	};
 };
 
+server_totalCrashes =			0;
 BIS_Effects_Burn =			{};
 server_playerLogin =		compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerLogin.sqf";
 server_playerSetup =		compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerSetup.sqf";
