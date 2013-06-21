@@ -108,11 +108,15 @@ food[] = {
 			"8Rnd_9x18_Makarov",
 			"15Rnd_W1866_Slug",
 			"WoodenArrow",
-			"HandRoadFlare",
+			//"HandRoadFlare",
 			"ItemPainkiller",
-			"HandChemGreen",
-			"HandChemBlue",
-			"HandChemRed",
+			//"HandChemGreen",
+			//"HandChemBlue",
+			//"HandChemRed",
+                        "Chemlight_blue",
+                        "Chemlight_yellow",
+                        "Chemlight_red",
+                        "Chemlight_green",
 			"ItemHeatPack"
 		},
 		{
@@ -138,10 +142,11 @@ food[] = {
 			0.02,
 			0.04,
 			0.07,
-			0.02,
-			0.01,
-			0.03,
-			0.03,
+			//0.02,
+			0.05,
+			0.05,
+			0.04,
+                        0.03,
 			0.04
 		}
 	};
@@ -215,9 +220,13 @@ food[] = {
 			"30Rnd_9x19_MP5",
 			"30Rnd_9x19_MP5SD",
 			"100Rnd_762x51_M240",
-			"HandChemGreen",
-			"HandChemBlue",
-			"HandChemRed",
+			//"HandChemGreen",
+			//"HandChemBlue",
+			//"HandChemRed",
+                        "Chemlight_blue",
+                        "Chemlight_yellow",
+                        "Chemlight_red",
+                        "Chemlight_green",
 			"ItemHeatPack",
 			"FoodMRE"
 		},
@@ -254,9 +263,10 @@ food[] = {
 			0.02,
 			0.01,
 			0.01,
-			0.02,
-			0.02,
-			0.02,
+			0.05,
+			0.05,
+			0.04,
+                        0.03,
 			0.04,
 			0.03
 		}
@@ -268,7 +278,11 @@ food[] = {
 			"6Rnd_45ACP",
 			"15Rnd_W1866_Slug",
 			"8Rnd_B_Beneli_74Slug",
-			"HandRoadFlare"
+			//"HandRoadFlare"
+                        "Chemlight_blue",
+                        "Chemlight_yellow",
+                        "Chemlight_red",
+                        "Chemlight_green",
 		},
 		{
 			1,
@@ -276,6 +290,9 @@ food[] = {
 			0.3,
 			0.3,
 			0.5,
+			0.5,
+			0.5,
+			0.4,
 			0.3
 		}
 	};
