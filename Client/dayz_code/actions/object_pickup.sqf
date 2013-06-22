@@ -75,7 +75,7 @@ if (_hasMeleeNo) then {
 	if (_classname in _oArray and (loadVest player <= 0.93)) then {
 		deleteVehicle _holder;
 		player addMagazine _classname;
-	};
+	} else {
 	_holder setVariable["claimed",0,true];
 	cutText [localize "STR_DAYZ_CODE_2", "PLAIN DOWN"];
 	if (_classname == "MeleeCrowbar") then {
@@ -102,5 +102,6 @@ if (_hasMeleeNo) then {
 		};
 	};
 	};
+    };
 };
 
