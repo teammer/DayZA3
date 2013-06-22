@@ -41,7 +41,7 @@ class CfgMods
 		hidePicture = 0;
 		hideName = 0;
 		action = "http://www.zoombiesmod.com";
-		version = "0.1.4.2";
+		version = "0.1.4.3";
 		hiveVersion = 0.96; //0.93
 	};
 	class DZ_InitWorld
