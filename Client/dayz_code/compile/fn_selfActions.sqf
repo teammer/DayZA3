@@ -48,8 +48,6 @@ _hasMRE =		"FoodMRE" in items player;
 //_hasDrink =			["ItemSodaCoke", "ItemSodaPepsi", "ItemSodaMdew"];
 //_hasDrink2 =		"ItemSodaPepsi" in items player;
 //_hasDrink3 =		"ItemSodaMdew" in items player;
-    _hungerA3         = 1 - (dayz_hunger / 2160);
-    _thirstA3         = 1 - (dayz_thirst / 1440);
 
 
 _getTextZ =     getText (_config >> "displayName");
@@ -148,7 +146,7 @@ if (_canPickLight and !dayz_hasLight) then {
 		} else if ((r_player_blood >= 10000) and (dayz_hunger2 < 0)) then {
 		player removeAction dayz_hunger3;
 		dayz_hunger3 = -1;
-		if((_hungerA3 < 0.86)) then {
+		if(dayz_hunger >= 600) then {
 			dayz_hunger2 = player addAction [format["<t color='#FF0000'>Eat%1</t>"], "\z\addons\dayz_code\actions\player_eat.sqf",[_getTextZ], 1, false, true, "", "player == player"];
 		};
 		};
@@ -169,7 +167,7 @@ if (_canPickLight and !dayz_hasLight) then {
 
 	//Allow player to slurp slurp
 	if(_vehicle == player and _hasDrink) then {
-    	if((_thirstA3 < 0.86) and (dayz_thirst2 < 0)) then {
+    	if((dayz_thirst >= 600) and (dayz_thirst2 < 0)) then {
         	dayz_thirst2 = player addAction [format["<t color='#FF0000'>Drink%1</t>"], "\z\addons\dayz_code\actions\player_drink2.sqf",[_getTextZ], 1, false, true, "", "player == player"];
     	};
 	} else {
@@ -188,7 +186,7 @@ if (_canPickLight and !dayz_hasLight) then {
 		} else if ((r_player_blood >= 10000) and (dayz_mre < 0)) then {
 		player removeAction dayz_mre2;
 		dayz_mre = -1;
-		if((_hungerA3 < 0.86) or (_thirstA3 < 0.86)) then {
+		if((dayz_hunger >= 600) or (dayz_thirst >= 600)) then {
 			dayz_mre2 = player addAction [format["<t color='#FF0000'>Use MRE%1</t>"], "\z\addons\dayz_code\actions\player_mre.sqf",[_getTextZ], 1, false, true, "", "player == player"];
 		};
 		};
