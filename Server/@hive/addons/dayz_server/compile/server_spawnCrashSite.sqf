@@ -11,7 +11,7 @@ _spawnMarker	= _this select 5;
 _spawnRadius	= _this select 6;
 _spawnFire	= _this select 7;
 _fadeFire	= _this select 8;
-
+server_totalCrashes = server_totalCrashes + 1;
 
 diag_log("CRASHSPAWNER: Starting spawn logic for Crash Spawner");
 
