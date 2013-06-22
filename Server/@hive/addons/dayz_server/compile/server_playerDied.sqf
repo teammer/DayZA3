@@ -34,7 +34,7 @@ if (_killerName != "nil") then
 	};
 
 	diag_log _loc_message;
-	[nil, nil, rspawn, [_killer, _message], { (_this select 0) globalChat (_this select 1) }] call RE;
+	[nil, nil, rspawn, [_message], { cutText [format["%1",(_this select 0)],"PLAIN DOWN"]; }] call RE;
 	//[nil, nil, rHINT, _message] call RE;
 
 	// Cleanup
