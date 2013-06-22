@@ -320,7 +320,12 @@ class CfgBuildingLoot {
 			{"Skin_Camo1_DZ","magazine"},
 			{"Skin_Sniper1_DZ","magazine"},
 			{"WeaponHolder_ItemCrowbar","object"},
-			{"MR43","weapon"}
+			{"MR43","weapon"},
+			
+			{"V_PlateCarrier2_rgr","vest"}, // 20
+			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
+			{"V_HarnessO_brn","vest"}, // 25.7
+			{"V_HarnessOGL_brn","vest"} // 28.6
 		};
 		itemChance[] =	{
 			0.01,
@@ -345,7 +350,11 @@ class CfgBuildingLoot {
 			0.01,
 			0.01,
 			0.08,
-			0.03
+			0.03,
+            0.05,
+            0.04,
+            0.02,
+            0.02
 		};		
 	};
 	class Office: Residential {
@@ -452,7 +461,12 @@ class CfgBuildingLoot {
 			{"Crossbow_DZ","weapon"},
 			{"Binocular","weapon"},
 			{"PartWoodPile","magazine"},
-			{"MR43","weapon"}
+			{"MR43","weapon"},
+			
+			{"V_PlateCarrier2_rgr","vest"}, // 20
+			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
+			{"V_HarnessO_brn","vest"}, // 25.7
+			{"V_HarnessOGL_brn","vest"} // 28.6
 		};
 		itemChance[] =	{
 			0.15,
@@ -473,7 +487,11 @@ class CfgBuildingLoot {
 			0.01,
 			0.05,
 			0.02,
-			0.01
+			0.01,
+            0.05,
+            0.04,
+            0.02,
+            0.02
 		};
 	};
 	class HeliCrash: Default {
@@ -651,7 +669,12 @@ class CfgBuildingLoot {
 			{"Sa58P_EP1","weapon"},
 			{"Sa58V_EP1","weapon"},
 			{"BAF_L85A2_RIS_Holo","weapon"},
-			{"NVGoggles","weapon"}
+			{"NVGoggles","weapon"},
+			
+			{"V_PlateCarrier2_rgr","vest"}, // 20
+			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
+			{"V_HarnessO_brn","vest"}, // 25.7
+			{"V_HarnessOGL_brn","vest"} // 28.6
 		};
 		itemChance[] =	{
 			0.05,
@@ -688,7 +711,11 @@ class CfgBuildingLoot {
 			0.03,
 			0.03,
 			0.01,
-			0.04
+			0.04,
+            0.08,
+            0.06,
+            0.04,
+            0.02
 		};
 	};
 	class MilitarySpecial: Default {
@@ -745,7 +772,12 @@ class CfgBuildingLoot {
 			{"Sa58V_CCO_EP1","weapon"},
 			//{"G36_C_SD_camo","weapon"},
 			{"M40A3","weapon"},
-			{"100Rnd_762x54_PK","magazine"}
+			{"100Rnd_762x54_PK","magazine"},
+			
+			{"V_PlateCarrier2_rgr","vest"}, // 20
+			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
+			{"V_HarnessO_brn","vest"}, // 25.7
+			{"V_HarnessOGL_brn","vest"} // 28.6
 		};
 		itemChance[] =	{
 			0.10,
@@ -792,7 +824,11 @@ class CfgBuildingLoot {
 			0.01, //Sa58V_CCO_EP1
 			//0.01, //{"G36_C_SD_camo","weapon"},
 			0.02, // M40A3
-			0.01	//("100Rnd_762x54_PK","magazine"}
+			0.01,	//("100Rnd_762x54_PK","magazine"}
+            0.08,
+            0.06,
+            0.04,
+            0.02
 		};
 	};
 	class Hunting: Default {
