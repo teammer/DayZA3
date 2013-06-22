@@ -46,6 +46,11 @@ switch (_iClass) do {
 		//Item is one magazine
 		_item = createVehicle [_iItem, _iPos, [], _radius, "CAN_COLLIDE"];
 	};
+	case "vest": {
+		//Item is one magazine
+		_item = createVehicle ["WeaponHolder", _iPos, [], _radius, "CAN_COLLIDE"];
+		_item addItemCargoGlobal [_iItem,1];
+	};
 };
 
 // timestamp for later clearing
