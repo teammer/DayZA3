@@ -143,7 +143,7 @@ if (_canPickLight and !dayz_hasLight) then {
 		dayz_hunger2 = -1;
 		dayz_hunger3 = player addAction [format["<t color='#FF0000'>Eat%1</t>"], "\z\addons\dayz_code\actions\player_eat.sqf",[_getTextZ], 1, false, true, "", "player == player"];
 		
-		} else if ((r_player_blood >= 10000) and (dayz_hunger2 < 0)) then {
+		}; if ((r_player_blood >= 10000) and (dayz_hunger2 < 0)) then {
 		player removeAction dayz_hunger3;
 		dayz_hunger3 = -1;
 		if(dayz_hunger >= 600) then {
@@ -183,7 +183,7 @@ if (_canPickLight and !dayz_hasLight) then {
 		dayz_mre = -1;
 		dayz_mre2 = player addAction [format["<t color='#FF0000'>Use MRE%1</t>"], "\z\addons\dayz_code\actions\player_mre.sqf",[_getTextZ], 1, false, true, "", "player == player"];
 		
-		} else if ((r_player_blood >= 10000) and (dayz_mre < 0)) then {
+		}; if ((r_player_blood >= 10000) and (dayz_mre < 0)) then {
 		player removeAction dayz_mre2;
 		dayz_mre = -1;
 		if((dayz_hunger >= 600) or (dayz_thirst >= 600)) then {
