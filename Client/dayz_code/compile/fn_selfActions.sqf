@@ -216,7 +216,7 @@ if (_canPickLight and !dayz_hasLight) then {
 			s_doClothes2 = player addAction [format["<t color='#FF0000'>Wear Camo Clothing</t>"], "z\addons\dayz_code\actions\player_wearClothes.sqf", ["Skin_Camo1_DZ"]];
 		};
 		if((s_doClothes3 < 0) and (_hasClothes3)) then {
-			s_doClothes3 = player addAction [format["<t color='#FF0000'>Wear Survival Clothing</t>"], "z\addons\dayz_code\actions\player_wearClothes.sqf", ["Skin_Survivor2_DZ"]];
+			s_doClothes3 = player addAction [format["<t color='#FF0000'>Wear Civilian Clothing</t>"], "z\addons\dayz_code\actions\player_wearClothes.sqf", ["Skin_Survivor2_DZ"]];
 		};
 	} else	{
 		player removeAction s_doClothes1;
