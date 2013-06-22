@@ -3,6 +3,7 @@ _array = _this select 3;
 _type = _array select 0;
 _classname = _array select 1;
 _holder = _array select 2;
+_oArray = ["PartWheel","PartVRotor","PartGeneric","PartGlass","PartEngine","PartFueltank","ItemTent","TrapBear","ItemTankTrap","ItemWire","ItemJerrycan","PartWoodPile"];
 
 _playerID = getPlayerUID player;
 _text = getText (configFile >> _type >> _classname >> "displayName");
@@ -71,6 +72,10 @@ if (_isOk) then {
 	};
 } else {
 if (_hasMeleeNo) then {
+	if (_classname in _oArray and (loadVest player <= 0.93)) then {
+		deleteVehicle _holder;
+		player addMagazine _classname;
+	};
 	_holder setVariable["claimed",0,true];
 	cutText [localize "STR_DAYZ_CODE_2", "PLAIN DOWN"];
 	if (_classname == "MeleeCrowbar") then {
