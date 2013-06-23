@@ -210,7 +210,6 @@ if (isDedicated) then {
 };
 
 allowConnection = true;
-if (server_totalCrashes <= 8) then {
 // [_guaranteedLoot, _randomizedLoot, _frequency, _variance, _spawnChance, _spawnMarker, _spawnRadius, _spawnFire, _fadeFire]
 nul = [3, 4, (40 * 60), (5 * 60), 1.00, 'center', 4000, true, false] spawn server_spawnCrashSite;
-};
+

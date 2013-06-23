@@ -11,11 +11,10 @@ _spawnMarker	= _this select 5;
 _spawnRadius	= _this select 6;
 _spawnFire	= _this select 7;
 _fadeFire	= _this select 8;
-server_totalCrashes = server_totalCrashes + 1;
 
 diag_log("CRASHSPAWNER: Starting spawn logic for Crash Spawner");
 
-while {true} do {
+while {(server_totalCrashes <= 8)} do {
 	private["_timeAdjust","_timeToSpawn","_spawnRoll","_crash","_hasAdjustment","_newHeight","_adjustedPos"];
 	// Allows the variance to act as +/- from the spawn frequency timer
 	_timeAdjust = round(random(_variance * 2) - _variance);
@@ -46,6 +45,7 @@ while {true} do {
 		diag_log(format["CRASHSPAWNER: Spawning '%1' with loot table '%2' NOW! (%3) at: %4 - (%5)", _crashName, _lootTable, time, str(_position),mapGridPosition _position]);
 
 		_crash = createVehicle [_crashModel,_position, [], 0, "CAN_COLLIDE"];
+        server_totalCrashes = server_totalCrashes + 1;
 		
   		//Grass clear system uncomment for clear areas around choppers.
 		//_clutter = createVehicle ["ClutterCutter_EP1", _position, [], 0, "CAN_COLLIDE"];
@@ -115,4 +115,5 @@ while {true} do {
 	} else {
 		diag_log(format["CRASHSPAWNER: %1%2 chance to spawn '%3' with loot table '%4' at %5 FAILED (chance)", round(_spawnChance * 100), '%', _crashName, _lootTable, _timeToSpawn]);	
 	};
+};
 };
