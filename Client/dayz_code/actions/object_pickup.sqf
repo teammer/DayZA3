@@ -55,6 +55,7 @@ if(_classname isKindOf "Bag_Base_EP1") then {
 };
 
 _config = (configFile >> _type >> _classname);
+    if !(_classname in ["ItemMap","ItemCompass","ItemWatch","ItemGPS","NVGoggles"]) then {
 _isOk = [player,_config] call BIS_fnc_invAdd;
 if (_isOk) then {
 	deleteVehicle _holder;
@@ -104,4 +105,12 @@ if (_hasMeleeNo) then {
 	};
     };
 };
-
+    }else {
+    if (_classname in assignedItems player) then {
+	cutText [format["You already have a %1!",_text], "PLAIN DOWN"];
+    } else {
+	deleteVehicle _holder;
+        player addItem _classname;
+        player assignItem _classname;
+        };
+    };

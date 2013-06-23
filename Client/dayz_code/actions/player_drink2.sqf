@@ -82,3 +82,13 @@ cutText [format[(localize  "str_player_consumed"),_text], "PLAIN DOWN"];
 
         player removeAction dayz_thirst2;
     	dayz_thirst2 = -1;
+        
+        _fatigue = getFatigue player;
+        if (_fatigue >= 0.3) then {
+        player setFatigue (_fatigue - 0.3);
+        };
+        [] spawn {
+        player enableFatigue false;
+        sleep 5;
+        player enableFatigue true;
+        };
