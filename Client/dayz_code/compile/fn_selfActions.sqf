@@ -15,6 +15,7 @@ _hasAntiB = 	"ItemAntibiotic" in items player;
 _hasFuelE = 	"ItemJerrycanEmpty" in items player;
 //boiled Water
 _hasbottleitem = "ItemWaterbottle" in items player;
+_hasbottleitemE = "ItemWaterbottleUnfilled" in items player;
 _hastinitem = false;
 {
     if (_x in magazines player) then {
@@ -58,6 +59,37 @@ _hasTent = 		"ItemTent" in items player;
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _nearLight = 	nearestObject [player,"LitObject"];
 _canPickLight = false;
+
+_canFill = 		count nearestObjects [_playerPos, ["Land_pumpa","Land_water_tank"], 4] > 0;
+_isPond = 		false;
+_isWell = 		false;
+_pondPos = 		[];
+_objectsWell = 	[];
+_objectsPond = 	[];
+
+
+if (!_canFill) then {
+	_objectsWell = 	nearestObjects [getPosATL player, [], 4];
+	{
+		//Check for Well
+		_isWell = ["_well",str(_x),false] call fnc_inString;
+		if (_isWell) then {_canFill = true};
+	} forEach _objectsWell;
+};
+
+if (!_canFill) then {
+	_objectsPond = 		nearestObjects [getPosATL player, [], 50];
+	{
+		//Check for pond
+		_isPond = ["pond",str(_x),false] call fnc_inString;
+		if (_isPond) then {
+			_pondPos = (_x worldToModel getPosATL player) select 2;
+			if (_pondPos < 0) then {
+				_canFill = true;
+			};
+		};
+	} forEach _objectsPond;
+};
 
 if (!isNull _nearLight) then {
 	if (_nearLight distance player < 4) then {
@@ -173,6 +205,16 @@ if (_canPickLight and !dayz_hasLight) then {
 	} else {
     	player removeAction dayz_thirst2;
     	dayz_thirst2 = -1;
+	};
+
+	//Allow player to fill water bottles
+	if(_vehicle == player and _canFill and _hasbottleitemE) then {
+    	if((s_player_fillwater2 < 0)) then {
+        	s_player_fillwater2 = player addAction [format["<t color='#FF0000'>Fill Bottle%1</t>"], "\z\addons\dayz_code\actions\water_fill.sqf",[_getTextZ], 1, false, true, "", "player == player"];
+    	};
+	} else {
+    	player removeAction s_player_fillwater2;
+    	s_player_fillwater2 = -1;
 	};
 
 	//Allow consuming of an MRE

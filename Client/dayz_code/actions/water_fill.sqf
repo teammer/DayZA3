@@ -1,6 +1,5 @@
 private["_hasFood","_item","_text","_qty"];
 
-call gear_ui_init;
 
 _playerPos = 	getPosATL player;
 _canFill = 		count nearestObjects [_playerPos, ["Land_pumpa","Land_water_tank"], 4] > 0;
@@ -12,7 +11,7 @@ _objectsWell = 	[];
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 if (_onLadder) exitWith {cutText [(localize "str_player_21") , "PLAIN DOWN"]};
 
-_hasbottleitem = _this in magazines player;
+_hasbottleitem = "ItemWaterbottleUnfilled" in items player;
 
 _config = configFile >> "CfgMagazines" >> _item;
 _text = getText (_config >> "displayName");
@@ -47,9 +46,9 @@ if (!_canFill) then {
 };
 
 if (_canFill) then {
-	_qty = {_x == "ItemWaterbottleUnfilled"} count magazines player;
+	_qty = {_x == "ItemWaterbottleUnfilled"} count items player;
 
-	if ("ItemWaterbottleUnfilled" in magazines player) then {
+	if ("ItemWaterbottleUnfilled" in items player) then {
 		for "_x" from 1 to _qty do {
 			player removeMagazine "ItemWaterbottleUnfilled";
 			player addMagazine "ItemWaterbottle";
