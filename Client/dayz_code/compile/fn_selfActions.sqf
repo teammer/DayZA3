@@ -185,7 +185,7 @@ if (_canPickLight and !dayz_hasLight) then {
 		
 		}; if ((r_player_blood >= 10000) and (dayz_mre < 0)) then {
 		player removeAction dayz_mre2;
-		dayz_mre = -1;
+		dayz_mre2 = -1;
 		if((dayz_hunger >= 270) or (dayz_thirst >= 180)) then {
 			dayz_mre2 = player addAction [format["<t color='#FF0000'>Use MRE%1</t>"], "\z\addons\dayz_code\actions\player_mre.sqf",[_getTextZ], 1, false, true, "", "player == player"];
 		};

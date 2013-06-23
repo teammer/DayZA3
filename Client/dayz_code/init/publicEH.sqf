@@ -12,7 +12,7 @@
 "dayzHit" 			addPublicVariableEventHandler {(_this select 1) call fnc_usec_damageHandler};
 "dayzHitV" 			addPublicVariableEventHandler {(_this select 1) call fnc_usec_damageVehicle};
 "dayzHideBody"		addPublicVariableEventHandler {hideBody (_this select 1)};
-"dayzGutBody"		addPublicVariableEventHandler {(_this select 1) spawn local_gutObject};
+"dayzGutBody"		addPublicVariableEventHandler {(_this select 1) spawn local_gutAnimal};
 "dayzDelLocal"		addPublicVariableEventHandler {(_this select 1) call object_delLocal};
 "dayzVehicleInit"	addPublicVariableEventHandler {(_this select 1) call fnc_vehicleEventHandler};
 "dayzHumanity"		addPublicVariableEventHandler {(_this select 1) spawn player_humanityChange};

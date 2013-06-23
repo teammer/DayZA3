@@ -33,12 +33,7 @@ if ((_hasKnife or _hasKnifeBlunt) and !_hasHarvested) then {
 	
 	_array = [_item,_qty];
 
-	if (local _item) then {
-		_array spawn local_gutObject;
-	} else {
-		dayzGutBody = _array;
-		publicVariable "dayzGutBody";
-	};
+		_array spawn local_gutAnimal;
 	
 	sleep 6;
 	_string = format[localize "str_success_gutted_animal",_text,_qty];
