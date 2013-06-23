@@ -74,6 +74,8 @@ private ["_newBackpackType","_backpackWpn","_backpackMag"];
 
 //BackUp Player Object
 	_oldUnit = player;
+    
+_otheritems = assignedItems player;
 	
 /***********************************/
 //DONT USE player AFTER THIS POINT
@@ -103,6 +105,11 @@ private ["_newBackpackType","_backpackWpn","_backpackMag"];
 		_newUnit addWeapon _x;
 		//sleep 0.05;
 	} forEach _weapons;
+    
+    {
+        _newUnit addItem _x;
+        _newUnit assignItem _x;
+    } forEach _otheritems
 
 //Check and Compare it
 	if(str(_weapons) != str(weapons _newUnit)) then {
