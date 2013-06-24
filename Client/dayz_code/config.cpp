@@ -327,10 +327,10 @@ class CfgBuildingLoot {
 			{"V_HarnessO_brn","vest"}, // 25.7
 			{"V_HarnessOGL_brn","vest"}, // 28.6
 			
-			{"DZ_Assault_Pack_A3","object"},
-			{"DZ_Czech_Vest_Pouch_A3","object"},
-			{"DZ_ALICE_Pack_A3","object"},
-			{"DZ_TK_Assault_Pack_A3","object"}
+			{"DZ_Assault_Pack_A3","vest"},
+			{"DZ_Czech_Vest_Pouch_A3","vest"},
+			{"DZ_ALICE_Pack_A3","vest"},
+			{"DZ_TK_Assault_Pack_A3","vest"}
 		};
 		itemChance[] =	{
 			0.01,
@@ -477,10 +477,10 @@ class CfgBuildingLoot {
 			{"V_HarnessO_brn","vest"}, // 25.7
 			{"V_HarnessOGL_brn","vest"}, // 28.6
 			
-			{"DZ_Assault_Pack_A3","object"},
-			{"DZ_Czech_Vest_Pouch_A3","object"},
-			{"DZ_ALICE_Pack_A3","object"},
-			{"DZ_TK_Assault_Pack_A3","object"}
+			{"DZ_Assault_Pack_A3","vest"},
+			{"DZ_Czech_Vest_Pouch_A3","vest"},
+			{"DZ_ALICE_Pack_A3","vest"},
+			{"DZ_TK_Assault_Pack_A3","vest"}
 		};
 		itemChance[] =	{
 			0.15,
@@ -694,11 +694,11 @@ class CfgBuildingLoot {
 			{"V_HarnessO_brn","vest"}, // 25.7
 			{"V_HarnessOGL_brn","vest"}, // 28.6
 			
-			{"DZ_ALICE_Pack_A3","object"}, // 16
-			{"DZ_TK_Assault_Pack_A3","object"}, // 16
-			{"DZ_British_ACU_A3","object"}, // 18
-			{"DZ_CivilBackpack_A3","object"}, // 24
-			{"DZ_Backpack_A3","object"} // 24
+			{"DZ_ALICE_Pack_A3","vest"}, // 16
+			{"DZ_TK_Assault_Pack_A3","vest"}, // 16
+			{"DZ_British_ACU_A3","vest"}, // 18
+			{"DZ_CivilBackpack_A3","vest"}, // 24
+			{"DZ_Backpack_A3","vest"} // 24
 		};
 		itemChance[] =	{
 			0.05,
@@ -808,11 +808,11 @@ class CfgBuildingLoot {
 			{"V_HarnessO_brn","vest"}, // 25.7
 			{"V_HarnessOGL_brn","vest"}, // 28.6
 			
-			{"DZ_ALICE_Pack_A3","object"}, // 16
-			{"DZ_TK_Assault_Pack_A3","object"}, // 16
-			{"DZ_British_ACU_A3","object"}, // 18
-			{"DZ_CivilBackpack_A3","object"}, // 24
-			{"DZ_Backpack_A3","object"} // 24
+			{"DZ_ALICE_Pack_A3","vest"}, // 16
+			{"DZ_TK_Assault_Pack_A3","vest"}, // 16
+			{"DZ_British_ACU_A3","vest"}, // 18
+			{"DZ_CivilBackpack_A3","vest"}, // 24
+			{"DZ_Backpack_A3","vest"} // 24
 		};
 		itemChance[] =	{
 			0.10,
