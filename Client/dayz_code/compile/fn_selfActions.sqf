@@ -16,6 +16,7 @@ _hasFuelE = 	"ItemJerrycanEmpty" in items player;
 //boiled Water
 _hasbottleitem = "ItemWaterbottle" in items player;
 _hasbottleitemE = "ItemWaterbottleUnfilled" in items player;
+_hasWood = 		"PartWoodPile" in items player;
 _hastinitem = false;
 {
     if (_x in magazines player) then {
@@ -59,6 +60,7 @@ _hasTent = 		"ItemTent" in items player;
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _nearLight = 	nearestObject [player,"LitObject"];
 _canPickLight = false;
+_hasHatchet =   currentWeapon player == "MeleeHatchet";
 
 _canFill = 		count nearestObjects [_playerPos, ["Land_pumpa","Land_water_tank"], 4] > 0;
 _isPond = 		false;
@@ -121,7 +123,6 @@ if (_canPickLight and !dayz_hasLight) then {
 //End off topic functions
 
 //Start of A3 Scroll functions by Papzzz and Pwnoz0r
-
 	//Allow player to use Morphine
 	if (_vehicle == player and _legsBroke and _armsBroke and _hasMorphine) then {
 		if (s_player_morphineA3 < 0) then {
@@ -157,6 +158,26 @@ if (_canPickLight and !dayz_hasLight) then {
 	} else {
 		player removeAction s_player_bandageA3;
 		s_player_bandageA3 = -1;
+	};
+
+	//Allow player to chop trees
+	if (_vehicle == player and (["forest",dayz_surfaceType] call fnc_inString) and _hasHatchet) then {
+		if (s_player_chopA3 < 0) then {
+			s_player_chopA3 = player addAction [format["<t color='#FF0000'>Chop Wood%1</t>"], "\z\addons\dayz_code\actions\player_chopWood.sqf",[_unit], 1, true, true, "", ""];
+		};
+	} else {
+		player removeAction s_player_chopA3;
+		s_player_chopA3 = -1;
+	};
+
+	//Allow player to setup a camp fire
+	if (_vehicle == player and _hasWood) then {
+		if (s_player_makefireA3 < 0) then {
+			s_player_makefireA3 = player addAction [format["<t color='#FF0000'>Place Campfire%1</t>"], "\z\addons\dayz_code\actions\player_makefire.sqf",[_unit], 1, true, true, "", ""];
+		};
+	} else {
+		player removeAction s_player_makefireA3;
+		s_player_makefireA3 = -1;
 	};
 
 	_foodItems = no_output_food + food_with_output + meatcooked;

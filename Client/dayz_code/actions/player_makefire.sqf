@@ -5,9 +5,11 @@ if ((_location select 2) < 0) then {
 };
 //_location set [2,0];
 _isOk = true; //count (_location isFlatEmpty [0.3,0,0,4,0,false,player]) > 0;
-_hasWood = 		"PartWoodPile" in magazines player;
+_hasWood = 		"PartWoodPile" in items player;
+_hasMatch = 		"ItemMatchbox" in items player;
 
 if (_hasWood) then {
+if (_hasMatch) then {
 	if (_isOk) then {
 			player removeMagazine "PartWoodPile";
 			_dir = getDir player;
@@ -24,6 +26,9 @@ if (_hasWood) then {
 	} else {
 		cutText [localize "str_fireplace_02", "PLAIN DOWN"];
 	};
+    } else {
+    cutText ["You must have matches in order to setup a camp fire!", "PLAIN DOWN"];
+    };
 } else {
 	cutText [localize "str_player_22", "PLAIN DOWN"];
 };
