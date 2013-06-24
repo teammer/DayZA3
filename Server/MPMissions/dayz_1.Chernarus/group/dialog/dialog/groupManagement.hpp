@@ -56,7 +56,7 @@ class GroupManagement {
 		class InviteButton : w_RscButton {
 			idc = gInviteButton;
 			text = "Invite";
-			onButtonClick = "[] execVM 'group\dialog\inviteToGroup.sqf'";
+			onButtonClick = "[] execVM '\z\addons\dayz_code\group\dialog\inviteToGroup.sqf'";
 			x = 0.3075; y = 0.200;
 			w = 0.125; h = 0.033 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
@@ -65,7 +65,7 @@ class GroupManagement {
 		class DisbandButton : w_RscButton {
 			idc = gDisbandButton;
 			text = "Disband";
-			onButtonClick = "[] execVM 'group\dialog\disbandGroup.sqf'";
+			onButtonClick = "[] execVM '\z\addons\dayz_code\group\dialog\disbandGroup.sqf'";
 			x = 0.3075; y = 0.300;
 			w = 0.125; h = 0.033 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
@@ -74,7 +74,7 @@ class GroupManagement {
 		class LeaveButton : w_RscButton {
 			idc = gLeaveButton;
 			text = "Leave Group";
-			onButtonClick = "[] execVM 'group\dialog\leaveGroup.sqf'";
+			onButtonClick = "[] execVM '\z\addons\dayz_code\group\dialog\leaveGroup.sqf'";
 			x = 0.3075; y = 0.350;
 			w = 0.125; h = 0.033 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
@@ -83,7 +83,7 @@ class GroupManagement {
 		class AcceptInviteButton : w_RscButton {
 			idc = gAcceptButton;
 			text = "Accept";
-			onButtonClick = "[] execVM 'group\dialog\acceptGroupInvite.sqf'";
+			onButtonClick = "[] execVM '\z\addons\dayz_code\group\dialog\acceptGroupInvite.sqf'";
 			x = 0.275; y = 0.625 - 0.0255 * safezoneH;
 			w = 0.100; h = 0.033 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
@@ -92,7 +92,7 @@ class GroupManagement {
 		class DeclineInviteButton : w_RscButton {
 			idc = gDeclineButton;
 			text = "Decline";
-			onButtonClick = "[] execVM 'group\dialog\declineGroupInvite.sqf'";
+			onButtonClick = "[] execVM '\z\addons\dayz_code\group\dialog\declineGroupInvite.sqf'";
 			x = 0.375; y = 0.625 - 0.0255 * safezoneH;
 			w = 0.100; h = 0.033 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};

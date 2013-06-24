@@ -443,4 +443,5 @@ if(!isDedicated) then {
 	//if (uiNamespace getVariable ['DZ_displayUI', 0] == 2) then {
 	//	dayzDebug = true;
 	//};
+    [] execVM "\z\addons\dayz_code\group\keymonitor.sqf";
 };

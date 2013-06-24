@@ -13,7 +13,7 @@ Bindings_A3 =
 	{
 		case 211:		//DELETE
 		{
-            [] execVM "group\dialog\groupMenu.sqf";
+            [] execVM "\z\addons\dayz_code\group\dialog\groupMenu.sqf";
 		};
 	};
     _return
