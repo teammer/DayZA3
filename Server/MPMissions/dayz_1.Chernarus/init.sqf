@@ -43,6 +43,7 @@ if ((!isServer) && (player != player)) then
 if (isServer) then {
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
 	[] execVM "\z\addons\dayz_server\init\player_removeGear.sqf";
+	[] execVM "group\currentInvites.sqf";
 };
 
 if (!isDedicated) then {
@@ -53,5 +54,6 @@ if (!isDedicated) then {
 	
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
+    _keyMonitor = [] execVM "keymonitor.sqf";
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
 };
