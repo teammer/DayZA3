@@ -667,6 +667,108 @@ class CfgVehicles {
 	};	
 	class Bag_Base_EP1;
 	class Bag_Base_BAF;
+	class Bag_Base;
+    class DZ_Patrol_Pack_A3: Bag_Base
+    {
+        scope = 2;
+        displayName = "Patrol Pack";
+		picture = "\ca\weapons_e\data\icons\backpack_US_ASSAULT_COYOTE_CA.paa";
+		icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
+		model = "\ca\weapons_e\AmmoBoxes\backpack_us_assault_Coyote.p3d";
+		transportMaxWeapons = 1;
+		transportMaxMagazines = 8;
+        mass = 40;
+        maximumload = 28;
+    };
+	class DZ_Assault_Pack_A3: Bag_Base
+	{
+		scope = 2;
+		displayName = "Assault Pack";
+		picture = "\ca\weapons_e\data\icons\backpack_US_ASSAULT_CA.paa";
+		icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
+		model = "\ca\weapons_e\AmmoBoxes\backpack_us_assault.p3d";
+		transportMaxWeapons = 1;
+		transportMaxMagazines = 12;
+        mass = 40;
+        maximumload = 40;
+	};
+	class DZ_Czech_Vest_Pouch_A3: Bag_Base
+	{
+		scope = 2;
+		displayname = "Czech Vest Pouch";
+		icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
+		model = "\ca\weapons_e\AmmoBoxes\backpack_acr_small.p3d";
+		picture = "\ca\weapons_e\data\icons\backpack_ACR_small_CA.paa";
+		transportMaxWeapons = 0;
+		transportMaxMagazines = 12;
+        mass = 40;
+        maximumload = 30;
+	};
+	class DZ_ALICE_Pack_A3: Bag_Base
+	{
+		scope = 2;
+		displayName = "ALICE Pack";
+		picture = "\ca\weapons_e\data\icons\backpack_TK_ALICE_CA.paa";
+		icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
+		model = "\ca\weapons_e\AmmoBoxes\backpack_tk_alice.p3d";
+		transportMaxWeapons = 2;
+		transportMaxMagazines = 16;
+        mass = 40;
+        maximumload = 57;
+	};
+	class DZ_TK_Assault_Pack_A3 : Bag_Base
+	{
+		scope = 2;
+		displayName = "Survival ACU";
+		picture = "\ca\weapons_e\data\icons\backpack_CIVIL_ASSAULT_CA.paa";
+		icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
+		model = "\ca\weapons_e\AmmoBoxes\backpack_civil_assault.p3d";
+		transportMaxWeapons = 2;
+		transportMaxMagazines = 16;
+        mass = 40;
+        maximumload = 57;
+	};
+	class DZ_British_ACU_A3 : Bag_Base
+	{
+		scope = 2;
+		displayName = "British Assault Pack";
+		model = "\ca\weapons_baf\Backpack_Small_BAF";
+		picture = "\ca\weapons_baf\data\UI\backpack_BAF_CA.paa";
+		icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
+		transportMaxWeapons = 3;
+		transportMaxMagazines = 18;
+        mass = 40;
+        maximumload = 70;
+	};
+	class DZ_CivilBackpack_A3: Bag_Base 
+	{
+		scope = 2;
+		displayName = "Czech Backpack";
+		picture = "\ca\weapons_e\data\icons\backpack_ACR_CA.paa";
+		icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
+		model = "\ca\weapons_e\AmmoBoxes\backpack_acr.p3d";
+		transportMaxWeapons = 4;
+		transportMaxMagazines = 24;
+        mass = 40;
+        maximumload = 70;
+	};
+	class DZ_Backpack_A3: Bag_Base
+	{
+		scope = 2;
+		displayName = "Coyote Backpack";
+		picture = "\ca\weapons_e\data\icons\backpack_US_CA.paa";
+		icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
+		model = "\ca\weapons_e\AmmoBoxes\backpack_us.p3d";
+		transportMaxWeapons = 6;
+		transportMaxMagazines = 24;
+        mass = 40;
+        maximumload = 160;
+	};
+    
+    
+    
+    
+    
 	class DZ_Patrol_Pack_EP1: Bag_Base_EP1
 	{
 		scope = 2;
@@ -732,7 +834,7 @@ class CfgVehicles {
 		scope = 2;
 		displayName = "British Assault Pack";
 		mapSize = 2;
-		model = "\ca\weapons_baf\Backpack_Small_BAF";\
+		model = "\ca\weapons_baf\Backpack_Small_BAF";
 		picture = "\ca\weapons_baf\data\UI\backpack_BAF_CA.paa";
 		icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
 		transportMaxWeapons = 3;

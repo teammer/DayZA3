@@ -325,7 +325,12 @@ class CfgBuildingLoot {
 			{"V_PlateCarrier2_rgr","vest"}, // 20
 			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
 			{"V_HarnessO_brn","vest"}, // 25.7
-			{"V_HarnessOGL_brn","vest"} // 28.6
+			{"V_HarnessOGL_brn","vest"}, // 28.6
+			
+			{"DZ_Assault_Pack_A3","object"},
+			{"DZ_Czech_Vest_Pouch_A3","object"},
+			{"DZ_ALICE_Pack_A3","object"},
+			{"DZ_TK_Assault_Pack_A3","object"}
 		};
 		itemChance[] =	{
 			0.01,
@@ -353,6 +358,10 @@ class CfgBuildingLoot {
 			0.03,
             0.05,
             0.04,
+            0.02,
+            0.02,
+            0.04,
+            0.05,
             0.02,
             0.02
 		};		
@@ -466,7 +475,12 @@ class CfgBuildingLoot {
 			{"V_PlateCarrier2_rgr","vest"}, // 20
 			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
 			{"V_HarnessO_brn","vest"}, // 25.7
-			{"V_HarnessOGL_brn","vest"} // 28.6
+			{"V_HarnessOGL_brn","vest"}, // 28.6
+			
+			{"DZ_Assault_Pack_A3","object"},
+			{"DZ_Czech_Vest_Pouch_A3","object"},
+			{"DZ_ALICE_Pack_A3","object"},
+			{"DZ_TK_Assault_Pack_A3","object"}
 		};
 		itemChance[] =	{
 			0.15,
@@ -490,6 +504,10 @@ class CfgBuildingLoot {
 			0.01,
             0.05,
             0.04,
+            0.02,
+            0.02,
+            0.04,
+            0.05,
             0.02,
             0.02
 		};
@@ -674,7 +692,13 @@ class CfgBuildingLoot {
 			{"V_PlateCarrier2_rgr","vest"}, // 20
 			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
 			{"V_HarnessO_brn","vest"}, // 25.7
-			{"V_HarnessOGL_brn","vest"} // 28.6
+			{"V_HarnessOGL_brn","vest"}, // 28.6
+			
+			{"DZ_ALICE_Pack_A3","object"}, // 16
+			{"DZ_TK_Assault_Pack_A3","object"}, // 16
+			{"DZ_British_ACU_A3","object"}, // 18
+			{"DZ_CivilBackpack_A3","object"}, // 24
+			{"DZ_Backpack_A3","object"} // 24
 		};
 		itemChance[] =	{
 			0.05,
@@ -715,7 +739,12 @@ class CfgBuildingLoot {
             0.08,
             0.06,
             0.04,
-            0.02
+            0.02,
+            0.07,
+            0.07,
+            0.03,
+            0.04,
+            0.01
 		};
 	};
 	class MilitarySpecial: Default {
@@ -777,7 +806,13 @@ class CfgBuildingLoot {
 			{"V_PlateCarrier2_rgr","vest"}, // 20
 			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
 			{"V_HarnessO_brn","vest"}, // 25.7
-			{"V_HarnessOGL_brn","vest"} // 28.6
+			{"V_HarnessOGL_brn","vest"}, // 28.6
+			
+			{"DZ_ALICE_Pack_A3","object"}, // 16
+			{"DZ_TK_Assault_Pack_A3","object"}, // 16
+			{"DZ_British_ACU_A3","object"}, // 18
+			{"DZ_CivilBackpack_A3","object"}, // 24
+			{"DZ_Backpack_A3","object"} // 24
 		};
 		itemChance[] =	{
 			0.10,
@@ -828,7 +863,12 @@ class CfgBuildingLoot {
             0.08,
             0.06,
             0.04,
-            0.02
+            0.02,
+            0.07,
+            0.07,
+            0.03,
+            0.04,
+            0.01
 		};
 	};
 	class Hunting: Default {
@@ -1223,7 +1263,7 @@ class CfgBuildingLoot {
 	};
 	class GraveCross2: HouseRoaming {	
 		maxRoaming = 2;
-	};
+	};  
 	class GraveCrossHelmet: Military {	
 		maxRoaming = 4;
 	};
