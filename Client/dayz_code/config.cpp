@@ -229,7 +229,7 @@ class CfgSurvival {
 			//weapons[] = {"Makarov"};
 			//weapons[] = {"ItemFlashlight"};
 			//backpackWeapon = "";
-			//backpack = "DZ_Patrol_Pack_EP1";
+			backpack = "DZ_Patrol_Pack_A3";
 			//backpack = "";
 		};
 	};
@@ -321,16 +321,11 @@ class CfgBuildingLoot {
 			{"Skin_Sniper1_DZ","magazine"},
 			{"WeaponHolder_ItemCrowbar","object"},
 			{"MR43","weapon"},
-			
-			{"V_PlateCarrier2_rgr","vest"}, // 20
-			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
-			{"V_HarnessO_brn","vest"}, // 25.7
-			{"V_HarnessOGL_brn","vest"}, // 28.6
-			
-			{"DZ_Assault_Pack_A3","vest"},
-			{"DZ_Czech_Vest_Pouch_A3","vest"},
-			{"DZ_ALICE_Pack_A3","vest"},
-			{"DZ_TK_Assault_Pack_A3","vest"}
+            
+			{"DZ_Assault_Pack_A3","backpack"},
+			{"DZ_Czech_Vest_Pouch_A3","backpack"},
+			{"DZ_ALICE_Pack_A3","backpack"},
+			{"DZ_TK_Assault_Pack_A3","backpack"}
 		};
 		itemChance[] =	{
 			0.01,
@@ -356,10 +351,7 @@ class CfgBuildingLoot {
 			0.01,
 			0.08,
 			0.03,
-            0.05,
-            0.04,
-            0.02,
-            0.02,
+
             0.04,
             0.05,
             0.02,
@@ -474,13 +466,11 @@ class CfgBuildingLoot {
 			
 			{"V_PlateCarrier2_rgr","vest"}, // 20
 			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
-			{"V_HarnessO_brn","vest"}, // 25.7
-			{"V_HarnessOGL_brn","vest"}, // 28.6
 			
-			{"DZ_Assault_Pack_A3","vest"},
-			{"DZ_Czech_Vest_Pouch_A3","vest"},
-			{"DZ_ALICE_Pack_A3","vest"},
-			{"DZ_TK_Assault_Pack_A3","vest"}
+			{"DZ_Assault_Pack_A3","backpack"},
+			{"DZ_Czech_Vest_Pouch_A3","backpack"},
+			{"DZ_ALICE_Pack_A3","backpack"},
+			{"DZ_TK_Assault_Pack_A3","backpack"}
 		};
 		itemChance[] =	{
 			0.15,
@@ -502,14 +492,12 @@ class CfgBuildingLoot {
 			0.05,
 			0.02,
 			0.01,
-            0.05,
-            0.04,
-            0.02,
-            0.02,
+            0.015,
+            0.01,
             0.04,
             0.05,
-            0.02,
-            0.02
+            0.025,
+            0.025
 		};
 	};
 	class HeliCrash: Default {
@@ -694,11 +682,11 @@ class CfgBuildingLoot {
 			{"V_HarnessO_brn","vest"}, // 25.7
 			{"V_HarnessOGL_brn","vest"}, // 28.6
 			
-			{"DZ_ALICE_Pack_A3","vest"}, // 16
-			{"DZ_TK_Assault_Pack_A3","vest"}, // 16
-			{"DZ_British_ACU_A3","vest"}, // 18
-			{"DZ_CivilBackpack_A3","vest"}, // 24
-			{"DZ_Backpack_A3","vest"} // 24
+			{"DZ_ALICE_Pack_A3","backpack"}, // 16
+			{"DZ_TK_Assault_Pack_A3","backpack"}, // 16
+			{"DZ_British_ACU_A3","backpack"}, // 18
+			{"DZ_CivilBackpack_A3","backpack"}, // 24
+			{"DZ_Backpack_A3","backpack"} // 24
 		};
 		itemChance[] =	{
 			0.05,
@@ -736,15 +724,15 @@ class CfgBuildingLoot {
 			0.03,
 			0.01,
 			0.04,
-            0.08,
             0.06,
             0.04,
             0.02,
-            0.07,
-            0.07,
-            0.03,
+            0.01,
             0.04,
-            0.01
+            0.03,
+            0.015,
+            0.02,
+            0.005
 		};
 	};
 	class MilitarySpecial: Default {
@@ -808,11 +796,11 @@ class CfgBuildingLoot {
 			{"V_HarnessO_brn","vest"}, // 25.7
 			{"V_HarnessOGL_brn","vest"}, // 28.6
 			
-			{"DZ_ALICE_Pack_A3","vest"}, // 16
-			{"DZ_TK_Assault_Pack_A3","vest"}, // 16
-			{"DZ_British_ACU_A3","vest"}, // 18
-			{"DZ_CivilBackpack_A3","vest"}, // 24
-			{"DZ_Backpack_A3","vest"} // 24
+			{"DZ_ALICE_Pack_A3","backpack"}, // 16
+			{"DZ_TK_Assault_Pack_A3","backpack"}, // 16
+			{"DZ_British_ACU_A3","backpack"}, // 18
+			{"DZ_CivilBackpack_A3","backpack"}, // 24
+			{"DZ_Backpack_A3","backpack"} // 24
 		};
 		itemChance[] =	{
 			0.10,
@@ -860,15 +848,15 @@ class CfgBuildingLoot {
 			//0.01, //{"G36_C_SD_camo","weapon"},
 			0.02, // M40A3
 			0.01,	//("100Rnd_762x54_PK","magazine"}
-            0.08,
             0.06,
             0.04,
             0.02,
-            0.07,
-            0.07,
-            0.03,
+            0.01,
             0.04,
-            0.01
+            0.03,
+            0.015,
+            0.02,
+            0.005
 		};
 	};
 	class Hunting: Default {
