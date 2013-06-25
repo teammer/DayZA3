@@ -745,6 +745,12 @@ class cfgWeapons {
 		midRangeProbab = 0.3;
 		maxRange = 50;
 		maxRangeProbab = 0.04;
+        class LinkedItems {
+            class LinkedItemsAcc {
+                item = "acc_flashlight";
+                slot = "PointerSlot";
+            };
+        };
 	};
 	
 	class MeleeFlashlightRed : MeleeFlashlight {
