@@ -745,19 +745,6 @@ class cfgWeapons {
 		midRangeProbab = 0.3;
 		maxRange = 50;
 		maxRangeProbab = 0.04;
-        class WeaponSlotsInfo;
-        class WeaponSlotsInfo : WeaponSlotsInfo
-        {
-            mass = 10;
-            allowedslots[] = {901};
-            class SlotInfo;
-            class PointerSlot : SlotInfo
-            {
-                linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-                displayName = "Battery";
-                compatibleItems[] = {"acc_flashlight"};
-            };
-        };
 	};
 	
 	class MeleeFlashlightRed : MeleeFlashlight {
