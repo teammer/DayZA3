@@ -19,6 +19,7 @@ class Header
  maxPlayers = 100;            //Max # of players the mission supports
 };
 
+#include "group\dialog\dialog\common.hpp"
 #include "group\dialog\dialog\groupManagement.hpp"
 
 aiKills = 1;
