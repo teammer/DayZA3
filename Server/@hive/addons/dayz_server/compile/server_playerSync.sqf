@@ -98,13 +98,15 @@ if (_characterID != "0") then {
 	};
 	if (!_isNewGear) then {
 		//diag_log ("gear..."); sleep 0.05;
-		_playerGear = [weapons _character + _otheritems ,_magazines + _currentmag];		
+        _arrayM = _magazines + [_currentmag];
+		_playerGear = [weapons _character + _otheritems ,_arrayM];		
 		diag_log ("playerGear: " +str(_playerGear) + "_backy gear: " +str(_backy));
 		_backpack = unitBackpack _character;
 		_playerBackp = [typeOf _backpack,getWeaponCargo _backpack,getMagazineCargo _backpack];
 	} else {
 		//diag_log ("gear..."); sleep 0.05;
-		_playerGear = [weapons _character + _otheritems ,_magazines + _currentmag];		
+        _arrayM = _magazines + [_currentmag];
+		_playerGear = [weapons _character + _otheritems ,_arrayM];		
 		diag_log ("playerGear: " +str(_playerGear) + "_backy gear: " +str(_backy));
 		_backpack = unitBackpack _character;
 		_playerBackp = [typeOf _backpack,getWeaponCargo _backpack,getMagazineCargo _backpack];
