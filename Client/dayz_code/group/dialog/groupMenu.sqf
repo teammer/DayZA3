@@ -58,6 +58,10 @@ while{gActive} do
         _groupInvite ctrlShow true;
     } else {
         _groupInvite ctrlShow false;
+        if !(_hasInvite) then {
+        _groupInviteText ctrlShow true;
+        _groupInviteText ctrlSetStructuredText parseText (format ["You must be looking at a player<br/>within 5 meters of you<br/>in order to invite them."]);
+        };
     };
     
     //Sort Invite Controls
