@@ -745,10 +745,15 @@ class cfgWeapons {
 		midRangeProbab = 0.3;
 		maxRange = 50;
 		maxRangeProbab = 0.04;
-        class LinkedItems {
-            class LinkedItemsAcc {
-                item = "acc_flashlight";
-                slot = "PointerSlot";
+        class WeaponSlotsInfo : WeaponSlotsInfo
+        {
+            mass = 10;
+            allowedslots[] = {901};
+            class PointerSlot : SlotInfo
+            {
+                linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+                displayName = "Battery";
+                compatibleItems[] = {"acc_flashlight"};
             };
         };
 	};
