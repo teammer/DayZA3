@@ -60,8 +60,23 @@ _hasTent = 		"ItemTent" in items player;
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _nearLight = 	nearestObject [player,"LitObject"];
 _canPickLight = false;
-_hasHatchet =   (currentWeapon player) == "MeleeHatchet";
+_hasHatchet =   "MeleeHatchet" in weaapons player;
+_hasMachete =   "MeleeMachete" in weapons player;
+_hasCrowbar =   "MeleeCrowbar" in weapons player;
+_hasMelee =     (_hasHatchet) or (_hasMachete) or (_hasCrowbar);
 
+    if (_hasMelee) then {
+    if (_hasMachete) then {
+        _currentWep = "MeleeHatchet";
+    };
+    if (_hasMachete) then {
+        _currentWep = "MeleeMachete";
+    };
+    if (_hasCrowbar) then {
+        _currentWep = "MeleeCrowbar";
+    };
+    };
+    
 _canFill = 		count (nearestObjects [position player, ["Land_pumpa","Land_water_tank"], 4]) > 0;
 _isPond = 		false;
 _isWell = 		false;
@@ -123,6 +138,9 @@ if (_canPickLight and !dayz_hasLight) then {
 //End off topic functions
 
 //Start of A3 Scroll functions by Papzzz and Pwnoz0r
+    if (_hasMelee) then {
+        player setWeaponReloadingTime [player,_currentWep,0.8];
+    };
 	//Allow player to use Morphine
 	if (_vehicle == player and _legsBroke and _armsBroke and _hasMorphine) then {
 		if (s_player_morphineA3 < 0) then {
