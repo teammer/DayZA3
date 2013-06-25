@@ -10,7 +10,9 @@ _victim removeAllEventHandlers "MPHit";
 
 _victim = _this select 2;
 _victimName = _victim getVariable["bodyName", "nil"];
-
+if (backpack _victim == "DZ_DJ_Pack_A3") then {
+    removeBackpack _victim;
+};
 _killer = _victim getVariable["AttackedBy", "nil"];
 _killerName = _victim getVariable["AttackedByName", "nil"];
 
@@ -38,7 +40,6 @@ if (_killerName != "nil") then
 
 	diag_log _loc_message;
 	[nil, nil, rTITLETEXT, _message, "PLAIN DOWN", 0] call RE;
-	//[nil, nil, rHINT, _message] call RE;
 
 	// Cleanup
 	_victim setVariable["AttackedBy", "nil", true];
@@ -52,12 +53,6 @@ dayz_disco = dayz_disco - [_playerID];
 _newObject setVariable["processedDeath",time];
 _newObject setVariable ["bodyName", _playerName, true];
 
-/*
-diag_log ("DW_DEBUG: (isnil _characterID): " + str(isnil "_characterID"));
-if (isnil "_characterID") then {
-diag_log ("DW_DEBUG: _newObject: " + str(_newObject));	
-	};
-*/
 
 if (typeName _minutes == "STRING") then 
 {
@@ -76,15 +71,3 @@ else
 };
 
 diag_log ("PDEATH: Player Died " + _playerID);
-/*
-_eh = [_newObject] spawn {
-	_body = _this select 0;
-	_method = _body getVariable["deathType","unknown"];
-	_name = _body getVariable["bodyName","unknown"];
-	waitUntil{!isPlayer _body;sleep 1};
-	_body setVariable["deathType",_method,true];
-	_body setVariable["bodyName",_name,true];
-	diag_log ("PDEATH: Player Left Body " + _name);
-};
-*/
-//dead_bodyCleanup set [count dead_bodyCleanup,_newObject];

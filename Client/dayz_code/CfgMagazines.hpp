@@ -726,4 +726,41 @@ class CfgMagazines {
 			};
 		};
 	};
+    class Chemlight_green;
+    class Chemlight_blue_DZ: Chemlight_green {
+	ammo = "Chemlight_blue_DZ";
+	descriptionshort = "Type: Light - Blue<br />Rounds: 1<br />Used in: Hand";
+	displayname = "Chemlight (Blue)";
+	displaynameshort = "Blue Light";
+	model = "\A3\Weapons_f\chemlight\chemlight_blue";
+	picture = "\A3\Weapons_F\Data\UI\M_chemlight_blue_CA.paa";
+    };
+    class Chemlight_green_DZ: Chemlight_green {
+	ammo = "Chemlight_green_DZ";
+	descriptionshort = "Type: Light - Green<br />Rounds: 1<br />Used in: Hand";
+	displayname = "Chemlight (Green)";
+	displaynameshort = "Green Light";
+	mass = 4;
+	model = "\A3\Weapons_f\chemlight\chemlight_green";
+	namesound = "Chemlight";
+	namesoundweapon = "Chemlight";
+	picture = "\A3\Weapons_F\Data\UI\M_chemlight_green_CA.paa";
+	value = 2;
+};
+class Chemlight_red_DZ: Chemlight_green {
+	ammo = "Chemlight_red_DZ";
+	descriptionshort = "Type: Light - Red<br />Rounds: 1<br />Used in: Hand";
+	displayname = "Chemlight (Red)";
+	displaynameshort = "Red Light";
+	model = "\A3\Weapons_f\chemlight\chemlight_red";
+	picture = "\A3\Weapons_F\Data\UI\M_chemlight_red_CA.paa";
+};
+class Chemlight_yellow_DZ: Chemlight_green {
+	ammo = "Chemlight_yellow_DZ";
+	descriptionshort = "Type: Light - Yellow<br />Rounds: 1<br />Used in: Hand";
+	displayname = "Chemlight (Yellow)";
+	displaynameshort = "Yellow Light";
+	model = "\A3\Weapons_f\chemlight\chemlight_yellow";
+	picture = "\A3\Weapons_F\Data\UI\M_chemlight_yellow_CA.paa";
+};
 };
