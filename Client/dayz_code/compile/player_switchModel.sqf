@@ -109,7 +109,7 @@ _otheritems = assignedItems player;
     {
         _newUnit addItem _x;
         _newUnit assignItem _x;
-    } forEach _otheritems
+    } forEach _otheritems;
 
 //Check and Compare it
 	if(str(_weapons) != str(weapons _newUnit)) then {

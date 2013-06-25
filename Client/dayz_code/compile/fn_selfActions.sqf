@@ -60,9 +60,9 @@ _hasTent = 		"ItemTent" in items player;
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _nearLight = 	nearestObject [player,"LitObject"];
 _canPickLight = false;
-_hasHatchet =   currentWeapon player == "MeleeHatchet";
+_hasHatchet =   (currentWeapon player) == "MeleeHatchet";
 
-_canFill = 		count nearestObjects [_playerPos, ["Land_pumpa","Land_water_tank"], 4] > 0;
+_canFill = 		count (nearestObjects [position player, ["Land_pumpa","Land_water_tank"], 4]) > 0;
 _isPond = 		false;
 _isWell = 		false;
 _pondPos = 		[];
