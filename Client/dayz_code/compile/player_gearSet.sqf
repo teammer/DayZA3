@@ -4,6 +4,20 @@ if (count _inventory > 0) then {
 	_wpns = _inventory select 0;
 	_mags = _inventory select 1;
 
+	//Add weapons
+	{
+		if (_x == "Crossbow") then { _x = "Crossbow_DZ" }; // Convert Crossbow to Crossbow_DZ
+        if (_x in ["V_PlateCarrier1_rgr_AiA","V_PlateCarrier2_rgr","V_PlateCarrierGL_rgr","V_HarnessO_brn","V_HarnessOGL_brn"]) then {
+            player addVest _x;
+        } else {
+		//Is item legal?
+		_isOK = 	isClass(configFile >> "CfgWeapons" >> _x);
+		if (_isOK) then {
+			player addWeapon _x;
+		};
+        };
+	} forEach _wpns;
+    
 	//Add inventory
 	{
 		private["_item","_val"];
@@ -31,14 +45,4 @@ if (count _inventory > 0) then {
 		_idc = _idc + 1;
 	} forEach _mags;
 
-	//Add weapons
-	{
-		if (_x == "Crossbow") then { _x = "Crossbow_DZ" }; // Convert Crossbow to Crossbow_DZ
-
-		//Is item legal?
-		_isOK = 	isClass(configFile >> "CfgWeapons" >> _x);
-		if (_isOK) then {
-			player addWeapon _x;
-		};
-	} forEach _wpns;
 };
