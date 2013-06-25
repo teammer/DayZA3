@@ -126,4 +126,17 @@ class CfgWeapons {
 			};          
 		};
 	}; 
+    class ChemlightGreenMuzzle_DZ: ThrowMuzzle {
+        displayname = "Chemlight";
+        magazines[] = {"Chemlight_green_DZ"};
+    };
+    class ChemlightRedMuzzle_DZ: ChemlightGreenMuzzle_DZ {
+        magazines[] = {"Chemlight_red_DZ"};
+    };
+    class ChemlightYellowMuzzle_DZ: ChemlightGreenMuzzle_DZ {
+        magazines[] = {"Chemlight_yellow_DZ"};
+    };
+    class ChemlightBlueMuzzle_DZ: ChemlightGreenMuzzle_DZ {
+        magazines[] = {"Chemlight_blue_DZ"};
+    };
 };

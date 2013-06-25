@@ -58,8 +58,14 @@ _hasKnife = 	"ItemKnife" in items player;
 _hasToolbox = 	"ItemToolbox" in items player;
 _hasTent = 		"ItemTent" in items player;
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-_nearLight = 	nearestObject [player,"LitObject"];
-_canPickLight = false;
+_nearLightG = 	nearestObject [player,"Chemlight_green"];
+_nearLightB = 	nearestObject [player,"Chemlight_blue"];
+_nearLightY = 	nearestObject [player,"Chemlight_yellow"];
+_nearLightR = 	nearestObject [player,"Chemlight_red"];
+_canPickLightG = false;
+_canPickLightY = false;
+_canPickLightB = false;
+_canPickLightR = false;
 _hasHatchet =   "MeleeHatchet" in weapons player;
 _hasMachete =   "MeleeMachete" in weapons player;
 _hasCrowbar =   "MeleeCrowbar" in weapons player;
@@ -108,25 +114,79 @@ if (!_canFill) then {
 	} forEach _objectsPond;
 };
 
-if (!isNull _nearLight) then {
-	if (_nearLight distance player < 4) then {
-		_canPickLight = isNull (_nearLight getVariable ["owner",objNull]);
+if (!isNull _nearLightG) then {
+	if (_nearLightG distance player < 1) then {
+		_canPickLightG = isNull (_nearLightG getVariable ["owner",objNull]);
+	};
+};
+if (!isNull _nearLightY) then {
+	if (_nearLightY distance player < 1) then {
+		_canPickLightY = isNull (_nearLightY getVariable ["owner",objNull]);
+	};
+};
+if (!isNull _nearLightB) then {
+	if (_nearLightB distance player < 1) then {
+		_canPickLightB = isNull (_nearLightB getVariable ["owner",objNull]);
+	};
+};
+if (!isNull _nearLightR) then {
+	if (_nearLightR distance player < 1) then {
+		_canPickLightR = isNull (_nearLightR getVariable ["owner",objNull]);
 	};
 };
 _canDo = (!r_drag_sqf and !r_player_unconscious and !_onLadder);
 
-//Grab Flare
-if (_canPickLight and !dayz_hasLight) then {
+//Grab GChem
+if (_canPickLightG and !dayz_hasLight) then {
 	if (s_player_grabflare < 0) then {
-		_text = getText (configFile >> "CfgAmmo" >> (typeOf _nearLight) >> "displayName");
-		s_player_grabflare = player addAction [format[localize "str_actions_medical_15",_text], "\z\addons\dayz_code\actions\flare_pickup.sqf",_nearLight, 1, false, true, "", ""];
-		s_player_removeflare = player addAction [format[localize "str_actions_medical_17",_text], "\z\addons\dayz_code\actions\flare_remove.sqf",_nearLight, 1, false, true, "", ""];
+		_text = "Green Chemlight";
+		s_player_grabflare = player addAction [format[localize "str_actions_medical_15",_text], "\z\addons\dayz_code\actions\flare_pickup.sqf",_nearLightG, 1, false, true, "", ""];
+		s_player_removeflare = player addAction [format[localize "str_actions_medical_17",_text], "\z\addons\dayz_code\actions\flare_remove.sqf",_nearLightG, 1, false, true, "", ""];
 	};
 } else {
 	player removeAction s_player_grabflare;
 	player removeAction s_player_removeflare;
 	s_player_grabflare = -1;
 	s_player_removeflare = -1;
+};
+//Grab BChem
+if (_canPickLightB and !dayz_hasLight) then {
+	if (s_player_grabflare2 < 0) then {
+		_text = "Blue Chemlight";
+		s_player_grabflare2 = player addAction [format[localize "str_actions_medical_15",_text], "\z\addons\dayz_code\actions\flare_pickup.sqf",_nearLightB, 1, false, true, "", ""];
+		s_player_removeflare2 = player addAction [format[localize "str_actions_medical_17",_text], "\z\addons\dayz_code\actions\flare_remove.sqf",_nearLightB, 1, false, true, "", ""];
+	};
+} else {
+	player removeAction s_player_grabflare2;
+	player removeAction s_player_removeflare2;
+	s_player_grabflare2 = -1;
+	s_player_removeflare2 = -1;
+};
+//Grab YChem
+if (_canPickLightY and !dayz_hasLight) then {
+	if (s_player_grabflare3 < 0) then {
+		_text = "Yellow Chemlight";
+		s_player_grabflare3 = player addAction [format[localize "str_actions_medical_15",_text], "\z\addons\dayz_code\actions\flare_pickup.sqf",_nearLightY, 1, false, true, "", ""];
+		s_player_removeflare3 = player addAction [format[localize "str_actions_medical_17",_text], "\z\addons\dayz_code\actions\flare_remove.sqf",_nearLightY, 1, false, true, "", ""];
+	};
+} else {
+	player removeAction s_player_grabflare3;
+	player removeAction s_player_removeflare3;
+	s_player_grabflare3 = -1;
+	s_player_removeflare3 = -1;
+};
+//Grab RChem
+if (_canPickLightR and !dayz_hasLight) then {
+	if (s_player_grabflare4 < 0) then {
+		_text = "Red Chemlight";
+		s_player_grabflare4 = player addAction [format[localize "str_actions_medical_15",_text], "\z\addons\dayz_code\actions\flare_pickup.sqf",_nearLightR, 1, false, true, "", ""];
+		s_player_removeflare4 = player addAction [format[localize "str_actions_medical_17",_text], "\z\addons\dayz_code\actions\flare_remove.sqf",_nearLightR, 1, false, true, "", ""];
+	};
+} else {
+	player removeAction s_player_grabflare4;
+	player removeAction s_player_removeflare4;
+	s_player_grabflare4 = -1;
+	s_player_removeflare4 = -1;
 };
 
 //Off topic functions

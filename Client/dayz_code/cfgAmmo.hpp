@@ -10,28 +10,33 @@ class CfgAmmo {
 		hit = 9;
 		simulation = "shotBullet";
 	};
-	class Chemlight_green;
-	class Chemlight_blue;
-	class Chemlight_yellow;
-	class Chemlight_red;
+	class SmokeShell;
 	
-	class Chemlight_green_DZ: Chemlight_green
+	class Chemlight_green_DZ: SmokeShell
 	{
-		timeToLive = 300;
-	};
-	
-	class Chemlight_yellow_DZ: Chemlight_yellow
-	{
+        effectssmoke = "ChemlightLight_green";
+        model = "\A3\Weapons_f\chemlight\chemlight_green_lit";
 		timeToLive = 240;
 	};
 	
-	class Chemlight_red_DZ: Chemlight_red
+	class Chemlight_yellow_DZ: SmokeShell
 	{
-		timeToLive = 360;
+        effectssmoke = "ChemlightLight_yellow";
+        model = "\A3\Weapons_f\chemlight\chemlight_yellow_lit";
+		timeToLive = 240;
 	};
 	
-	class Chemlight_blue_DZ: Chemlight_blue
+	class Chemlight_red_DZ: SmokeShell
 	{
-		timeToLive = 360;
+        effectssmoke = "ChemlightLight_red";
+        model = "\A3\Weapons_f\chemlight\chemlight_red_lit";
+		timeToLive = 240;
+	};
+	
+	class Chemlight_blue_DZ: SmokeShell
+	{
+        effectssmoke = "ChemlightLight_blue";
+        model = "\A3\Weapons_f\chemlight\chemlight_blue_lit";
+		timeToLive = 240;
 	};
 };

@@ -1,5 +1,9 @@
 private["_flare"];
 _flare = _this select 3;
+_red = _flare == "Chemlight_red";
+_blue = _flare == "Chemlight_blue";
+_green = _flare == "Chemlight_green";
+_yellow = _flare == "Chemlight_yellow";
 player playActionNow "PutDown";
 sleep 2;
 _flare attachTo [player,[0,0,0],"granat2"];
@@ -8,10 +12,19 @@ _flare setPos (getPos _flare);
 _flare setVariable ["owner",player,true];
 player removeAction s_player_grabflare;
 player removeAction s_player_removeflare;
+player removeAction s_player_grabflare2;
+player removeAction s_player_removeflare2;
+player removeAction s_player_grabflare3;
+player removeAction s_player_removeflare3;
+player removeAction s_player_grabflare4;
+player removeAction s_player_removeflare4;
 dayz_hasLight = true;
 
 //Add Drop Action
-_text = getText (configFile >> "CfgAmmo" >> (typeOf _flare) >> "displayName");
+if (_red) then { _text = "Red Chemlight"; };
+if (_blue) then { _text = "Blue Chemlight"; };
+if (_green) then { _text = "Green Chemlight"; };
+if (_yellow) then { _text = "Yellow Chemlight"; };
 s_player_dropflare = player addAction [format[localize "str_actions_medical_16",_text], "\z\addons\dayz_code\actions\flare_drop.sqf",_flare, 1, false, true, "", ""];
 
 while {(alive _flare) and dayz_hasLight} do {
@@ -22,4 +35,13 @@ if (dayz_hasLight) then {
 	player removeAction s_player_dropflare;
 	s_player_grabflare = -1;
 	s_player_removeflare = -1;
+	player removeAction s_player_dropflare2;
+	s_player_grabflare2 = -1;
+	s_player_removeflare2 = -1;
+	player removeAction s_player_dropflare3;
+	s_player_grabflare3 = -1;
+	s_player_removeflare3 = -1;
+	player removeAction s_player_dropflare4;
+	s_player_grabflare4 = -1;
+	s_player_removeflare4 = -1;
 };
