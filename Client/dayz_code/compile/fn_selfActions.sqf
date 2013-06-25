@@ -60,7 +60,7 @@ _hasTent = 		"ItemTent" in items player;
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _nearLight = 	nearestObject [player,"LitObject"];
 _canPickLight = false;
-_hasHatchet =   "MeleeHatchet" in weaapons player;
+_hasHatchet =   "MeleeHatchet" in weapons player;
 _hasMachete =   "MeleeMachete" in weapons player;
 _hasCrowbar =   "MeleeCrowbar" in weapons player;
 _hasMelee =     (_hasHatchet) or (_hasMachete) or (_hasCrowbar);
