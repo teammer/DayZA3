@@ -41,12 +41,7 @@ class CfgWeapons {
 			"OFP2_ManSkeleton",
 			"\dayz_weapons\anim\melee_hatchet_holding.rtm"
 		};
-        class Single: Mode_SemiAuto {
             reloadtime = 0.8;
-        };
-        class FullAuto: Mode_FullAuto {
-            reloadtime = 0.8;
-        };
 	};	
 	class MeleeCrowbar: MeleeHatchet
 	{
@@ -60,12 +55,7 @@ class CfgWeapons {
 		{
 			"Crowbar_Swing"
 		};
-        class Single: Mode_SemiAuto {
             reloadtime = 0.8;
-        };
-        class FullAuto: Mode_FullAuto {
-            reloadtime = 0.8;
-        };
 	};	
 	class ItemCrowbar: ItemCore
 	{
@@ -87,12 +77,7 @@ class CfgWeapons {
 		{
 			"Machete_Swing"
 		};
-        class Single: Mode_SemiAuto {
             reloadtime = 0.8;
-        };
-        class FullAuto: Mode_FullAuto {
-            reloadtime = 0.8;
-        };
 
 	};	
 	class ItemMachete: ItemCore
