@@ -15,6 +15,12 @@ Bindings_A3 =
 		{
             [] execVM "\z\addons\dayz_code\group\dialog\groupMenu.sqf";
 		};
+		case 38:		//L
+		{
+            if ((currentWeapon player == "MeleeFlashlight")) {
+                dayz_lightOn = !dayz_lightOn;
+            };
+		};
 	};
     _return
 };

@@ -436,6 +436,7 @@ if(!isDedicated) then {
 	dayz_lootDelay =		3;
 	dayz_lootWait =			-300;
 	dayz_spawnZombies =		0;
+    dayz_lightOn =          true;
 	//used to count global zeds around players
 	dayz_CurrentZombies = 0;
 	//Used to limit overall zed counts
@@ -452,4 +453,5 @@ if(!isDedicated) then {
 	//	dayzDebug = true;
 	//};
     [] execVM "\z\addons\dayz_code\group\keymonitor.sqf";
+    [] execVM "\z\addons\dayz_code\init\flashlight.sqf";
 };
