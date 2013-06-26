@@ -17,7 +17,7 @@ Bindings_A3 =
 		};
 		case 38:		//L
 		{
-            if ((currentWeapon player == "MeleeFlashlight")) {
+            if ((currentWeapon player) == "MeleeFlashlight") {
                 dayz_lightOn = !dayz_lightOn;
             };
 		};
