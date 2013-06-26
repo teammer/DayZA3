@@ -18,6 +18,7 @@ player removeWeapon _item;
 if (_item == "MeleeHatchet") then {_item = "ItemHatchet";};
 if (_item == "MeleeCrowbar") then {_item = "ItemCrowbar";};
 if (_item == "MeleeMachete") then {_item = "ItemMachete";};
+if (_item == "MeleeFlashlight") then {_item = "ItemFlashlight";};
 _bag = createVehicle [format["WeaponHolder_%1",_item],getPosATL player,[], 0, "CAN_COLLIDE"];
 _bag setdir (getDir player);
 player reveal _bag;

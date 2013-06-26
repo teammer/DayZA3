@@ -13,6 +13,9 @@ _holder setVariable["claimed",_playerID,true];
 if(_classname isKindOf "TrapBear") exitwith {deleteVehicle _holder;};
 
 player playActionNow "PutDown";
+if (_classname == "ItemFlashlight") then {
+	_classname = 'MeleeFlashlight';
+};
 if (_classname == "ItemCrowbar") then {
 	player addWeapon 'MeleeCrowbar';
 	_classname = 'MeleeCrowbar';
@@ -35,7 +38,7 @@ if (_classname == "MeleeMachete") then {
 		player addMagazine 'Machete_swing';
 };
 
-_hasMeleeNo = ((_classname != "MeleeMachete") and (_classname != "MeleeCrowbar") and (_classname != "MeleeHatchet"));								
+_hasMeleeNo = ((_classname != "MeleeMachete") and (_classname != "MeleeCrowbar") and (_classname != "MeleeHatchet") and (_clasname != "MeleeFlashlight"));								
 _broken = false;
 if(_classname == "WoodenArrow") then {
 	if (20 > random 100) then {
@@ -73,7 +76,7 @@ if (_isOk) then {
 	};
 } else {
 if (_hasMeleeNo) then {
-	if (_classname in _oArray and (loadVest player <= 0.93)) then {
+	if (_classname in _oArray and ((loadVest player <= 0.93) or (loadBackpack player <= 0.93))) then {
 		deleteVehicle _holder;
 		player addMagazine _classname;
 	} else {
@@ -87,20 +90,6 @@ if (_hasMeleeNo) then {
 	};
 	if (_classname == "MeleeMachete") then {
 			player removeMagazine 'Machete_swing';
-	};
-	} else {
-	deleteVehicle _holder;
-	if (_classname in ["MeleeHatchet","MeleeCrowbar","MeleeMachete"]) then {
-
-		if (_type == "cfgWeapons") then {
-			_muzzles = getArray(configFile >> "cfgWeapons" >> _classname >> "muzzles");
-			//_wtype = ((weapons player) select 0);
-			if (count _muzzles > 1) then {
-				player selectWeapon (_muzzles select 0);
-			} else {
-				player selectWeapon _classname;
-			};
-		};
 	};
 	};
     };
