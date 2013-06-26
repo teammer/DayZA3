@@ -11,13 +11,13 @@ Bindings_A3 =
     
 	switch (_key) do 
 	{
-		case 211:		//DELETE
+		case 211:
 		{
             [] execVM "\z\addons\dayz_code\group\dialog\groupMenu.sqf";
 		};
-		case 38:		//L
+		case 38:
 		{
-            if ((currentWeapon player) == "MeleeFlashlight") {
+            if ((currentWeapon player) == "MeleeFlashlight") then {
                 dayz_lightOn = !dayz_lightOn;
             };
 		};
