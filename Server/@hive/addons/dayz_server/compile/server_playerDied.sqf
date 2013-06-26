@@ -21,7 +21,7 @@ _killerName = _victim getVariable["AttackedByName", "nil"];
 if (_killerName != "nil") then
 {
 	_weapon = _victim getVariable["AttackedByWeapon", "nil"];
-	_distance = round(_victim getVariable["AttackedFromDistance", "nil"]);
+	_distance = _victim getVariable["AttackedFromDistance", "nil"];
     if (_distance != "nil") then {
     _distance = round(_distance);
     };
