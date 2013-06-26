@@ -10,9 +10,6 @@ _victim removeAllEventHandlers "MPHit";
 
 _victim = _this select 2;
 _victimName = _victim getVariable["bodyName", "nil"];
-if (backpack _victim == "DZ_DJ_Pack_A3") then {
-    removeBackpack _victim;
-};
 _killer = _victim getVariable["AttackedBy", "nil"];
 _killerName = _victim getVariable["AttackedByName", "nil"];
 

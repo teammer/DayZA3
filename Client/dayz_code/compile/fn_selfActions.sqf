@@ -199,7 +199,9 @@ if (_canPickLightR and !dayz_hasLight) then {
 
 //Start of A3 Scroll functions by Papzzz and Pwnoz0r
     if (_hasMelee) then {
-        player setWeaponReloadingTime [player,_currentWep,0.8];
+    if ((currentWeapon player) == _currentWep) then {
+        player setWeaponReloadingTime [player,currentWeapon player,0.8];
+        };
     };
 	//Allow player to use Morphine
 	if (_vehicle == player and _legsBroke and _armsBroke and _hasMorphine) then {
