@@ -11,7 +11,7 @@ _objectsWell = 	[];
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 if (_onLadder) exitWith {cutText [(localize "str_player_21") , "PLAIN DOWN"]};
 
-_hasbottleitem = "ItemWaterbottleUnfilled" in items player;
+_hasbottleitem = "ItemWaterbottleUnfilled" in magazines player;
 
 _config = configFile >> "CfgMagazines" >> _item;
 _text = getText (_config >> "displayName");
@@ -46,9 +46,9 @@ if (!_canFill) then {
 };
 
 if (_canFill) then {
-	_qty = {_x == "ItemWaterbottleUnfilled"} count items player;
+	_qty = {_x == "ItemWaterbottleUnfilled"} count magazines player;
 
-	if ("ItemWaterbottleUnfilled" in items player) then {
+	if ("ItemWaterbottleUnfilled" in magazines player) then {
 		for "_x" from 1 to _qty do {
 			player removeMagazine "ItemWaterbottleUnfilled";
 			player addMagazine "ItemWaterbottle";

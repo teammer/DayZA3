@@ -11,12 +11,12 @@ _inVehicle = (_vehicle != player);
 _bag = unitBackpack player;
 _classbag = typeOf _bag;
 _isWater = 		(surfaceIsWater (position player)) or dayz_isSwimming;
-_hasAntiB = 	"ItemAntibiotic" in items player;
-_hasFuelE = 	"ItemJerrycanEmpty" in items player;
+_hasAntiB = 	"ItemAntibiotic" in magazines player;
+_hasFuelE = 	"ItemJerrycanEmpty" in magazines player;
 //boiled Water
-_hasbottleitem = "ItemWaterbottle" in items player;
-_hasbottleitemE = "ItemWaterbottleUnfilled" in items player;
-_hasWood = 		"PartWoodPile" in items player;
+_hasbottleitem = "ItemWaterbottle" in magazines player;
+_hasbottleitemE = "ItemWaterbottleUnfilled" in magazines player;
+_hasWood = 		"PartWoodPile" in magazines player;
 _hastinitem = false;
 {
     if (_x in magazines player) then {
@@ -32,40 +32,33 @@ _injured = 			player getVariable ["USEC_injured", false];
 _inPain = 			player getVariable ["USEC_inPain", false];
 _legsBroke = 		player getVariable ["hit_legs", 0] >= 1;
 _armsBroke = 		player getVariable ["hit_hands", 0] >= 1;
-_hasBandage = 		"ItemBandage" in items player;
-_hasMorphine = 		"ItemMorphine" in items player;
-_hasPainkillers = 	"ItemPainkiller" in items player;
-_hasAntibiotic =	"ItemAntibiotic" in items player;
-_hasClothes1 = 		"Skin_Sniper1_DZ" in items player; //Ghillie
-_hasClothes2 = 		"Skin_Camo1_DZ" in items player; //Camo
-_hasClothes3 = 		"Skin_Survivor2_DZ" in items player; //Survivor
-_hasMRE =		"FoodMRE" in items player;
+_hasBandage = 		"ItemBandage" in magazines player;
+_hasMorphine = 		"ItemMorphine" in magazines player;
+_hasPainkillers = 	"ItemPainkiller" in magazines player;
+_hasAntibiotic =	"ItemAntibiotic" in magazines player;
+_hasClothes1 = 		"Skin_Sniper1_DZ" in magazines player; //Ghillie
+_hasClothes2 = 		"Skin_Camo1_DZ" in magazines player; //Camo
+_hasClothes3 = 		"Skin_Survivor2_DZ" in magazines player; //Survivor
+_hasMRE =		"FoodMRE" in magazines player;
 //FOOD
 //_hasFood = 			["FoodCanBakedBeans", "FoodCanSardines", "FoodCanFrankBeans", "FoodCanPasta", "FoodSteakCooked"];
-//_hasFood2 = 		"FoodCanSardines" in items player;
-//_hasFood3 = 		"FoodCanFrankBeans" in items player;
-//_hasFood4 = 		"FoodCanPasta" in items player;
-//_hasFood5 = 		"FoodSteakCooked" in items player;
+//_hasFood2 = 		"FoodCanSardines" in magazines player;
+//_hasFood3 = 		"FoodCanFrankBeans" in magazines player;
+//_hasFood4 = 		"FoodCanPasta" in magazines player;
+//_hasFood5 = 		"FoodSteakCooked" in magazines player;
 //DRINK
 //_hasDrink =			["ItemSodaCoke", "ItemSodaPepsi", "ItemSodaMdew"];
-//_hasDrink2 =		"ItemSodaPepsi" in items player;
-//_hasDrink3 =		"ItemSodaMdew" in items player;
+//_hasDrink2 =		"ItemSodaPepsi" in magazines player;
+//_hasDrink3 =		"ItemSodaMdew" in magazines player;
 
 
 _getTextZ =     getText (_config >> "displayName");
 //End of Code
-_hasKnife = 	"ItemKnife" in items player;
-_hasToolbox = 	"ItemToolbox" in items player;
-_hasTent = 		"ItemTent" in items player;
+_hasKnife = 	"ItemKnife" in magazines player;
+_hasToolbox = 	"ItemToolbox" in magazines player;
+_hasTent = 		"ItemTent" in magazines player;
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-_nearLightG = 	nearestObject [player,"Chemlight_green_DZ"];
-_nearLightB = 	nearestObject [player,"Chemlight_blue_DZ"];
-_nearLightY = 	nearestObject [player,"Chemlight_yellow_DZ"];
-_nearLightR = 	nearestObject [player,"Chemlight_red_DZ"];
-_canPickLightG = false;
-_canPickLightY = false;
-_canPickLightB = false;
-_canPickLightR = false;
+
 _hasHatchet =   "MeleeHatchet" in weapons player;
 _hasMachete =   "MeleeMachete" in weapons player;
 _hasCrowbar =   "MeleeCrowbar" in weapons player;
@@ -114,80 +107,7 @@ if (!_canFill) then {
 	} forEach _objectsPond;
 };
 
-if (!isNull _nearLightG) then {
-	if (_nearLightG distance player < 1) then {
-		_canPickLightG = isNull (_nearLightG getVariable ["owner",objNull]);
-	};
-};
-if (!isNull _nearLightY) then {
-	if (_nearLightY distance player < 1) then {
-		_canPickLightY = isNull (_nearLightY getVariable ["owner",objNull]);
-	};
-};
-if (!isNull _nearLightB) then {
-	if (_nearLightB distance player < 1) then {
-		_canPickLightB = isNull (_nearLightB getVariable ["owner",objNull]);
-	};
-};
-if (!isNull _nearLightR) then {
-	if (_nearLightR distance player < 1) then {
-		_canPickLightR = isNull (_nearLightR getVariable ["owner",objNull]);
-	};
-};
 _canDo = (!r_drag_sqf and !r_player_unconscious and !_onLadder);
-
-//Grab GChem
-if (_canPickLightG and !dayz_hasLight) then {
-	if (s_player_grabflare < 0) then {
-		_text = "Green Chemlight";
-		s_player_grabflare = player addAction [format[localize "str_actions_medical_15",_text], "\z\addons\dayz_code\actions\flare_pickup.sqf",_nearLightG, 1, false, true, "", ""];
-		s_player_removeflare = player addAction [format[localize "str_actions_medical_17",_text], "\z\addons\dayz_code\actions\flare_remove.sqf",_nearLightG, 1, false, true, "", ""];
-	};
-} else {
-	player removeAction s_player_grabflare;
-	player removeAction s_player_removeflare;
-	s_player_grabflare = -1;
-	s_player_removeflare = -1;
-};
-//Grab BChem
-if (_canPickLightB and !dayz_hasLight) then {
-	if (s_player_grabflare2 < 0) then {
-		_text = "Blue Chemlight";
-		s_player_grabflare2 = player addAction [format[localize "str_actions_medical_15",_text], "\z\addons\dayz_code\actions\flare_pickup.sqf",_nearLightB, 1, false, true, "", ""];
-		s_player_removeflare2 = player addAction [format[localize "str_actions_medical_17",_text], "\z\addons\dayz_code\actions\flare_remove.sqf",_nearLightB, 1, false, true, "", ""];
-	};
-} else {
-	player removeAction s_player_grabflare2;
-	player removeAction s_player_removeflare2;
-	s_player_grabflare2 = -1;
-	s_player_removeflare2 = -1;
-};
-//Grab YChem
-if (_canPickLightY and !dayz_hasLight) then {
-	if (s_player_grabflare3 < 0) then {
-		_text = "Yellow Chemlight";
-		s_player_grabflare3 = player addAction [format[localize "str_actions_medical_15",_text], "\z\addons\dayz_code\actions\flare_pickup.sqf",_nearLightY, 1, false, true, "", ""];
-		s_player_removeflare3 = player addAction [format[localize "str_actions_medical_17",_text], "\z\addons\dayz_code\actions\flare_remove.sqf",_nearLightY, 1, false, true, "", ""];
-	};
-} else {
-	player removeAction s_player_grabflare3;
-	player removeAction s_player_removeflare3;
-	s_player_grabflare3 = -1;
-	s_player_removeflare3 = -1;
-};
-//Grab RChem
-if (_canPickLightR and !dayz_hasLight) then {
-	if (s_player_grabflare4 < 0) then {
-		_text = "Red Chemlight";
-		s_player_grabflare4 = player addAction [format[localize "str_actions_medical_15",_text], "\z\addons\dayz_code\actions\flare_pickup.sqf",_nearLightR, 1, false, true, "", ""];
-		s_player_removeflare4 = player addAction [format[localize "str_actions_medical_17",_text], "\z\addons\dayz_code\actions\flare_remove.sqf",_nearLightR, 1, false, true, "", ""];
-	};
-} else {
-	player removeAction s_player_grabflare4;
-	player removeAction s_player_removeflare4;
-	s_player_grabflare4 = -1;
-	s_player_removeflare4 = -1;
-};
 
 //Off topic functions
 /*
@@ -263,7 +183,7 @@ if (_canPickLightR and !dayz_hasLight) then {
 	_foodItems = no_output_food + food_with_output + meatcooked;
 	_hasFood = false;
 		{
-			if (_x in items player) then {
+			if (_x in magazines player) then {
 				_hasFood = true;
 			};
 		} forEach _foodItems; 
@@ -293,7 +213,7 @@ if (_canPickLightR and !dayz_hasLight) then {
 	_drinkItems = no_output_drink + drink_with_output;
 	_hasDrink = false;
 		{
-			if (_x in items player) then {
+			if (_x in magazines player) then {
 				_hasDrink = true;
 			};
 		} forEach _drinkItems; 

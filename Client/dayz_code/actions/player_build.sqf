@@ -16,7 +16,7 @@ _require = 	getText (configFile >> "CfgMagazines" >> _item >> "ItemActions" >> "
 _text = 		getText (configFile >> "CfgVehicles" >> _classname >> "displayName");
 
 _hasbuilditem = _this in magazines player;
-_hasrequireditem = _require in items player;
+_hasrequireditem = _require in magazines player;
 
 if (!_hasbuilditem) exitWith {cutText [format[(localize "str_player_31"),_text,"build"] , "PLAIN DOWN"]};
 if (_text == "TrapBear") then { _bypass = true; };

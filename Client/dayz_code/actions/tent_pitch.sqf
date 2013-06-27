@@ -2,7 +2,7 @@ private["_position","_tent","_location","_isOk","_backpack","_tentType","_trg","
 //check if can pitch here
 
 _playerPos = 	getPosATL player;
-_item = "ItemTent" in items player;
+_item = "ItemTent" in magazines player;
 //_hastentitem = _item;
 _location = player modeltoworld [0,2.5,0];
 _location set [2,0];
@@ -36,7 +36,7 @@ _objectsPond = 		nearestObjects [_playerPos, [], 10];
 	_dir = round(direction player);	
 	
 	//wait a bit
-	player removeMagazine "ItemTent" in items player;
+	player removeMagazine "ItemTent" in magazines player;
 	player playActionNow "Medic";
 	sleep 1;
 	
