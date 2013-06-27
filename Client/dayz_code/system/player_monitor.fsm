@@ -553,6 +553,7 @@ class FSM
        "//_inventory = [[""Mk_48_DZ"",""NVGoggles"",""Binocular_Vector"",""M9SD"",""ItemGPS"",""ItemToolbox"",""ItemEtool"",""ItemCompass"",""ItemMatchbox"",""FoodCanBakedBeans"",""ItemKnife"",""ItemMap"",""ItemWatch""],[[""100Rnd_762x51_M240"",47],""ItemPainkiller"",""ItemBandage"",""15Rnd_9x19_M9SD"",""100Rnd_762x51_M240"",""ItemBandage"",""ItemBandage"",""15Rnd_9x19_M9SD"",""15Rnd_9x19_M9SD"",""15Rnd_9x19_M9SD"",""ItemMorphine"",""PartWoodPile""]];" \n
        "" \n
        "dayzGearSave = false;" \n
+       "removeAllAssignedItems player;" \n
        "_inventory call player_gearSet;" \n
        "" \n
        "//player addMagazine ""7Rnd_45ACP_1911"";" \n

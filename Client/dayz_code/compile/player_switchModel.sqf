@@ -47,13 +47,18 @@ private ["_weapons","_magazines","_primweapon","_secweapon"];
 //	};
 
 //BackUp Backpack
-private ["_newBackpackType","_backpackWpn","_backpackMag"];
+private ["_newBackpackType","_backpackWpn","_backpackMag","_vest","_vestitems"];
 	dayz_myBackpack = unitBackpack player;
 	_newBackpackType = (typeOf dayz_myBackpack);
 	if(_newBackpackType != "") then {
 		_backpackWpn = getWeaponCargo unitBackpack player;
 		_backpackMag = getMagazineCargo unitBackpack player;
 	};
+_vest = vest _character;
+if (_vest != "") then {
+    _vestitems = vestItems player;
+};
+
 
 //Get Muzzle
 	_currentWpn = currentWeapon player;
@@ -92,8 +97,6 @@ _otheritems = assignedItems player;
 //Clear New Character
 	{_newUnit removeMagazine _x;} forEach  magazines _newUnit;
 	removeAllWeapons _newUnit;	
-    removeUniform _newUnit;
-    removeHeadgear _newUnit;
 
 //Equip New Charactar
 	{
@@ -106,10 +109,7 @@ _otheritems = assignedItems player;
 		//sleep 0.05;
 	} forEach _weapons;
     
-    {
-        _newUnit addItem _x;
-        _newUnit assignItem _x;
-    } forEach _otheritems;
+    
 
 //Check and Compare it
 	if(str(_weapons) != str(weapons _newUnit)) then {
@@ -168,6 +168,15 @@ _otheritems = assignedItems player;
 			} forEach _backpackmagTypes;
 		};
 	};
+    if (!isNil "_vest") then {
+        if (_vest != "") then {
+            _newUnit addVest _vest;
+            
+            {
+                _newUnit addMagazine _x;
+            } forEach _vestitems;
+        };
+    };
 //Debug Message
 	diag_log "Swichtable Unit Created. Equipment:";
 	diag_log str(weapons _newUnit);
@@ -200,3 +209,11 @@ _otheritems = assignedItems player;
 	_playerObjName = format["player%1",_playerUID];
 	call compile format["%1 = player;",_playerObjName];
 	publicVariable _playerObjName;
+
+    removeUniform _newUnit;
+    removeHeadgear _newUnit;
+    removeAllAssignedItems _newUnit;
+    {
+        _newUnit addItem _x;
+        _newUnit assignItem _x;
+    } forEach _otheritems;

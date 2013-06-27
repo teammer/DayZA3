@@ -384,6 +384,9 @@ if (!isDedicated) then {
 	};
 	*/
 	dayz_originalPlayer =		player;
+    [] execVM "\z\addons\dayz_code\group\keymonitor.sqf";
+    [] execVM "\z\addons\dayz_code\init\flashlight.sqf";
+    [] execVM "\z\addons\dayz_code\group\dialog\loop.sqf";
 };
 
 	progressLoadingScreen 0.8;

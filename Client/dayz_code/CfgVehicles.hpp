@@ -767,7 +767,7 @@ class CfgVehicles {
 	class DZ_DJ_Pack_A3: Bag_Base
 	{
 		scope = 2;
-		displayName = "DJ's Pack";
+		displayName = "Legendary Pack";
 		picture = "\ca\weapons_e\data\icons\backpack_US_ASSAULT_CA.paa";
 		icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
 		model = "\ca\weapons_e\AmmoBoxes\backpack_us_assault.p3d";

@@ -448,10 +448,9 @@ if(!isDedicated) then {
 	dayz_scaleLight = 		0;
 	dayzDebug = false;
 	dayzState = -1;
+    dayz_pendingInvite =    "";
 	//uiNamespace setVariable ['DAYZ_GUI_display',displayNull];
 	//if (uiNamespace getVariable ['DZ_displayUI', 0] == 2) then {
 	//	dayzDebug = true;
 	//};
-    [] execVM "\z\addons\dayz_code\group\keymonitor.sqf";
-    [] execVM "\z\addons\dayz_code\init\flashlight.sqf";
 };

@@ -59,22 +59,6 @@ _hasToolbox = 	"ItemToolbox" in magazines player;
 _hasTent = 		"ItemTent" in magazines player;
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 
-_hasHatchet =   "MeleeHatchet" in weapons player;
-_hasMachete =   "MeleeMachete" in weapons player;
-_hasCrowbar =   "MeleeCrowbar" in weapons player;
-_hasMelee =     (_hasHatchet) or (_hasMachete) or (_hasCrowbar);
-
-    if (_hasMelee) then {
-    if (_hasMachete) then {
-        _currentWep = "MeleeHatchet";
-    };
-    if (_hasMachete) then {
-        _currentWep = "MeleeMachete";
-    };
-    if (_hasCrowbar) then {
-        _currentWep = "MeleeCrowbar";
-    };
-    };
     
 _canFill = 		count (nearestObjects [position player, ["Land_pumpa","Land_water_tank"], 4]) > 0;
 _isPond = 		false;
@@ -118,11 +102,6 @@ _canDo = (!r_drag_sqf and !r_player_unconscious and !_onLadder);
 //End off topic functions
 
 //Start of A3 Scroll functions by Papzzz and Pwnoz0r
-    if (_hasMelee) then {
-    if ((currentWeapon player) == _currentWep) then {
-        player setWeaponReloadingTime [player,currentWeapon player,0.8];
-        };
-    };
 	//Allow player to use Morphine
 	if (_vehicle == player and _legsBroke and _armsBroke and _hasMorphine) then {
 		if (s_player_morphineA3 < 0) then {

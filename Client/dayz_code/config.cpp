@@ -225,7 +225,6 @@ class CfgSurvival {
 	class Inventory {
 		class Default {
 			magazines[] = {"ItemBandage"};
-			vest = "V_PlateCarrier1_cbr";
 			//weapons[] = {"Makarov"};
 			//weapons[] = {"ItemFlashlight"};
 			//backpackWeapon = "";
