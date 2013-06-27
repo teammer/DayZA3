@@ -113,10 +113,10 @@ food[] = {
 			//"HandChemGreen",
 			//"HandChemBlue",
 			//"HandChemRed",
-                        "Chemlight_blue_DZ",
-                        "Chemlight_yellow_DZ",
-                        "Chemlight_red_DZ",
-                        "Chemlight_green_DZ",
+                        "Chemlight_blue",
+                        "Chemlight_yellow",
+                        "Chemlight_red",
+                        "Chemlight_green",
 			"ItemHeatPack"
 		},
 		{
@@ -143,10 +143,10 @@ food[] = {
 			0.04,
 			0.07,
 			//0.02,
-			0.05,
-			0.05,
-			0.04,
-                        0.03,
+			0.01,
+			0.01,
+			0.01,
+            0.01,
 			0.04
 		}
 	};
@@ -223,10 +223,10 @@ food[] = {
 			//"HandChemGreen",
 			//"HandChemBlue",
 			//"HandChemRed",
-                        "Chemlight_blue_DZ",
-                        "Chemlight_yellow_DZ",
-                        "Chemlight_red_DZ",
-                        "Chemlight_green_DZ",
+                        "Chemlight_blue",
+                        "Chemlight_yellow",
+                        "Chemlight_red",
+                        "Chemlight_green",
 			"ItemHeatPack",
 			"FoodMRE"
 		},
@@ -263,10 +263,10 @@ food[] = {
 			0.02,
 			0.01,
 			0.01,
-			0.05,
-			0.05,
-			0.04,
-                        0.03,
+			0.01,
+			0.01,
+			0.01,
+            0.01,
 			0.04,
 			0.03
 		}
@@ -279,10 +279,10 @@ food[] = {
 			"15Rnd_W1866_Slug",
 			"8Rnd_B_Beneli_74Slug",
 			//"HandRoadFlare"
-                        "Chemlight_blue_DZ",
-                        "Chemlight_yellow_DZ",
-                        "Chemlight_red_DZ",
-                        "Chemlight_green_DZ",
+                        "Chemlight_blue",
+                        "Chemlight_yellow",
+                        "Chemlight_red",
+                        "Chemlight_green",
 		},
 		{
 			1,
@@ -290,10 +290,10 @@ food[] = {
 			0.3,
 			0.3,
 			0.5,
-			0.5,
-			0.5,
-			0.4,
-			0.3
+			0.01,
+			0.01,
+			0.01,
+            0.01
 		}
 	};
 	hunter[] = {

@@ -3,6 +3,7 @@ _class 			= _this;
 
 _position 		= getPosATL player;
 _dir 			= getDir player;
+_curgroup       = (group leader (group (player)));
 _currentAnim 	= animationState player;
 //_currentCamera	= cameraView;
 
@@ -212,8 +213,12 @@ _otheritems = assignedItems player;
 
     removeUniform _newUnit;
     removeHeadgear _newUnit;
+    removeGoggles _newUnit;
     removeAllAssignedItems _newUnit;
     {
         _newUnit addItem _x;
         _newUnit assignItem _x;
     } forEach _otheritems;
+    if !(isNil "_curgroup") then {
+    [_newUnit] joinSilent _curgroup;
+    };

@@ -224,9 +224,9 @@ class RscStructuredTextGUI: RscStructuredText
 class CfgSurvival {
 	class Inventory {
 		class Default {
-			magazines[] = {"ItemBandage"};
+			magazines[] = {"ItemBandage","Chemlight_green","Chemlight_green"};
 			//weapons[] = {"Makarov"};
-			//weapons[] = {"ItemFlashlight"};
+			weapons[] = {"ItemCompass","ItemWatch"};
 			//backpackWeapon = "";
 			backpack = "DZ_Patrol_Pack_A3";
 			//backpack = "";

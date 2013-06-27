@@ -36,8 +36,9 @@ if (_killerName != "nil") then
 	};
 
 	diag_log _loc_message;
-	[nil, nil, rTITLETEXT, _message, "PLAIN DOWN", 0] call RE;
-
+	//[nil, nil, rTITLETEXT, _message, "PLAIN DOWN", 0] call RE;
+    [nil, nil, rSPAWN, [_message], { cutText [format["%1",(_this select 0)],"PLAIN DOWN"]; }] call RE;
+    
 	// Cleanup
 	_victim setVariable["AttackedBy", "nil", true];
 	_victim setVariable["AttackedByName", "nil", true];

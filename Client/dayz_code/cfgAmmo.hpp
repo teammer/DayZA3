@@ -12,28 +12,28 @@ class CfgAmmo {
 	};
 	class SmokeShell;
 	
-	class Chemlight_green_DZ: SmokeShell
+	class Chemlight_green: SmokeShell
 	{
         effectssmoke = "ChemlightLight_green";
         model = "\A3\Weapons_f\chemlight\chemlight_green_lit";
 		timeToLive = 240;
 	};
 	
-	class Chemlight_yellow_DZ: SmokeShell
+	class Chemlight_yellow: SmokeShell
 	{
         effectssmoke = "ChemlightLight_yellow";
         model = "\A3\Weapons_f\chemlight\chemlight_yellow_lit";
 		timeToLive = 240;
 	};
 	
-	class Chemlight_red_DZ: SmokeShell
+	class Chemlight_red: SmokeShell
 	{
         effectssmoke = "ChemlightLight_red";
         model = "\A3\Weapons_f\chemlight\chemlight_red_lit";
 		timeToLive = 240;
 	};
 	
-	class Chemlight_blue_DZ: SmokeShell
+	class Chemlight_blue: SmokeShell
 	{
         effectssmoke = "ChemlightLight_blue";
         model = "\A3\Weapons_f\chemlight\chemlight_blue_lit";

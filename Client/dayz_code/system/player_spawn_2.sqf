@@ -314,7 +314,7 @@ while {true} do {
 	*/
 	"colorCorrections" ppEffectAdjust [1, 1, 0, [1, 1, 1, 0.0], [1, 1, 1, (r_player_blood/r_player_bloodTotal)],  [1, 1, 1, 0.0]];
 	"colorCorrections" ppEffectCommit 0;
-	sleep 2;
+	sleep 1;
 	
 	_myPos = player getVariable["lastPos",[]];
 	if (count _myPos > 0) then {
@@ -336,10 +336,50 @@ while {true} do {
 			};
 		};
 	};
-	
+    _currentWep = currentWeapon player;
+
+    if ((_currentWep == "MeleeHatchet") or (_currentWep == "MeleeMachete") or (_currentWep == "MeleeCrowbar")) then {
+        if (_currentWep == "MeleeHatchet") then {
+            player setWeaponReloadingTime [player,currentWeapon player,0.8];
+        };
+        if (_currentWep == "MeleeMachete") then {
+            player setWeaponReloadingTime [player,currentWeapon player,0.8];
+        };
+        if (_currentWep == "MeleeCrowbar") then {
+            player setWeaponReloadingTime [player,currentWeapon player,0.8];
+        };
+    };
 	//Hatchet ammo fix	
-	//"MeleeHatchet" call dayz_meleeMagazineCheck;
+	"MeleeHatchet" call dayz_meleeMagazineCheck;
 	
 	//Crowbar ammo fix	
-	//"MeleeCrowbar" call dayz_meleeMagazineCheck;
+	"MeleeCrowbar" call dayz_meleeMagazineCheck;
+    
+	//Machete ammo fix	
+	"MeleeMachete" call dayz_meleeMagazineCheck;
+    {
+    if(_x select 1 == getPlayerUID player) then {_hasInvite = true;
+    
+    if (_hasInvite) then {
+        if (dayz_pendingInvite == "") then {
+                _invite = _x;
+                if (_invite select 1 == getPlayerUID player) then {
+                    {
+                        if(_invite select 0 == getPlayerUID _x) then {
+                            _name = name(_x);
+                        if (dayz_pendingInvite != _name) then {
+                            dayz_pendingInvite = _name;
+                hint parseText format["<t size='1.20' font='Bitstream' color='#0CE800'>[GROUP]</t><br/>
+        <t size='1' font='Bitstream' align='left'>You have been invited to %1's group.</t><br/>", _name];
+                        };
+                        };
+                    } forEach playableUnits;
+                };
+        };
+    } else {
+    dayz_pendingInvite = "";
+    };
+    };
+    } forEach currentInvites;
+    
 };
