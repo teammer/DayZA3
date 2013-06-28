@@ -17,6 +17,7 @@ _hasFuelE = 	"ItemJerrycanEmpty" in magazines player;
 _hasbottleitem = "ItemWaterbottle" in magazines player;
 _hasbottleitemE = "ItemWaterbottleUnfilled" in magazines player;
 _hasWood = 		"PartWoodPile" in magazines player;
+_hasSPack =      "SurvivalPack" in magazines player;
 _hastinitem = false;
 {
     if (_x in magazines player) then {
@@ -82,8 +83,8 @@ if (!isNull _nearLightR) then {
 
 _getTextZ =     getText (_config >> "displayName");
 //End of Code
-_hasKnife = 	"ItemKnife" in magazines player;
-_hasToolbox = 	"ItemToolbox" in magazines player;
+_hasKnife = 	"ItemKnife" in items player;
+_hasToolbox = 	"ItemToolbox" in items player;
 _hasTent = 		"ItemTent" in magazines player;
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 
@@ -183,9 +184,17 @@ if (_canPickLightR and !dayz_hasLight) then {
   s_player_grabflare4 = -1;
   s_player_removeflare4 = -1;
 };
-
+    //Allow player to use the Survival Pack
+    if (_vehicle == player and _hasSPack and ((_legsBroke or _armsBroke) or (r_player_infected) or (_inPain) or (_injured) or (r_player_blood < 12000))) then {
+        if (s_player_survivalpackA3 < 0) then {
+            s_player_survivalpackA3 = player addAction [format["<t color='#FF0000'>Use Survival Pack%1</t>"], "\z\addons\dayz_code\medical\spack.sqf",[_unit], 1, true, true, "", "'SurvivalPack' in magazines player"]];
+        };
+    } else {
+        player removeAction s_player_survivalpackA3;
+        s_player_survivalpackA3 = -1;
+    };
 	//Allow player to use Morphine
-	if (_vehicle == player and _legsBroke and _armsBroke and _hasMorphine) then {
+	if (_vehicle == player and (_legsBroke or _armsBroke) and _hasMorphine) then {
 		if (s_player_morphineA3 < 0) then {
 			s_player_morphineA3 = player addAction [format["<t color='#FF0000'>Use Morphine%1</t>"], "\z\addons\dayz_code\medical\morphine.sqf",[_unit], 1, true, true, "", "'ItemMorphine' in magazines player"];
 		};

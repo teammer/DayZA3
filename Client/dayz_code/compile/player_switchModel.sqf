@@ -25,7 +25,15 @@ private ["_playerUID"];
 private ["_weapons","_magazines","_primweapon","_secweapon"];
 	_weapons 	= weapons player;
 	_magazines	= call player_countmagazines; //magazines player;
+    
+_currentmag = currentMagazine player;
+_secmag = (handgunMagazine player) select 0;
+_magArray = [_currentmag, _secmag];
+if (_secmag == _currentMag) then {
+    _magArray = [_currentmag];
+};
 	_magazines = vestItems player;
+    _magazines = _magazines + _magArray;
 //	if ( (_playerUID == dayz_playerUID) && (count _magazines == 0) && (count (magazines player) > 0 )) exitWith {cutText ["can't count magazines!", "PLAIN DOWN"]};
 
 

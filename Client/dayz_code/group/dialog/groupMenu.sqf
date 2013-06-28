@@ -88,12 +88,8 @@ while{gActive} do
     } else {
     	_groupAcceptInvite ctrlShow false;
         _groupDeclineInvite ctrlShow false;
-        if (!(typeOf cursorTarget in ["SurvivorW2_DZ","Survivor2_DZ","Sniper1_DZ","Camo1_DZ","BanditW1_DZ","Bandit1_DZ"]) or (player distance cursorTarget > 5)) then {
         _groupInviteText ctrlShow true;
-        _groupInviteText ctrlSetStructuredText parseText (format ["You must be looking at a player within<br/>5 meters of you in order to invite them."]);
-        } else {
-        _groupInviteText ctrlShow false;  	 
-        };            
+        _groupInviteText ctrlSetStructuredText parseText (format ["You must be looking at a player within<br/>5 meters of you in order to invite them."]);   
     };
     
 	sleep 0.5;

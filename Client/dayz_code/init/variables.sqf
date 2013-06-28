@@ -212,6 +212,7 @@ dayz_resetSelfActions = {
 	s_player_morphineA3 =	-1;
 	s_player_painkillerA3 =	-1;
 	s_player_antibioticA3 = -1;
+    s_player_survivalpackA3 = -1;
 	s_getAlive =			-1;
 	s_getFood = 			-1;
 	s_getDrink =			-1;

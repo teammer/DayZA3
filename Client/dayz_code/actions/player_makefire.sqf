@@ -6,7 +6,7 @@ if ((_location select 2) < 0) then {
 //_location set [2,0];
 _isOk = true; //count (_location isFlatEmpty [0.3,0,0,4,0,false,player]) > 0;
 _hasWood = 		"PartWoodPile" in magazines player;
-_hasMatch = 		"ItemMatchbox" in magazines player;
+_hasMatch = 		"ItemMatchbox" in items player;
 
 if (_hasWood) then {
 if (_hasMatch) then {

@@ -52,9 +52,10 @@ if (_hasPatient and !r_drag_sqf and !r_action and !_inVehicle and !r_player_unco
 	_armsBroke = 	_unit getVariable ["hit_hands", 0] >= 1;
 	_hasBandage = 	"ItemBandage" in magazines player;
 	_hasEpi = 		"ItemEpinephrine" in magazines player;
+	_hasSPack = 		"SurvivalPack" in magazines player;
 	_hasMorphine = 	"ItemMorphine" in magazines player;
 	_hasBlood = 	"ItemBloodbag" in magazines player;	
-	_hasToolbox = 	"ItemToolbox" in magazines player;
+	_hasToolbox = 	"ItemToolbox" in items player;
 	_hasJerry = 	"ItemJerrycan" in magazines player;
 	_hasEtool = 	"ItemEtool" in weapons player;
 	_hasWire = 		"ItemWire" in magazines player;
@@ -102,6 +103,12 @@ if (_hasPatient and !r_drag_sqf and !r_action and !_inVehicle and !r_player_unco
 	if(_unconscious and _hasEpi) then {
 		r_action = true;
 		_action = _unit addAction [localize "str_actions_medical_05", "\z\addons\dayz_code\medical\epinephrine.sqf",[_unit], 0, true, true];
+		r_player_actions set [count r_player_actions,_action];
+	};
+	//Allow player to administer Survival Pack
+	if(_unconscious and _hasSPack) then {
+		r_action = true;
+		_action = _unit addAction ["Give Survival Pack", "\z\addons\dayz_code\medical\spack.sqf",[_unit], 0, true, true];
 		r_player_actions set [count r_player_actions,_action];
 	};
 	//Allow player to give Morphine

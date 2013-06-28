@@ -297,9 +297,9 @@ class CfgBuildingLoot {
 		lootPos[] = {};
 		itemType[] =	{
 			{"ItemSodaMdew","magazine"},
-			{"ItemWatch","generic"},
-			{"ItemCompass","generic"},
-			{"ItemMap","weapon"},
+			{"ItemWatch","vest"},
+			{"ItemCompass","vest"},
+			{"ItemMap","vest"},
 			{"Makarov","weapon"},
 			{"Colt1911","weapon"},
 			{"ItemFlashlight","generic"},
@@ -442,9 +442,9 @@ class CfgBuildingLoot {
 		zombieChance = 0.3;
 		zombieClass[] = {"zZombie_Base","zZombie_Base","z_teacher","z_suit1","z_suit2"};
 		itemType[] = {
-			{"ItemWatch","generic"},
-			{"ItemCompass","generic"},
-			{"ItemMap","weapon"},
+			{"ItemWatch","vest"},
+			{"ItemCompass","vest"},
+			{"ItemMap","vest"},
 			{"Makarov","weapon"},
 			{"Colt1911","weapon"},
 			{"ItemFlashlight","generic"},
