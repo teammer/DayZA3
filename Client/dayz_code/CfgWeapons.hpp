@@ -63,6 +63,7 @@ class CfgWeapons {
 	model = "\A3\Weapons_F\Items\FirstAidkit";
 	picture = "\A3\Weapons_F\Items\data\UI\gear_FirstAidKit_CA.paa";
 	scope = 2;
+    class InventoryFirstAidKitItem_Base_F;
 	class ItemInfo: InventoryFirstAidKitItem_Base_F {
 		mass = 14;
 	};
