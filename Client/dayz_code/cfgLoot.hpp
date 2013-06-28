@@ -175,7 +175,8 @@ food[] = {
 			"ItemMorphine",
 			"ItemEpinephrine",
 			"ItemBloodbag",
-			"ItemAntibiotic"
+			"ItemAntibiotic",
+            "SurvivalPack"
 		},
 		{
 			0.33,
@@ -183,7 +184,8 @@ food[] = {
 			0.13,
 			0.09,
 			0.17,
-			0.12
+			0.12,
+            0.03
 		}
 	};
 	military[] = {
@@ -228,7 +230,8 @@ food[] = {
                         "Chemlight_red",
                         "Chemlight_green",
 			"ItemHeatPack",
-			"FoodMRE"
+			"FoodMRE",
+            "SurvivalPack"
 		},
 		{
 			0.18,
@@ -268,7 +271,8 @@ food[] = {
 			0.01,
             0.01,
 			0.04,
-			0.03
+			0.03,
+            0.05
 		}
 	};
 	policeman[] = {
