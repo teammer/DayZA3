@@ -623,13 +623,13 @@ class CfgBuildingLoot {
 		itemType[] =	{
 			{"","trash"},
 			{"","hospital"},
-            {"SurvivalPack","weapon"},
+            {"SurvivalPack","weaponNA"},
 			{"MedBox0","object"}
 		};
 		itemChance[] =	{
 			0.2,
 			1,
-            0.1,
+            0.01,
 			0.03
 		};
 	};
@@ -688,7 +688,9 @@ class CfgBuildingLoot {
 			{"DZ_British_ACU_A3","backpack"}, // 18
 			{"DZ_CivilBackpack_A3","backpack"}, // 24
 			{"DZ_Backpack_A3","backpack"}, // 24
-            {"SurvivalPack","weapon"}
+            {"SurvivalPack","weaponNA"},
+			{"SCAR_L_CQC","weapon"},
+			{"SCAR_L_CQC_HOLO","weaponNA"}
 		};
 		itemChance[] =	{
 			0.05,
@@ -735,7 +737,9 @@ class CfgBuildingLoot {
             0.015,
             0.02,
             0.005,
-            0.05
+            0.05,
+			0.07,
+			0.05
 		};
 	};
 	class MilitarySpecial: Default {
@@ -804,7 +808,9 @@ class CfgBuildingLoot {
 			{"DZ_British_ACU_A3","backpack"}, // 18
 			{"DZ_CivilBackpack_A3","backpack"}, // 24
 			{"DZ_Backpack_A3","backpack"}, // 24
-            {"SurvivalPack","weapon"}
+            {"SurvivalPack","weaponNA"},
+			{"SCAR_H_CQC_CCO","weapon"},
+			{"SCAR_H_CQC_CCO_SD","weaponNA"}
 		};
 		itemChance[] =	{
 			0.10,
@@ -861,7 +867,9 @@ class CfgBuildingLoot {
             0.015,
             0.02,
             0.005,
-            0.05
+            0.05,
+			0.03,
+			0.01
 		};
 	};
 	class Hunting: Default {

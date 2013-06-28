@@ -11,7 +11,10 @@
 disableSerialization;
 				
 private ["_start","_dialog","_myGroup","_playerListBox","_groupListBox","_uid","_namestr","_index","_groupCreate","_groupInvite","_groupKick","_groupDisband","_groupLeaveButton","_inGroup","_isLeader","_name"];
-
+if (gActive) exitWith {
+	closeDialog 0;
+	gActive = false;
+};
 closeDialog 0;
 _start = createDialog "GroupManagement";			
 _dialog = findDisplay gDialog;

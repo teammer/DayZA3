@@ -37,6 +37,11 @@ switch (_iClass) do {
 			_item addMagazineCargoGlobal [(_mags select 0), (round(random 2))];
 		};
 	};
+	case "weaponNA": {
+		//Item is a weapon, add it with NO AMMO (NA)
+		_item = createVehicle ["WeaponHolder", _iPos, [], _radius, "CAN_COLLIDE"];
+		_item addWeaponCargoGlobal [_iItem,1];
+	};
 	case "magazine": {
 		//Item is one magazine
 		_item = createVehicle ["WeaponHolder", _iPos, [], _radius, "CAN_COLLIDE"];
