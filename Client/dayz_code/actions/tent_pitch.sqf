@@ -4,7 +4,7 @@ private["_position","_tent","_location","_isOk","_backpack","_tentType","_trg","
 _playerPos = 	getPosATL player;
 _item = "ItemTent" in magazines player;
 //_hastentitem = _item;
-_location = player modeltoworld [0,2.5,0];
+_location = player modeltoworld [0,3,0];
 _location set [2,0];
 _building = nearestObject [(vehicle player), "HouseBase"];
 _isOk = [(vehicle player),_building] call fnc_isInsideBuilding;
