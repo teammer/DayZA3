@@ -57,17 +57,6 @@ class CfgWeapons {
 		};
             reloadtime = 0.8;
 	};	
-    class SurvivalPack: ItemCore {
-	descriptionshort = "Medical pack for universal needs.";
-	displayname = "Survival Pack";
-	model = "\A3\Weapons_F\Items\FirstAidkit";
-	picture = "\A3\Weapons_F\Items\data\UI\gear_FirstAidKit_CA.paa";
-	scope = 2;
-    class InventoryFirstAidKitItem_Base_F;
-	class ItemInfo: InventoryFirstAidKitItem_Base_F {
-		mass = 14;
-	};
-};
 	class ItemCrowbar: ItemCore
 	{
 		scope=2;

@@ -5,6 +5,14 @@ class CfgAmmo {
 		hit = 8;
 		caliber = 0.33;
 	};
+	class BulletBase;
+	class SurvivalPack : BulletBase
+	{
+		model = "\A3\Weapons_F\Items\FirstAidkit";
+		hit = 0;
+		caliber = 0;
+		timeToLive = 0;
+	};
 	class Melee;
 	class Machete_Swing_Ammo : Melee {
 		hit = 9;
