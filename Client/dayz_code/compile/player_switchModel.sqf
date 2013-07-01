@@ -56,6 +56,7 @@ if (_secmag == _currentMag) then {
 	if(!(_secweapon in _weapons) && _secweapon != "") then {
 		_weapons = _weapons + [_secweapon];
 	};
+
 	
 //	if(count _magazines == 0) then {
 //		_magazines = magazines player;
@@ -113,16 +114,28 @@ _otheritems = assignedItems player;
 	{_newUnit removeMagazine _x;} forEach  magazines _newUnit;
 	removeAllWeapons _newUnit;	
 
+    removeUniform _newUnit;
+    removeHeadgear _newUnit;
+    removeGoggles _newUnit;
+    removeAllAssignedItems _newUnit;
+
+	if(_vest != (vest _newUnit) && _vest != "") then {
+		_newUnit addItem _vest;		
+		_newUnit assignItem _vest;		
+	};
+
 //Equip New Charactar
+
+	{
+		_newUnit addWeapon _x;
+		//sleep 0.05;
+	} forEach _weapons;
+    
 	{
 		if (typeName _x == "ARRAY") then {_newUnit addMagazine [_x select 0,_x select 1] } else { _newUnit addMagazine _x };
 		//sleep 0.05;
 	} forEach _magazines;
 	
-	{
-		_newUnit addWeapon _x;
-		//sleep 0.05;
-	} forEach _weapons;
     
     
 
@@ -183,15 +196,6 @@ _otheritems = assignedItems player;
 			} forEach _backpackmagTypes;
 		};
 	};
-    if (!isNil "_vest") then {
-        if (_vest != "") then {
-            _newUnit addVest _vest;
-            
-            {
-                _newUnit addMagazine _x;
-            } forEach _vestitems;
-        };
-    };
 //Debug Message
 	diag_log "Swichtable Unit Created. Equipment:";
 	diag_log str(weapons _newUnit);
@@ -224,11 +228,6 @@ _otheritems = assignedItems player;
 	_playerObjName = format["player%1",_playerUID];
 	call compile format["%1 = player;",_playerObjName];
 	publicVariable _playerObjName;
-
-    removeUniform _newUnit;
-    removeHeadgear _newUnit;
-    removeGoggles _newUnit;
-    removeAllAssignedItems _newUnit;
     {
         _newUnit addItem _x;
         _newUnit assignItem _x;

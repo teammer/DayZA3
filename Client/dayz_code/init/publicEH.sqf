@@ -44,7 +44,7 @@ if (isServer) then {
 //Client only
 if (!isDedicated) then {
 	"dayzSetDate"		addPublicVariableEventHandler {setDate (_this select 1)};
-	"dayzFlies"			addPublicVariableEventHandler {(_this select 1) call spawn_flies};
+	"dayzFlies"			addPublicVariableEventHandler {[(_this select 1)] call spawn_flies};
 	"dayzRoadFlare"		addPublicVariableEventHandler {(_this select 1) spawn object_roadFlare};
 	"norrnRaDrag"   	addPublicVariableEventHandler {[_this select 1] execVM "\z\addons\dayz_code\medical\publicEH\animDrag.sqf"};
 	"norrnRnoAnim"  	addPublicVariableEventHandler {[_this select 1] execVM "\z\addons\dayz_code\medical\publicEH\noAnim.sqf"};
