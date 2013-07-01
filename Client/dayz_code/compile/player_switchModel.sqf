@@ -28,7 +28,13 @@ private ["_weapons","_magazines","_primweapon","_secweapon"];
     
 _currentmag = currentMagazine player;
 _secmag = (handgunMagazine player) select 0;
-_magArray = [_currentmag, _secmag];
+_magArray = [];
+if !(isNil "_currentmag") then {
+_magArray = _magArray + [_currentmag];
+};
+if !(isNil "_secmag") then {
+_magArray = _magArray + [_secmag];
+};
 if (_secmag == _currentMag) then {
     _magArray = [_currentmag];
 };
