@@ -70,11 +70,7 @@ private ["_newBackpackType","_backpackWpn","_backpackMag","_vest","_vestitems"];
 		_backpackWpn = getWeaponCargo unitBackpack player;
 		_backpackMag = getMagazineCargo unitBackpack player;
 	};
-_vest = vest _character;
-if (_vest != "") then {
-    _vestitems = vestItems player;
-};
-
+_vest = vest player;
 
 //Get Muzzle
 	_currentWpn = currentWeapon player;
