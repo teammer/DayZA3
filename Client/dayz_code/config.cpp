@@ -690,8 +690,7 @@ class CfgBuildingLoot {
 			{"DZ_British_ACU_A3","backpack"}, // 18
 			{"DZ_CivilBackpack_A3","backpack"}, // 24
 			{"DZ_Backpack_A3","backpack"}, // 24
-			{"SCAR_L_CQC","weapon"},
-			{"SCAR_L_CQC_HOLO","weaponNA"}
+			{"SCAR_L_CQC","weapon"}
 		};
 		itemChance[] =	{
 			0.05,
@@ -808,8 +807,7 @@ class CfgBuildingLoot {
 			{"DZ_British_ACU_A3","backpack"}, // 18
 			{"DZ_CivilBackpack_A3","backpack"}, // 24
 			{"DZ_Backpack_A3","backpack"}, // 24
-			{"SCAR_H_CQC_CCO","weapon"},
-			{"SCAR_H_CQC_CCO_SD","weaponNA"}
+			{"SCAR_H_CQC_CCO_SD","weapon"}
 		};
 		itemChance[] =	{
 			0.10,
