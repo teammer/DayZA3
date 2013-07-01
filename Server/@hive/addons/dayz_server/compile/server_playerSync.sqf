@@ -23,7 +23,14 @@ _otheritems = assignedItems _character;
 _magazines = vestItems _character;
 _currentmag = currentMagazine _character;
 _secmag = (handgunMagazine _character) select 0;
-_magArray = [_currentmag, _secmag];
+
+_magArray = [];
+if !(isNil "_currentmag") then {
+_magArray = _magArray + [_currentmag];
+};
+if !(isNil "_secmag") then {
+_magArray = _magArray + [_secmag];
+};
 _weapons = [primaryWeapon _character, handgunWeapon _character];
 if (_secmag == _currentMag) then {
     _magArray = [_currentmag];
