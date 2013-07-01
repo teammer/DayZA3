@@ -116,4 +116,3 @@ while {(server_totalCrashes <= 8)} do {
 		diag_log(format["CRASHSPAWNER: %1%2 chance to spawn '%3' with loot table '%4' at %5 FAILED (chance)", round(_spawnChance * 100), '%', _crashName, _lootTable, _timeToSpawn]);	
 	};
 };
-};
