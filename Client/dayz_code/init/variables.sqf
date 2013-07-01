@@ -23,7 +23,7 @@ meatraw = [
     "FoodchickenRaw",
     "FoodrabbitRaw",
     "FoodbaconRaw",
-    "FoodzombieRaw",
+    "FoodzombieRaw"
 ];
 meatcooked = [
     "FoodSteakCooked",
