@@ -344,6 +344,12 @@ class CfgMagazines {
 		descriptionShort = "Gutted meat from a zombie's carcass.";
 		bloodRegen = 50;
     };
+    
+    class FoodhumanRaw : FoodmeatRaw {
+		displayName = "Cooked Human Flesh";
+		descriptionShort = "Raw flesh from a survivor's body.";
+		bloodRegen = 60;
+    };
 	
 	class FoodbaconRaw : FoodmeatRaw {
 		displayName = $STR_FOOD_EQIP_CODE_NAME_4;
@@ -400,6 +406,11 @@ class CfgMagazines {
 		displayName = "Infectious Cooked Meat";
 		descriptionShort = "Gutted meat from a zombie's carcass that's been cooked to a crisp.";
 		bloodRegen = 100;
+    };
+    class FoodhumanCooked : FoodmeatCooked {
+		displayName = "Cooked Human Flesh";
+		descriptionShort = "Cooked flesh from a survivor's body that's been cooked to a crisp.";
+		bloodRegen = 120;
     };
 	
 	class AngelCookies : FoodEdible {

@@ -13,6 +13,8 @@ r_action = false;
 if (vehicle player == player) then {
 	//not in a vehicle
 	player playActionNow "Medic";
+    hint parseText format["<t size='1.20' font='Bitstream' color='#F2F24E'>[Medic]</t><br/>
+        <t size='1' font='Bitstream' align='left'>Don't move! Two stages must be administered.</t><br/>"];
 };
 r_interrupt = false;
 _animState = animationState player;

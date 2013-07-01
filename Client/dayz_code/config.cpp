@@ -269,6 +269,10 @@ class CfgSurvival {
             yield = 1;
             rawfoodtype = "FoodzombieRaw";
         };
+        class player_base: Default {
+            yield = 1;
+            rawfoodtype = "FoodhumanRaw";
+        };
 	};
 };
 

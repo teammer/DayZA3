@@ -370,6 +370,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 	_isAnimal = cursorTarget isKindOf "Animal";
 	_isDog =  (cursorTarget isKindOf "DZ_Pastor" || cursorTarget isKindOf "DZ_Fin");
 	_isZombie = cursorTarget isKindOf "zZombie_base";
+	_isPlayer = typeOf cursorTarget in AllPlayers_A3;
 	_isDestructable = cursorTarget isKindOf "BuiltItems";
 	_isTent = cursorTarget isKindOf "TentStorage";
 	_isFuel = false;
@@ -433,9 +434,9 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 		s_player_fillfuel = -1;
 	};
 	
-	if (!alive cursorTarget and (_isAnimal or _isZombie) and _hasKnife and !_isHarvested and _canDo) then {
+	if (!alive cursorTarget and (_isAnimal or _isZombie or _isPlayer) and _hasKnife and !_isHarvested and _canDo) then {
 		if (s_player_butcher < 0) then {
-			s_player_butcher = player addAction [localize "str_actions_self_04", "\z\addons\dayz_code\actions\gather_meat.sqf",cursorTarget, 3, true, true, "", ""];
+			s_player_butcher = player addAction ["Gut Flesh", "\z\addons\dayz_code\actions\gather_meat.sqf",cursorTarget, 3, true, true, "", ""];
 		};
 	} else {
 		player removeAction s_player_butcher;
