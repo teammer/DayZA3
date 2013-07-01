@@ -25,16 +25,17 @@ _currentmag = currentMagazine _character;
 _secmag = (handgunMagazine _character) select 0;
 
 _magArray = [];
-if !(isNil "_currentmag") then {
+if (_currentmag != "") then {
 _magArray = _magArray + [_currentmag];
 };
-if !(isNil "_secmag") then {
+if (_secmag != "") then {
 _magArray = _magArray + [_secmag];
 };
 _weapons = [primaryWeapon _character, handgunWeapon _character];
-if (_secmag == _currentMag) then {
+if ((_secmag == _currentMag) and (_currentMag != "")) then {
     _magArray = [_currentmag];
 };
+
 _force =	_this select 2;
 _force =	true;
 
