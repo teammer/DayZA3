@@ -87,13 +87,7 @@ if (!_isNew) then {
 } else {
 	_model =		_primary select 3;
 	_hiveVer =		_primary select 4;
-	if (isNil "_model") then {
-		_model = "Survivor2_DZ";
-	} else {
-		if (_model == "") then {
-			_model = "Survivor2_DZ";
-		};
-	};
+	_model = "Survivor2_DZ";
 
 	//Record initial inventory
 	_config = (configFile >> "CfgSurvival" >> "Inventory" >> "Default");
