@@ -1,9 +1,9 @@
 private["_flare"];
 _flare = _this select 3;
-_red = _flare == "Chemlight_red";
-_blue = _flare == "Chemlight_blue";
-_green = _flare == "Chemlight_green";
-_yellow = _flare == "Chemlight_yellow";
+_red = _flare in ["Chemlight_blue"];
+_green = _flare in ["Chemlight_green"];
+_yellow = _flare in ["Chemlight_yellow"];
+_blue = _flare in ["Chemlight_blue"];
 player playActionNow "PutDown";
 sleep 2;
 _flare attachTo [player,[0,0,0],"granat2"];
