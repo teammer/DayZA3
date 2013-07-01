@@ -99,7 +99,7 @@ class CfgMagazines {
 		ammo = "SurvivalPack";
 		count = 1;
 		descriptionshort = "Medical pack for universal needs.";
-		displayname = "Survival Pack";
+		displayname = "Survival Medical Pack";
 		model = "\A3\Weapons_F\Items\FirstAidkit";
 		picture = "\A3\Weapons_F\Items\data\UI\gear_FirstAidKit_CA.paa";
 		initSpeed = 0;
