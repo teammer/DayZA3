@@ -690,7 +690,8 @@ class CfgBuildingLoot {
 			{"DZ_British_ACU_A3","backpack"}, // 18
 			{"DZ_CivilBackpack_A3","backpack"}, // 24
 			{"DZ_Backpack_A3","backpack"}, // 24
-			{"SCAR_L_CQC","weapon"}
+			{"SCAR_L_CQC","weapon"},
+			{"SCAR_H_CQC_CCO_SD","weapon"}
 		};
 		itemChance[] =	{
 			0.05,
@@ -738,7 +739,8 @@ class CfgBuildingLoot {
             0.02,
             0.005,
 			0.07,
-			0.05
+			0.05,
+            0.01
 		};
 	};
 	class MilitarySpecial: Default {
@@ -807,6 +809,7 @@ class CfgBuildingLoot {
 			{"DZ_British_ACU_A3","backpack"}, // 18
 			{"DZ_CivilBackpack_A3","backpack"}, // 24
 			{"DZ_Backpack_A3","backpack"}, // 24
+			{"SCAR_L_CQC","weapon"},
 			{"SCAR_H_CQC_CCO_SD","weapon"}
 		};
 		itemChance[] =	{
@@ -865,6 +868,7 @@ class CfgBuildingLoot {
             0.02,
             0.005,
 			0.03,
+            0.05,
 			0.01
 		};
 	};
