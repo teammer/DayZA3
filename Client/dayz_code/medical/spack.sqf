@@ -118,6 +118,6 @@ if (!_isDead) then {
 	publicVariable "usecPainK";
 } else {
 	r_interrupt = false;
-	[objNull, player, rSwitchMove,""] call RE;
+	[[[player], { (_this select 0) switchMove ''; }], "BIS_fnc_spawn", true, false] call BIS_fnc_MP;
 	player playActionNow "stop";
 };

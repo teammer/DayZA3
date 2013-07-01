@@ -955,7 +955,7 @@ class FSM
        "reload player;" \n
        "" \n
        "if (_currentAnim != """") then {" \n
-       "	[objNull, player, rSwitchMove,_currentAnim] call RE;" \n
+       "	[[[player, _currentanim], { (_this select 0) switchMove (_this select 1); }], 'BIS_fnc_spawn', true, false] call BIS_fnc_MP;" \n
        "};" \n
        "if (_currentWpn != """") then {" \n
        "	player selectWeapon _currentWpn;" \n

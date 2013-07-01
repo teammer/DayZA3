@@ -221,9 +221,9 @@ if (!isDedicated) then {
 			canRoll = false;
 			null = [] spawn {
 				if (DoRE) then {
-					[nil, player, rSWITCHMOVE, "ActsPercMrunSlowWrflDf_FlipFlopPara"] call RE;
+                    [[[player], { (_this select 0) switchMove 'ActsPercMrunSlowWrflDf_FlipFlopPara'; }], "BIS_fnc_spawn", true, false] call BIS_fnc_MP;
 				} else {
-					player switchMove "ActsPercMrunSlowWrflDf_FlipFlopPara";
+                    player switchMove 'ActsPercMrunSlowWrflDf_FlipFlopPara';
 				};
 				sleep 0.3;
 				player setVelocity [(velocity player select 0) + 1.5 * sin direction player, (velocity player select 1) + 1.5 * cos direction player, (velocity player select 2) + 4];
@@ -241,11 +241,11 @@ if (!isDedicated) then {
 		if (_dikCode in (actionKeys "GetOver")) then {
 			if (!r_fracture_legs and (time - dayz_lastCheckBit > 4)) then {
 				_inBuilding = [player] call fnc_isInsideBuilding;
-				_nearbyObjects = nearestObjects[getPosATL player, ["TentStorage", "Hedgehog_DZ", "Sandbag1_DZ","TrapBear","Wire_cat1"], 8];
-				if (!_inBuilding) then {
+				_nearbyObjects = nearestObjects[getPosATL player, ["TentStorage", "Hedgehog_DZ", "Sandbag1_DZ","TrapBear","Wire_cat1"], 4];
+				
 					dayz_lastCheckBit = time;
 					call player_CombatRoll;
-				};
+				
 			};
 		};
 		//if (_dikCode == 57) then {_handled = true}; // space

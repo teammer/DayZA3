@@ -214,7 +214,7 @@ _otheritems = assignedItems player;
 
 //	player switchCamera = _currentCamera;
 	if(_currentWpn != "") then {_newUnit selectWeapon _currentWpn;};
-	[objNull, player, rSwitchMove,_currentAnim] call RE;
+	[[[player, _currentanim], { (_this select 0) switchMove (_this select 1); }], "BIS_fnc_spawn", true, false] call BIS_fnc_MP;
 	//dayz_originalPlayer attachTo [_newUnit];
 	player disableConversation true;
 	

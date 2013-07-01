@@ -24,17 +24,15 @@ private["_display","_btnRespawn","_btnAbort","_timeOut","_timeMax","_isDead"];
 			switch true do {
 				case (_timeOut < _timeMax && ((count (player nearEntities ["zZombie_Base", 35]) > 0) or (count (player nearEntities ["AllVehicles", 10]) > 0))) : {
 					_btnAbort ctrlEnable false;
-					cutText [format ["Can Abort in %1", (_timeMax - _timeOut)], "PLAIN DOWN"];
-					//cutText [format[localize "str_abort_zedsclose",_text, "PLAIN DOWN"];
+					2 cutText [format ["You can abort in %1...", (_timeMax - _timeOut)], "PLAIN DOWN"];
 				};
 				case (player getVariable["combattimeout", 0] >= time) : {
 					_btnAbort ctrlEnable false;
-					//cutText ["Cannot Abort while in combat!", "PLAIN DOWN"];
-					cutText [format[localize "str_abort_playerincombat",_text], "PLAIN DOWN"];					
+					2 cutText [format[localize "str_abort_playerincombat",_text], "PLAIN DOWN"];					
 				};
 				default {
 					_btnAbort ctrlEnable true;
-					cutText ["", "PLAIN DOWN"];				
+					2 cutText ["", "PLAIN DOWN"];				
 				};
 			};
 			sleep 1;
