@@ -5,6 +5,9 @@ _hasKnifeBlunt = 	"ItemKnifeBlunt" in items player;
 _type = typeOf _item;
 _hasHarvested = _item getVariable["meatHarvested",false];
 _config = 		configFile >> "CfgSurvival" >> "Meat" >> _type;
+if (_item isKindOf "zZombie_base") then {
+    _config = 		configFile >> "CfgSurvival" >> "Meat" >> "zZombie_base";
+};
 
 player removeAction s_player_butcher;
 s_player_butcher = -1;

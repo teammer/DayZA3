@@ -338,6 +338,12 @@ class CfgMagazines {
 		descriptionShort = $STR_FOOD_EQUIP_CODE_DESC_3;
 		bloodRegen = 400;
 	};
+    
+    class FoodzombieRaw : FoodmeatRaw {
+		displayName = "Infectious Raw Meat";
+		descriptionShort = "Gutted meat from a zombie's carcass.";
+		bloodRegen = 50;
+    };
 	
 	class FoodbaconRaw : FoodmeatRaw {
 		displayName = $STR_FOOD_EQIP_CODE_NAME_4;
@@ -390,6 +396,11 @@ class CfgMagazines {
 		descriptionShort = $STR_FOODCOOKED_EQUIP_CODE_DESC_6;
 		bloodRegen = 600;
 	};
+    class FoodzombieCooked : FoodmeatCooked {
+		displayName = "Infectious Cooked Meat";
+		descriptionShort = "Gutted meat from a zombie's carcass that's been cooked to a crisp.";
+		bloodRegen = 100;
+    };
 	
 	class AngelCookies : FoodEdible {
 		scope = public;

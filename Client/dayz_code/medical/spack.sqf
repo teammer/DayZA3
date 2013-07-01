@@ -75,7 +75,7 @@ player setVariable["USEC_infected",false,true];
         r_bloodRestored = 0;
         r_oldblood = r_player_blood;
         while { r_isHealing } do {
-            if (r_player_blood < 12000) {
+            if (r_player_blood < 12000) then {
                 r_bloodRestored = r_bloodRestored + 100;
                 r_player_blood = r_oldblood + r_bloodRestored;
             } else {
@@ -105,6 +105,7 @@ if (!_isDead) then {
 
 	player removeMagazine "SurvivalPack";
 
+    
 	usecMorphine = [_unit,player];
 	publicVariable "usecMorphine";
 	usecBandage = [_unit,player];

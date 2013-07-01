@@ -265,6 +265,10 @@ class CfgSurvival {
 			yield = 1;
 			rawfoodtype = "FoodrabbitRaw";
 		};
+        class zZombie_base: Default {
+            yield = 1;
+            rawfoodtype = "FoodzombieRaw";
+        };
 	};
 };
 

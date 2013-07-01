@@ -60,6 +60,16 @@ if (_hasoutput) then{
 };
 
 if ( _rawfood and (random 15 < 1)) then {
+    if !(_itemorignal in ["FoodzombieRaw"]) then {
+    r_player_infected = true;
+    player setVariable["USEC_infected",true,true];
+    };
+};
+if ((_itemorignal in ["FoodzombieRaw"]) and (random 15 < 10)) then {
+    r_player_infected = true;
+    player setVariable["USEC_infected",true,true];
+};
+if ((_itemorignal in ["FoodzombieCooked"]) and (random 15 < 1)) then {
     r_player_infected = true;
     player setVariable["USEC_infected",true,true];
 };

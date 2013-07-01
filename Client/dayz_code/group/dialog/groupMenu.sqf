@@ -92,7 +92,7 @@ while{gActive} do
     	_groupAcceptInvite ctrlShow false;
         _groupDeclineInvite ctrlShow false;
         _groupInviteText ctrlShow true;
-        _groupInviteText ctrlSetStructuredText parseText (format ["You must be looking at a player within<br/>5 meters of you in order to invite them."]);   
+        _groupInviteText ctrlSetStructuredText parseText (format ["You must be looking at a player close to you to invite them."]);   
     };
     
 	sleep 0.5;
