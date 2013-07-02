@@ -568,8 +568,8 @@ class RscDisplayAnimViewer {
 };
 
 class RscDisplayInventory {
-	onLoad = "[""onLoad"",_this,""RscDisplayInventory"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""";
-	onUnload = "call player_gearSync; call dayz_forceSave;";
+	onLoad = "[""onLoad"",_this,""RscDisplayInventory"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""; call all_force_gearSave;";
+	onUnload = "call all_force_gearSave;";
 	idd = 602;
 	enableSimulation = 1;
 	
