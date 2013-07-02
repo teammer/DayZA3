@@ -19,9 +19,6 @@ if (_killerName != "nil") then
 {
 	_weapon = _victim getVariable["AttackedByWeapon", "nil"];
 	_distance = _victim getVariable["AttackedFromDistance", "nil"];
-    if (_distance != "nil") then {
-    _distance = round(_distance);
-    };
 	_displayname = getText (configFile >> 'CfgWeapons' >> _weapon >> 'displayName');
 	if (_victimName == _killerName) then 
 	{

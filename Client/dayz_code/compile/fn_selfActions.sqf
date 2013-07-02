@@ -35,6 +35,7 @@ _legsBroke = 		player getVariable ["hit_legs", 0] >= 1;
 _armsBroke = 		player getVariable ["hit_hands", 0] >= 1;
 _hasBandage = 		"ItemBandage" in magazines player;
 _hasMorphine = 		"ItemMorphine" in magazines player;
+_hasHeatpack = 		"ItemHeatpack" in magazines player;
 _hasPainkillers = 	"ItemPainkiller" in magazines player;
 _hasAntibiotic =	"ItemAntibiotic" in magazines player;
 _hasClothes1 = 		"Skin_Sniper1_DZ" in magazines player; //Ghillie
@@ -193,6 +194,16 @@ if (_canPickLightR and !dayz_hasLight) then {
         player removeAction s_player_survivalpackA3;
         s_player_survivalpackA3 = -1;
     };
+    //Allow player to use heatpacks
+    if (_vehicle == player and (dayz_temperatur < 35.5) and _hasHeatpack) then {
+    		if (s_player_heatpackA3 < 0) then {
+			s_player_heatpackA3 = player addAction [format["<t color='#FF0000'>Use Heatpack%1</t>"], "\z\addons\dayz_code\medical\heatpack.sqf",[_unit], 1, true, true, "", "'ItemHeatpack' in magazines player"];
+		};
+    } else {
+		player removeAction s_player_heatpackA3;
+		s_player_heatpackA3 = -1;
+    };
+    
 	//Allow player to use Morphine
 	if (_vehicle == player and (_legsBroke or _armsBroke) and _hasMorphine) then {
 		if (s_player_morphineA3 < 0) then {

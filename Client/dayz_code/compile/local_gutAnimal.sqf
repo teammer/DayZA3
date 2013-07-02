@@ -1,9 +1,13 @@
 private["_animalbody","_qty","_rawfoodtype","_ehLoc"];
 _animalbody = _this select 0;
 _qty = _this select 1;
+_isPlayer = typeOf _animalbody in AllPlayers_A3;
 _rawfoodtype =   getText (configFile >> "CfgSurvival" >> "Meat" >> typeOf _animalbody >> "rawfoodtype");
 if (_animalbody isKindOf "zZombie_base") then {
 _rawfoodtype =   getText (configFile >> "CfgSurvival" >> "Meat" >> "zZombie_base" >> "rawfoodtype");
+};
+if (_isPlayer) then {
+_rawfoodtype =   getText (configFile >> "CfgSurvival" >> "Meat" >> "player_base" >> "rawfoodtype");
 };
 
     	_item = createVehicle ["WeaponHolder", position _animalbody, [], 0, "CAN_COLLIDE"];

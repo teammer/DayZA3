@@ -215,6 +215,7 @@ dayz_resetSelfActions = {
     s_player_chopA3 =       -1;
     s_player_makefireA3 =   -1;
 	s_player_morphineA3 =	-1;
+	s_player_heatpackA3 =	-1;
 	s_player_painkillerA3 =	-1;
 	s_player_antibioticA3 = -1;
     s_player_survivalpackA3 = -1;
