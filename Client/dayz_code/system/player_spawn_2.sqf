@@ -21,7 +21,16 @@ while {true} do {
 	_size = 	(sizeOf typeOf _refObj) * 0.6;
 	_vel = 		velocity player;
 	_speed = 	round((_vel distance [0,0,0]) * 3.5);
-	_saveTime = (playersNumber west * 2) + 10;
+	_saveTime = 5;
+    if ((playersNumber west > 10) and (playersNumber west <= 20)) then {
+    _saveTime = 10;
+    };
+    if ((playersNumber west > 20) and (playersNumber west <= 30)) then {
+    _saveTime = 15;
+    };
+    if (playersNumber west > 30) then {
+    _saveTime = 20;
+    };
 		
 	//reset position
 	_randomSpot = true;
