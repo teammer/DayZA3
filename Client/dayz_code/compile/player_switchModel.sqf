@@ -228,6 +228,3 @@ _otheritems = assignedItems player;
         _newUnit addItem _x;
         _newUnit assignItem _x;
     } forEach _otheritems;
-    if !(isNil "_curgroup") then {
-    [_newUnit] joinSilent _curgroup;
-    };
