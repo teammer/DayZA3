@@ -9,10 +9,16 @@ _rawfoodtype =   getText (configFile >> "CfgSurvival" >> "Meat" >> "zZombie_base
 if (_isPlayer) then {
 _rawfoodtype =   getText (configFile >> "CfgSurvival" >> "Meat" >> "player_base" >> "rawfoodtype");
 };
-
+if (_isPlayer) then {
+    	_item = createVehicle ["WeaponHolder", position player, [], 0, "CAN_COLLIDE"];
+	for "_x" from 1 to _qty do {
+			_item addMagazineCargoGlobal [_rawfoodtype, 1];
+		};
+} else {
     	_item = createVehicle ["WeaponHolder", position _animalbody, [], 0, "CAN_COLLIDE"];
 	for "_x" from 1 to _qty do {
 			_item addMagazineCargoGlobal [_rawfoodtype, 1];
 		};
-        
+    
     deleteVehicle _animalbody;
+    };

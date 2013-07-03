@@ -41,7 +41,7 @@ class CfgMods
 		hidePicture = 0;
 		hideName = 0;
 		action = "http://www.zoombiesmod.com";
-		version = "0.1.5.2";
+		version = "0.1.5.3";
 		hiveVersion = 0.96; //0.93
 	};
 	class DZ_InitWorld
@@ -692,10 +692,11 @@ class CfgBuildingLoot {
 			{"DZ_ALICE_Pack_A3","backpack"}, // 16
 			{"DZ_TK_Assault_Pack_A3","backpack"}, // 16
 			{"DZ_British_ACU_A3","backpack"}, // 18
-			{"DZ_CivilBackpack_A3","backpack"}, // 24
+			{"DZ_CivilBackpack_A3","backpack"}, // 2    4
 			{"DZ_Backpack_A3","backpack"}, // 24
+			{"DZ_DJ_Pack_A3","backpack"}, // 24
 			{"SCAR_L_CQC","weapon"},
-			{"SCAR_H_CQC_CCO_SD","weapon"}
+			{"SCAR_L_CQC_CCO_SD","weapon"}
 		};
 		itemChance[] =	{
 			0.05,
@@ -741,8 +742,9 @@ class CfgBuildingLoot {
             0.03,
             0.015,
             0.02,
-            0.005,
-			0.07,
+            0.07,
+			0.01,
+            0.008,
 			0.05,
             0.01
 		};
@@ -813,8 +815,9 @@ class CfgBuildingLoot {
 			{"DZ_British_ACU_A3","backpack"}, // 18
 			{"DZ_CivilBackpack_A3","backpack"}, // 24
 			{"DZ_Backpack_A3","backpack"}, // 24
+			{"DZ_DJ_Pack_A3","backpack"}, // 24
 			{"SCAR_L_CQC","weapon"},
-			{"SCAR_H_CQC_CCO_SD","weapon"}
+			{"SCAR_L_CQC_CCO_SD","weapon"}
 		};
 		itemChance[] =	{
 			0.10,
@@ -870,8 +873,9 @@ class CfgBuildingLoot {
             0.03,
             0.015,
             0.02,
-            0.005,
-			0.03,
+            0.07,
+			0.01,
+            0.008,
             0.05,
 			0.01
 		};
@@ -892,7 +896,8 @@ class CfgBuildingLoot {
 			{"","military"},
 			{"WeaponHolder_ItemMachete", "object"},
 			{"huntingrifle","weapon"},
-			{"","hunter"}
+			{"","hunter"},
+			{"DZ_DJ_Pack_A3","backpack"} // 24
 		};
 		itemChance[] =	{
 			0.08,
@@ -903,7 +908,8 @@ class CfgBuildingLoot {
 			2.00,
 			0.1,
 			0.04,
-			3.00
+			3.00,
+            0.006
 		};
 	};	
 	class Church: Residential {

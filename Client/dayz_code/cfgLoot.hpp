@@ -31,7 +31,8 @@ class CfgLoot {
 			"2Rnd_shotgun_74Slug",
 			"2Rnd_shotgun_74Pellets",
 			"ItemBandage",
-			"ItemPainkiller"
+			"ItemPainkiller",
+            "SurvivalPack"
 		},
 		{
 			0.09,
@@ -48,7 +49,8 @@ class CfgLoot {
 			0.05,
 			0.05,
 			0.06,
-			0.06
+			0.06,
+            0.01
 		}
 	};
 food[] = {
@@ -167,7 +169,7 @@ food[] = {
 			0.2,
 			0.3,
 			0.1,
-			0.01
+			0.03
 		}
 	};
 	hospital[] = {
@@ -187,7 +189,7 @@ food[] = {
 			0.09,
 			0.17,
 			0.12,
-			0.02
+			0.1
 		}
 	};
 	military[] = {
@@ -274,7 +276,7 @@ food[] = {
             0.01,
 			0.04,
 			0.03,
-			0.02
+			0.05
 		}
 	};
 	policeman[] = {
@@ -289,6 +291,7 @@ food[] = {
                         "Chemlight_yellow",
                         "Chemlight_red",
                         "Chemlight_green",
+                        "SurvivalPack"
 		},
 		{
 			1,
@@ -299,6 +302,7 @@ food[] = {
 			0.01,
 			0.01,
 			0.01,
+            0.01,
             0.01
 		}
 	};

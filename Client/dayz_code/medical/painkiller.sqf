@@ -22,7 +22,11 @@ if (_unit == player) then {
 player removeMagazine "ItemPainkiller";
 
 sleep 1;
-//clear the healed player's vision
-//["usecPainK",[_unit,player]] call broadcastRpcCallAll;
 	usecPainK = [_unit,player];
 	publicVariable "usecPainK";
+
+        [] spawn {
+        player enableFatigue false;
+        sleep 5;
+        player enableFatigue true;
+        };

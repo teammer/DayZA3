@@ -116,6 +116,12 @@ if (!_isDead) then {
 	_unit setVariable ["USEC_injured",false,true];
 	usecPainK = [_unit,player];
 	publicVariable "usecPainK";
+    
+        [] spawn {
+        player enableFatigue false;
+        sleep 10;
+        player enableFatigue true;
+        };
 } else {
 	r_interrupt = false;
 	[[[player], { (_this select 0) switchMove ''; }], "BIS_fnc_spawn", true, false] call BIS_fnc_MP;

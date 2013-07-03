@@ -30,7 +30,7 @@ if (!_hasfooditem) exitWith {cutText [format[(localize "str_player_31"),_text,"c
 
 player playActionNow "PutDown";
 player removeMagazine _itemorignal;
-sleep 1;
+sleep 0.5;
 
 _dis=6;
 _sfx = "eat";
@@ -49,7 +49,7 @@ if (_hasoutput) then{
     // Selecting output
     _itemtodrop = food_output select (food_with_output find _itemorignal);
 
-    sleep 3;
+    sleep 0.1;
     _nearByPile= nearestObjects [(position player), ["WeaponHolder","WeaponHolderBase"],2];
     if (count _nearByPile ==0) then { 
         _item = createVehicle ["WeaponHolder", position player, [], 0.0, "CAN_COLLIDE"];

@@ -47,6 +47,12 @@ if (_finished) then {
 	//["usecMorphine",[_unit,player]] call broadcastRpcCallAll;
 	usecMorphine = [_unit,player];
 	publicVariable "usecMorphine";
+    
+        [] spawn {
+        player enableFatigue false;
+        sleep 5;
+        player enableFatigue true;
+        };
 } else {
 	r_interrupt = false;
 	[objNull, player, rSwitchMove,""] call RE;

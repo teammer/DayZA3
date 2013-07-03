@@ -768,12 +768,13 @@ class CfgVehicles {
 	{
 		scope = 2;
 		displayName = "Legendary Pack";
-		picture = "\ca\weapons_e\data\icons\backpack_US_ASSAULT_CA.paa";
+        picture = "\A3\Weapons_F\Ammoboxes\Bags\data\ui\backpack_CA.paa";
 		icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
-		model = "\ca\weapons_e\AmmoBoxes\backpack_us_assault.p3d";
+        hiddenselectionstextures[] = {"\A3\weapons_f\ammoboxes\bags\data\backpack_tortila_khk_co.paa"};
+        model = "\A3\weapons_f\Ammoboxes\bags\Backpack_Tortila";
 		transportMaxWeapons = 2;
 		transportMaxMagazines = 20;
-        mass = 10;
+        mass = 40;
         maximumload = 320;
 	};
     

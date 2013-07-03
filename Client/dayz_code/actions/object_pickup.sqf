@@ -76,9 +76,18 @@ if (_isOk) then {
 	};
 } else {
 if (_hasMeleeNo) then {
-	if (_classname in _oArray and ((loadVest player <= 0.93) or (loadBackpack player <= 0.93))) then {
-		deleteVehicle _holder;
-		player addMagazine _classname;
+	if (_classname in _oArray) then {
+    holderPickup = _holder;
+    PickupClass = _classname;
+		[] spawn {
+            if ((loadVest player <= 0.93) or (loadBackpack player <= 0.93)) then {
+                deleteVehicle holderPickup;
+                player addMagazine PickupClass;
+            } else {
+	holderPickup setVariable["claimed",0,true];
+	cutText [localize "STR_DAYZ_CODE_2", "PLAIN DOWN"];
+            };
+        };
 	} else {
 	_holder setVariable["claimed",0,true];
 	cutText [localize "STR_DAYZ_CODE_2", "PLAIN DOWN"];

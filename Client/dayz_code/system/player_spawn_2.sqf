@@ -352,10 +352,10 @@ while {true} do {
             player setWeaponReloadingTime [player,currentWeapon player,0.8];
         };
         if (_currentWep == "MeleeMachete") then {
-            player setWeaponReloadingTime [player,currentWeapon player,0.8];
+            player setWeaponReloadingTime [player,currentWeapon player,0.55];
         };
         if (_currentWep == "MeleeCrowbar") then {
-            player setWeaponReloadingTime [player,currentWeapon player,0.8];
+            player setWeaponReloadingTime [player,currentWeapon player,0.7];
         };
     };
 	//Hatchet ammo fix	

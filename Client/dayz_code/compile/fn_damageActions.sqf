@@ -106,7 +106,7 @@ if (_hasPatient and !r_drag_sqf and !r_action and !_inVehicle and !r_player_unco
 		r_player_actions set [count r_player_actions,_action];
 	};
 	//Allow player to administer Survival Pack
-	if(_unconscious and _hasSPack) then {
+	if(((_legsBroke or _armsBroke) or (_inPain) or (_injured) or (_lowBlood)) and _hasSPack) then {
 		r_action = true;
 		_action = _unit addAction ["Give Survival Pack", "\z\addons\dayz_code\medical\spack.sqf",[_unit], 0, true, true];
 		r_player_actions set [count r_player_actions,_action];
