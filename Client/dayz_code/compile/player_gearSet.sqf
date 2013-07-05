@@ -1,4 +1,4 @@
-private["_inventory","_wpns","_mags","_idc","_isOK","_val","_item","_x"];
+private["_inventory","_wpns","_mags","_idc","_isOK","_val","_item","_x","_vest1"];
 _inventory = _this;
 if (count _inventory > 0) then {
 	_wpns = _inventory select 0;
@@ -7,19 +7,14 @@ if (count _inventory > 0) then {
 	//Add weapons
 	{
 		if (_x == "Crossbow") then { _x = "Crossbow_DZ" }; // Convert Crossbow to Crossbow_DZ
-        if (_x in ["V_PlateCarrier1_rgr_AiA","V_PlateCarrier2_rgr","V_PlateCarrierGL_rgr","V_HarnessO_brn","V_HarnessOGL_brn"]) then {
+        if ((_x isKindOf "Vest_NoCamo_Base") or (_x isKindOf "Vest_Camo_Base")) then {
             player addVest _x;
         } else {
-            if (_x == "NVGoggles") then {
-                player addItem _x;
-                player assignItem _x;
-            } else {
-                //Is item legal?
-                _isOK = 	isClass(configFile >> "CfgWeapons" >> _x);
-                if (_isOK) then {
-                    player addWeapon _x;
-                };
-            };
+		//Is item legal?
+		_isOK = 	isClass(configFile >> "CfgWeapons" >> _x);
+		if (_isOK) then {
+			player addWeapon _x;
+		};
         };
 	} forEach _wpns;
     
@@ -37,7 +32,8 @@ if (count _inventory > 0) then {
 		};
 
 		if (_item == "BoltSteel") then { _item = "WoodenArrow" }; // Convert BoltSteel to WoodenArrow
-
+		_vest1 = vest player;
+		WaitUntil {!isnil "_vest1"};
 		//Is item legal?
 		_isOK = 	isClass(configFile >> "CfgMagazines" >> _item);
 		if (_isOK) then {
