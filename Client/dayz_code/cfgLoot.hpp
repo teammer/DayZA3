@@ -169,7 +169,7 @@ food[] = {
 			0.2,
 			0.3,
 			0.1,
-			0.03
+			0.02
 		}
 	};
 	hospital[] = {
@@ -189,7 +189,7 @@ food[] = {
 			0.09,
 			0.17,
 			0.12,
-			0.1
+			0.05
 		}
 	};
 	military[] = {
@@ -235,7 +235,8 @@ food[] = {
                         "Chemlight_green",
 			"ItemHeatPack",
 			"FoodMRE",
-			"SurvivalPack"
+			"SurvivalPack",
+            "10Rnd_86x70_L115A1"
 		},
 		{
 			0.18,
@@ -276,7 +277,8 @@ food[] = {
             0.01,
 			0.04,
 			0.03,
-			0.05
+			0.05,
+            0.02
 		}
 	};
 	policeman[] = {
