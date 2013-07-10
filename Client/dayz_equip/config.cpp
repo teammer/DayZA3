@@ -618,38 +618,6 @@ class cfgWeapons {
 		showToPlayer = false;
 	};
 	
-	class ItemToolbox : ItemCore {
-		scope = public;
-		displayName = $STR_EQUIP_NAME_2;
-		model = "\dayz_equip\models\toolbox.p3d";
-		picture = "\dayz_equip\textures\equip_toolbox_ca.paa";
-		descriptionShort = $STR_EQUIP_DESC_2;
-	};
-	
-	class ItemEtool : ItemCore {
-		scope = public;
-		displayName = $STR_EQUIP_NAME_1;
-		model = "\dayz_equip\models\etool.p3d";
-		picture = "\dayz_equip\textures\equip_etool_ca.paa";
-		descriptionShort = $STR_EQUIP_DESC_1;
-	};
-	
-	class ItemMatchbox : ItemCore {
-		scope = public;
-		displayName = $STR_EQUIP_NAME_3;
-		model = "\dayz_equip\models\matchbox_gear.p3d";
-		picture = "\dayz_equip\textures\equip_matchbox_ca.paa";
-		descriptionShort = $STR_EQUIP_DESC_3;
-		
-		class ItemActions {
-			class Use {
-				text = $STR_ACTIONS_LIGHTFIRE;
-				script = "spawn player_makeFire;";
-				use[] = {"PartWoodPile"};
-			};
-		};
-	};
-	
 	class ItemHatchet : ItemCore {
 		scope = public;
 		displayName = $STR_EQUIP_NAME_41;
@@ -670,14 +638,6 @@ class cfgWeapons {
 				output[] = {"MeleeHatchet"};
 			};
 		};
-	};
-	
-	class ItemKnife : ItemCore {
-		scope = public;
-		displayName = $STR_EQUIP_NAME_4;
-		model = "\dayz_equip\models\knife_gear.p3d";
-		picture = "\dayz_equip\textures\equip_knife_ca.paa";
-		descriptionShort = $STR_EQUIP_DESC_4;
 	};
 	
 	class ItemFlashlight : ItemCore {
@@ -793,6 +753,53 @@ class cfgWeapons {
 
 class CfgMagazines {
 	class CA_Magazine;	// External class reference
+	
+	class Utility : CA_Magazine {
+		scope = public;         
+		count = 1;
+		type = 256;
+        mass = 1;
+		displayName = "";
+		model = "";
+		picture = "";
+		descriptionShort = "";
+	};
+    
+	class ItemKnife : Utility {
+		scope = public;              
+        mass = 4;
+		displayName = $STR_EQUIP_NAME_4;
+		model = "\dayz_equip\models\knife_gear.p3d";
+		picture = "\dayz_equip\textures\equip_knife_ca.paa";
+		descriptionShort = $STR_EQUIP_DESC_4;
+	};
+	
+	class ItemToolbox : Utility {
+		scope = public;
+        mass = 10;
+		displayName = $STR_EQUIP_NAME_2;
+		model = "\dayz_equip\models\toolbox.p3d";
+		picture = "\dayz_equip\textures\equip_toolbox_ca.paa";
+		descriptionShort = $STR_EQUIP_DESC_2;
+	};
+	
+	class ItemEtool : Utility {
+		scope = public;
+        mass = 10;
+		displayName = $STR_EQUIP_NAME_1;
+		model = "\dayz_equip\models\etool.p3d";
+		picture = "\dayz_equip\textures\equip_etool_ca.paa";
+		descriptionShort = $STR_EQUIP_DESC_1;
+	};
+	
+	class ItemMatchbox : Utility {
+		scope = public;
+        mass = 1;
+		displayName = $STR_EQUIP_NAME_3;
+		model = "\dayz_equip\models\matchbox_gear.p3d";
+		picture = "\dayz_equip\textures\equip_matchbox_ca.paa";
+		descriptionShort = $STR_EQUIP_DESC_3;
+	};
 	
 	class 20Rnd_556x45_Stanag : CA_Magazine {
 		scope = public;
@@ -1689,7 +1696,7 @@ class CfgVehicles {
 		model = "\dayz_equip\proxy\toolbox.p3d";
 		
 		class eventHandlers {
-			init = "[(_this select 0),'cfgWeapons','ItemToolbox'] execVM '\z\addons\dayz_code\init\object_pickupAction.sqf';";
+			init = "[(_this select 0),'cfgMagazines','ItemToolbox'] execVM '\z\addons\dayz_code\init\object_pickupAction.sqf';";
 		};
 	};
 	

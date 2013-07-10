@@ -1,7 +1,7 @@
 private["_item","_hasKnife","_hasKnifeBlunt","_hasHarvested","_qty","_text","_string","_type"];
 _item = _this select 3;
-_hasKnife = 	"ItemKnife" in items player;
-_hasKnifeBlunt = 	"ItemKnifeBlunt" in items player;
+_hasKnife = 	"ItemKnife" in magazines player;
+_hasKnifeBlunt = 	"ItemKnifeBlunt" in magazines player;
 _type = typeOf _item;
 _hasHarvested = _item getVariable["meatHarvested",false];
 _isPlayer = typeOf _item in AllPlayers_A3;

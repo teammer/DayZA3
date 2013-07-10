@@ -58,7 +58,7 @@ if(_classname isKindOf "Bag_Base_EP1") then {
 };
 
 _config = (configFile >> _type >> _classname);
-    if !(_classname in ["ItemMap","ItemCompass","ItemWatch","ItemGPS","NVGoggles"]) then {
+    if !(_classname in ["NVGoggles"]) then {
 _isOk = [player,_config] call BIS_fnc_invAdd;
 if (_isOk) then {
 	deleteVehicle _holder;
@@ -80,7 +80,10 @@ if (_hasMeleeNo) then {
     holderPickup = _holder;
     PickupClass = _classname;
 		[] spawn {
-            if ((loadVest player <= 0.93) or (loadBackpack player <= 0.93)) then {
+        _vWeight = loadVest player;
+        _bWeight = loadBackpack player;
+        waitUntil{(!isNil "_vWeight") and (!isNil "_bWeight")};
+            if ((_vWeight <= 0.93) or (_bWeight <= 0.93)) then {
                 deleteVehicle holderPickup;
                 player addMagazine PickupClass;
             } else {
