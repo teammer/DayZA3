@@ -11,7 +11,7 @@ Camo1_DZ = 		"Camo1_DZ";
 Soldier1_DZ = 	"Soldier1_DZ";
 Rocket_DZ = 	"Rocket_DZ";
 
-AllPlayers_A3 = ["Bandit1_DZ","BanditW1_DZ","Survivor2_DZ","SurvivorW2_DZ","Sniper1_DZ","Camo1_DZ","Rocket_DZ"];
+AllPlayers_A3 = ["Bandit1_DZ","BanditW1_DZ","Survivor2_DZ","SurvivorW2_DZ","Sniper1_DZ","Camo1_DZ","Rocket_DZ","Survivor3_DZ"];
 AllPlayers = ["Soldier_Crew_PMC","Sniper1_DZ","Camo1_DZ","Soldier1_DZ","Rocket_DZ"];
 AllPlayersVehicles = ["Soldier_Crew_PMC","Sniper1_DZ","Camo1_DZ","Soldier1_DZ","Rocket_DZ","AllVehicles"];
 
@@ -179,6 +179,7 @@ dayz_resetSelfActions = {
 	s_player_boil =			-1;
 	s_player_fireout =		-1;
 	s_player_butcher =		-1;
+	s_player_stealclothes =	-1;
 	s_player_packtent = 	-1;
 	s_player_fillwater =	-1;
 	s_player_fillwater2 = 	-1;

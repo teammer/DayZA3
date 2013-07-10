@@ -384,6 +384,7 @@ if (_canPickLightR and !dayz_hasLight) then {
 
 if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4)) then {	//Has some kind of target
 	_isHarvested = cursorTarget getVariable["meatHarvested",false];
+	_isTakeable = cursorTarget getVariable["clothesTaken",false];
 	_isVehicle = cursorTarget isKindOf "AllVehicles";
 	_isVehicletype = typeOf cursorTarget in ["ATV_US_EP1","ATV_CZ_EP1"];
 	_isMan = cursorTarget isKindOf "Man";
@@ -392,6 +393,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 	_isDog =  (cursorTarget isKindOf "DZ_Pastor" || cursorTarget isKindOf "DZ_Fin");
 	_isZombie = cursorTarget isKindOf "zZombie_base";
 	_isPlayer = typeOf cursorTarget in AllPlayers_A3;
+	_hasClothes = typeOf cursorTarget in ["Camo1_DZ","Sniper1_DZ","Bandit1_DZ","Survivor2_DZ","Survivor3_DZ"];
 	_isDestructable = cursorTarget isKindOf "BuiltItems";
 	_isTent = cursorTarget isKindOf "TentStorage";
 	_isFuel = false;
@@ -462,6 +464,15 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 	} else {
 		player removeAction s_player_butcher;
 		s_player_butcher = -1;
+	};
+    
+	if (!alive cursorTarget and _isPlayer and _hasClothes and !_isTakeable and _canDo) then {
+		if (s_player_stealclothes < 0) then {
+			s_player_stealclothes = player addAction ["Take Clothes", "\z\addons\dayz_code\actions\gather_clothes.sqf",cursorTarget, 3, true, true, "", ""];
+		};
+	} else {
+		player removeAction s_player_stealclothes;
+		s_player_stealclothes = -1;
 	};
 	
 	//Fireplace Actions check
@@ -649,6 +660,8 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 	s_player_deleteBuild = -1;
 	player removeAction s_player_butcher;
 	s_player_butcher = -1;
+	player removeAction s_player_stealclothes;
+	s_player_stealclothes = -1;
 	player removeAction s_player_cook;
 	s_player_cook = -1;
 	player removeAction s_player_boil;
