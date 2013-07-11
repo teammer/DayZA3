@@ -32,7 +32,8 @@ class CfgLoot {
 			"2Rnd_shotgun_74Pellets",
 			"ItemBandage",
 			"ItemPainkiller",
-            "SurvivalPack"
+            "SurvivalPack",
+            "16Rnd_9x21_Mag"
 		},
 		{
 			0.09,
@@ -50,6 +51,7 @@ class CfgLoot {
 			0.05,
 			0.06,
 			0.06,
+            0.01,
             0.01
 		}
 	};
@@ -119,7 +121,8 @@ food[] = {
                         "Chemlight_yellow",
                         "Chemlight_red",
                         "Chemlight_green",
-			"ItemHeatPack"
+			"ItemHeatPack",
+            "16Rnd_9x21_Mag"
 		},
 		{
 			0.06,
@@ -149,7 +152,8 @@ food[] = {
 			0.01,
 			0.01,
             0.01,
-			0.04
+			0.04,
+            0.03
 		}
 	};
 	medical[] = {
@@ -236,7 +240,12 @@ food[] = {
 			"ItemHeatPack",
 			"FoodMRE",
 			"SurvivalPack",
-            "10Rnd_86x70_L115A1"
+            "10Rnd_86x70_L115A1",
+            "30Rnd_9x19_UZI_SD",
+            "100Rnd_762x54_PK",
+            "75Rnd_545x39_RPK",
+            "16Rnd_9x21_Mag",
+            "30Rnd_9x21_Mag"
 		},
 		{
 			0.18,
@@ -250,24 +259,24 @@ food[] = {
 			0.04,
 			0.04,
 			0.05,
-			0.01,
-			0.02,
-			0.04,
-			0.04,
-			0.01,
-			0.01,
-			0.04,
-			0.01,
-			0.01,
-			0.01,
-			0.01,
-			0.01,
-			0.01,
-			0.04,
 			0.02,
 			0.02,
 			0.04,
+			0.04,
+			0.03,
 			0.01,
+			0.04,
+			0.01,
+			0.01,
+			0.01,
+			0.01,
+			0.01,
+			0.01,
+			0.04,
+			0.02,
+			0.02,
+			0.04,
+			0.03,
 			0.02,
 			0.01,
 			0.01,
@@ -278,7 +287,12 @@ food[] = {
 			0.04,
 			0.03,
 			0.05,
-            0.02
+            0.02,
+            0.01,
+            0.005,
+            0.01,
+            0.05,
+            0.01
 		}
 	};
 	policeman[] = {
@@ -293,7 +307,8 @@ food[] = {
                         "Chemlight_yellow",
                         "Chemlight_red",
                         "Chemlight_green",
-                        "SurvivalPack"
+                        "SurvivalPack",
+            "16Rnd_9x21_Mag"
 		},
 		{
 			1,
@@ -305,7 +320,8 @@ food[] = {
 			0.01,
 			0.01,
             0.01,
-            0.01
+            0.01,
+            0.03
 		}
 	};
 	hunter[] = {
@@ -318,7 +334,8 @@ food[] = {
 			"WoodenArrow",
 			"ItemHeatPack",
 			"FoodMRE",
-			"FoodNutmix"
+			"FoodNutmix",
+            "16Rnd_9x21_Mag"
 		},
 		{
 			1,
@@ -329,7 +346,8 @@ food[] = {
 			1,
 			0.2,
 			0.04,
-			0.1
+			0.1,
+            0.02
 		}
 	};
 };
