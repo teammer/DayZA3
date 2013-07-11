@@ -140,4 +140,28 @@ class CfgWeapons {
     class ChemlightBlueMuzzle_DZ: ChemlightGreenMuzzle_DZ {
         magazines[] = {"Chemlight_blue_DZ"};
     };
+    class M9SD;
+    class UZI_SD_EP1;
+    class bizon_silenced;
+    class M4A1_AIM_SD_camo;
+    class MP5SD;
+    class SCAR_L_CQC_CCO_SD;
+    class M9DZ_DZ : M9SD {
+        magazines[] = {"15Rnd_9x19_M9SD","15Rnd_9x19_M9"};
+    };
+    class UZI_SD_DZ : UZI_SD_EP1 {
+        magazines[] = {"30Rnd_9x19_UZI","30Rnd_9x19_UZI_SD","17Rnd_9x19_glock17","30Rnd_9x19_MP5","30Rnd_9x19_MP5SD","15Rnd_9x19_M9","15Rnd_9x19_M9SD"};
+    };
+    class bizon_silenced_DZ : bizon_silenced {
+        magazines[] = {"64Rnd_9x19_Bizon","64Rnd_9x19_SD_Bizon"};
+    };
+    class M4A1_AIM_SD_camo_DZ : M4A1_AIM_SD_camo {
+        magazines[] = {"30Rnd_556x45_Stanag","30Rnd_556x45_StanagSD","20Rnd_556x45_Stanag","30Rnd_556x45_G36","100Rnd_556x45_BetaCMag","30Rnd_556x45_G36SD"};
+    };
+    class MP5SD_DZ : MP5SD {
+        magazines[] = {"30Rnd_9x19_UZI","30Rnd_9x19_MP5","17Rnd_9x19_glock17","30Rnd_9x19_MP5SD","30Rnd_9x19_UZI_SD","15Rnd_9x19_M9SD"};
+    };
+    class SCAR_L_CQC_CCO_SD_DZ : SCAR_L_CQC_CCO_SD {
+        magazines[] = {"30Rnd_556x45_Stanag","30Rnd_556x45_StanagSD","20Rnd_556x45_Stanag","30Rnd_556x45_G36","100Rnd_556x45_BetaCMag","30Rnd_556x45_G36SD"};
+    };
 };

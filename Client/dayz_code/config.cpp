@@ -657,7 +657,7 @@ class CfgBuildingLoot {
 			{"M9","weapon"},
 			{"M16A2","weapon"},
 			{"M16A2GL","weapon"},
-			{"M9SD","weapon"},
+			{"M9SD_DZ","weapon"},
 			{"AK_74","weapon"},
 			{"M4A1_Aim","weapon"},
 			{"AKS_74_kobra","weapon"},
@@ -673,31 +673,26 @@ class CfgBuildingLoot {
 			{"Remington870_lamp","weapon"},
 			{"glock17_EP1","weapon"},
 			{"MP5A5","weapon"},
-			{"MP5SD","weapon"},
+			{"MP5SD_DZ","weapon"},
 			{"M4A3_CCO_EP1","weapon"},
 			{"Binocular","weapon"},
 			{"ItemFlashlightRed","military"},
 			{"ItemKnife","military"},
 			{"ItemGPS","vest"},
 			{"ItemMap","vest"},
-			
-			//Normal
 			{"","medical"},
 			{"","generic"},
 			{"","military"},
-			//{"Body","object"},
 			{"ItemEtool","magazine"},
 			{"ItemSandbag","magazine"},
 			{"Sa58P_EP1","weapon"},
 			{"Sa58V_EP1","weapon"},
 			{"BAF_L85A2_RIS_Holo","weapon"},
 			{"NVGoggles","weapon"},
-			
 			{"V_PlateCarrier2_rgr","vest"}, // 20
 			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
 			{"V_HarnessO_brn","vest"}, // 25.7
 			{"V_HarnessOGL_brn","vest"}, // 28.6
-			
 			{"DZ_ALICE_Pack_A3","backpack"}, // 16
 			{"DZ_TK_Assault_Pack_A3","backpack"}, // 16
 			{"DZ_British_ACU_A3","backpack"}, // 18
@@ -705,12 +700,11 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_A3","backpack"}, // 24
 			{"DZ_DJ_Pack_A3","backpack"}, // 24
 			{"SCAR_L_CQC","weapon"},
-			{"SCAR_L_CQC_CCO_SD","weapon"},
-            
+			{"SCAR_L_CQC_CCO_SD_DZ","weapon"},
 			{"BAF_LRR_scoped_DZ","weapon"},
 			{"M8_compact","weapon"},
 			{"M8_sharpshooter","weapon"},
-			{"UZI_SD_EP1","weapon"},
+			{"UZI_SD_DZ","weapon"},
 			{"hgun_Rook40_F","weapon"},
 			{"hgun_P07_F","weapon"},
 			{"hgun_ACPC2_F","weapon"},
@@ -746,10 +740,9 @@ class CfgBuildingLoot {
 			0.10,
 			0.01,
 			0.05,
-			0.10, 
+			0.10,
 			1.00,
 			2.50,
-			//0.20,
 			0.05,
 			0.02,
 			0.03,
@@ -764,12 +757,10 @@ class CfgBuildingLoot {
             0.03,
             0.015,
             0.02,
-            0.07,
 			0.01,
             0.008,
 			0.05,
             0.01,
-            
             0.005,
 			0.10,
             0.05,
@@ -794,7 +785,7 @@ class CfgBuildingLoot {
 			{"M16A2","weapon"},
 			{"M16A2GL","weapon"},
 			{"M249_DZ","weapon"},
-			{"M9SD","weapon"},
+			{"M9SD_DZ","weapon"},
 			{"AK_74","weapon"},
 			{"M4A1_Aim","weapon"},
 			{"AKS_74_kobra","weapon"},
@@ -812,7 +803,7 @@ class CfgBuildingLoot {
 			{"Remington870_lamp","weapon"},
 			{"glock17_EP1","weapon"},
 			{"M240_DZ","weapon"},
-			{"M4A1_AIM_SD_camo","weapon"},
+			{"M4A1_AIM_SD_camo_DZ","weapon"},
 			{"M16A4_ACG","weapon"},
 			{"M4A1_HWS_GL_camo","weapon"},
 			{"Mk_48_DZ","weapon"},
@@ -829,7 +820,6 @@ class CfgBuildingLoot {
 			{"","medical"},
 			{"","generic"},
 			{"","military"},
-			//{"Body","object"},
 			{"PipeBomb","magazine"},
 			{"Sa58V_RCO_EP1","weapon"},
 			{"Sa58V_CCO_EP1","weapon"},
@@ -846,11 +836,11 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_A3","backpack"}, // 24
 			{"DZ_DJ_Pack_A3","backpack"}, // 24
 			{"SCAR_L_CQC","weapon"},
-			{"SCAR_L_CQC_CCO_SD","weapon"},
+			{"SCAR_L_CQC_CCO_SD_DZ","weapon"},
 			{"BAF_LRR_scoped_DZ","weapon"},
 			{"M8_compact","weapon"},
 			{"M8_sharpshooter","weapon"},
-			{"UZI_SD_EP1","weapon"},
+			{"UZI_SD_DZ","weapon"},
 			{"hgun_Rook40_F","weapon"},
 			{"hgun_P07_F","weapon"},
 			{"hgun_ACPC2_F","weapon"},
@@ -900,8 +890,7 @@ class CfgBuildingLoot {
 			5.00, //military
 			0.01, //PipeBomb
 			0.01, //Sa58V_RCO_EP1
-			0.01, //Sa58V_CCO_EP1
-			//0.01, //{"G36_C_SD_camo","weapon"},
+			0.01, //Sa58V_RCO_EP1
 			0.02, // M40A3
 			0.01,	//("100Rnd_762x54_PK","magazine"}
             0.06,
@@ -912,7 +901,6 @@ class CfgBuildingLoot {
             0.03,
             0.015,
             0.02,
-            0.07,
 			0.01,
             0.008,
             0.05,
