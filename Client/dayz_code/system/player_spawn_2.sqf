@@ -7,6 +7,8 @@ _lastTemp = dayz_temperatur;
 _debug = getMarkerpos "respawn_west";
 _isBandit = false;
 _isHero = false;
+_isAssassin = false;
+_isGuardian = false;
 
 player setVariable ["temperature",dayz_temperatur,true];
 
@@ -81,33 +83,56 @@ while {true} do {
 		};
 	};
 	
-	if (_humanity < -2000 and !_isBandit) then {
-		_isBandit = true;
+	if (_humanity > -8000 and !_isAssassin) then {
+		_isBandit = false;
+        _isHero = false;
+        _isGuardian = false;
+        _isAssassin = true;
 		_model = typeOf player;
-		if (_model == "Survivor2_DZ") then {
+		if ((_model == "Survivor2_DZ") or (_model == "Bandit1_DZ") or (_model == "Survivor3_DZ") or (_model == "Survivor4_DZ")) then {
+			[dayz_playerUID,dayz_characterID,"Bandit2_DZ"] spawn player_humanityMorph;
+		};
+	};
+	
+	if (_humanity > -8000 and _humanity < -2000 and !_isBandit) then {
+		_isBandit = true;
+        _isHero = false;
+        _isGuardian = false;
+        _isAssassin = false;
+		_model = typeOf player;
+		if ((_model == "Survivor2_DZ") or (_model == "Bandit2_DZ") or (_model == "Survivor3_DZ") or (_model == "Survivor4_DZ")) then {
 			[dayz_playerUID,dayz_characterID,"Bandit1_DZ"] spawn player_humanityMorph;
 		};
-		if (_model == "SurvivorW2_DZ") then {
-			[dayz_playerUID,dayz_characterID,"BanditW1_DZ"] spawn player_humanityMorph;
-		};
 	};
 	
-	if (_humanity > 0 and _isBandit) then {
+	if (_humanity > 0 and (_isBandit or _isAssassin)) then {
 		_isBandit = false;
+        _isAssassin = false;
 		_model = typeOf player;
-		if (_model == "Bandit1_DZ") then {
+		if ((_model == "Bandit1_DZ") or (_model == "Bandit2_DZ")) then {
 			[dayz_playerUID,dayz_characterID,"Survivor2_DZ"] spawn player_humanityMorph;
 		};
-		if (_model == "BanditW1_DZ") then {
-			[dayz_playerUID,dayz_characterID,"SurvivorW2_DZ"] spawn player_humanityMorph;
+	};
+	
+	if (_humanity < 12000 and _humanity > 5000 and !_isHero) then {
+		_isBandit = false;
+        _isHero = true;
+        _isGuardian = false;
+        _isAssassin = false;
+		_model = typeOf player;
+		if ((_model == "Survivor2_DZ") or (_model == "Bandit1_DZ") or (_model == "Bandit2_DZ") or (_model == "Survivor4_DZ")) then {
+			[dayz_playerUID,dayz_characterID,"Survivor3_DZ"] spawn player_humanityMorph;
 		};
 	};
 	
-	if (_humanity > 5000 and !_isHero) then {
+	if (_humanity > 12000 and !_isGuardian) then {
 		_isBandit = false;
+        _isHero = false;
+        _isGuardian = true;
+        _isAssassin = false;
 		_model = typeOf player;
-		if (_model == "Survivor2_DZ") then {
-			[dayz_playerUID,dayz_characterID,"Survivor3_DZ"] spawn player_humanityMorph;
+		if ((_model == "Survivor2_DZ") or (_model == "Bandit1_DZ") or (_model == "Bandit2_DZ") or (_model == "Survivor3_DZ")) then {
+			[dayz_playerUID,dayz_characterID,"Survivor4_DZ"] spawn player_humanityMorph;
 		};
 	};
 	

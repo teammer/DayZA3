@@ -21,6 +21,8 @@ _myModel = (typeOf player);
 _humanity = player getVariable ["humanity",0];
 _isBandit = _humanity < -2000;
 _isHero = _humanity > 5000;
+_isGuardian = _humanity > 12000;
+_isAssassin = _humanity < -10000;
 _itemNew = "Skin_" + _myModel;
 
 if ( !(isClass(_config >> _itemNew)) ) then {
@@ -39,11 +41,17 @@ switch (_item) do {
 	};
 	case "Skin_Survivor2_DZ": {
 		_model = "Survivor2_DZ";
-		if (_isBandit) then {
+		if (_isBandit and !_isAssassin) then {
 			_model = "Bandit1_DZ";
 		};
-		if (_isHero) then {
+		if (_isHero and !_isGuardian) then {
 			_model = "Survivor3_DZ";
+		};
+		if (_isBandit and _isAssassin) then {
+			_model = "Bandit2_DZ";
+		};
+		if (_isHero and _isGuardian) then {
+			_model = "Survivor4_DZ";
 		};
 	};
 };

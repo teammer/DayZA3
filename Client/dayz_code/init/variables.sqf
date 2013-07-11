@@ -11,7 +11,7 @@ Camo1_DZ = 		"Camo1_DZ";
 Soldier1_DZ = 	"Soldier1_DZ";
 Rocket_DZ = 	"Rocket_DZ";
 
-AllPlayers_A3 = ["Bandit1_DZ","BanditW1_DZ","Survivor2_DZ","SurvivorW2_DZ","Sniper1_DZ","Camo1_DZ","Rocket_DZ","Survivor3_DZ"];
+AllPlayers_A3 = ["Bandit1_DZ","BanditW1_DZ","Survivor2_DZ","SurvivorW2_DZ","Sniper1_DZ","Camo1_DZ","Rocket_DZ","Survivor3_DZ","Bandit2_DZ","Survivor4_DZ"];
 AllPlayers = ["Soldier_Crew_PMC","Sniper1_DZ","Camo1_DZ","Soldier1_DZ","Rocket_DZ"];
 AllPlayersVehicles = ["Soldier_Crew_PMC","Sniper1_DZ","Camo1_DZ","Soldier1_DZ","Rocket_DZ","AllVehicles"];
 
