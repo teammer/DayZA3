@@ -64,6 +64,16 @@ _newDest = getPosATL _agent;
 _agent setVariable ["myDest",_myDest];
 _agent setVariable ["newDest",_newDest];
 
+//Start A3 items fix
+_agent removeWeapon "ItemMap";
+_agent removeWeapon "ItemWatch";
+_agent removeWeapon "ItemCompass";
+removeAllWeapons _agent;
+removeAllItems _agent;
+removeUniform _agent;
+removeAllAssignedItems _agent;
+//End A3 items fix
+
 //Add some loot
 _rnd = random 1;
 if (_rnd > 0.3) then {
@@ -79,15 +89,6 @@ if (_rnd > 0.3) then {
 	};
 };
 
-//Start A3 items fix
-_agent removeWeapon "ItemMap";
-_agent removeWeapon "ItemWatch";
-_agent removeWeapon "ItemCompass";
-removeAllWeapons _agent;
-removeAllItems _agent;
-removeUniform _agent;
-removeAllAssignedItems _agent;
-//End A3 items fix
 
 //Start behavior
 _id = [_position,_agent] execFSM "\z\AddOns\dayz_code\system\zombie_agent.fsm";
