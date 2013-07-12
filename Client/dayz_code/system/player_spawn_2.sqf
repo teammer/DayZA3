@@ -23,6 +23,7 @@ while {true} do {
 	_size = 	(sizeOf typeOf _refObj) * 0.6;
 	_vel = 		velocity player;
 	_speed = 	round((_vel distance [0,0,0]) * 3.5);
+    _typeOf =    typeOf player;
 	_saveTime = 5;
     if ((playersNumber west > 10) and (playersNumber west <= 20)) then {
     _saveTime = 10;
@@ -74,10 +75,10 @@ while {true} do {
 	};
 	
 	_humanity = player getVariable ["humanity",0];
-	if (_timeOut > 150) then {
+	if ((_timeOut > 300) and (_typeOf != "Bandit2_DZ")) then {
 		_timeOut = 0;
 		if (_humanity < 2500) then {
-			_humanity = _humanity + 150;
+			_humanity = _humanity + 100;
 			_humanity = _humanity min 2500;
 			player setVariable ["humanity",_humanity,true];
 		};
