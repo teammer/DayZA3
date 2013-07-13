@@ -33,7 +33,7 @@ class CfgLoot {
 			"ItemBandage",
 			"ItemPainkiller",
             "SurvivalPack",
-            "16Rnd_9x21_Mag"
+            "9Rnd_45ACP_Mag"
 		},
 		{
 			0.09,
@@ -122,7 +122,7 @@ food[] = {
                         "Chemlight_red",
                         "Chemlight_green",
 			"ItemHeatPack",
-            "16Rnd_9x21_Mag"
+            "9Rnd_45ACP_Mag"
 		},
 		{
 			0.06,
@@ -244,7 +244,7 @@ food[] = {
             "30Rnd_9x19_UZI_SD",
             "100Rnd_762x54_PK",
             "75Rnd_545x39_RPK",
-            "16Rnd_9x21_Mag",
+            "9Rnd_45ACP_Mag",
             "30Rnd_9x21_Mag",
             "30Rnd_65x39_caseless_mag"
 		},
@@ -310,7 +310,7 @@ food[] = {
                         "Chemlight_red",
                         "Chemlight_green",
                         "SurvivalPack",
-            "16Rnd_9x21_Mag"
+            "9Rnd_45ACP_Mag"
 		},
 		{
 			1,
@@ -337,7 +337,7 @@ food[] = {
 			"ItemHeatPack",
 			"FoodMRE",
 			"FoodNutmix",
-            "16Rnd_9x21_Mag"
+            "9Rnd_45ACP_Mag"
 		},
 		{
 			1,

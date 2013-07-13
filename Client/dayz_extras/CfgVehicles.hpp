@@ -15,7 +15,7 @@ class CfgVehicles {
 		camouflage = 0.6;	// how dificult to spot - bigger - better spotable
 		sensitivity = 2;	// sensor sensitivity
 		faction = PMC_BAF;
-		identityTypes[] = {"Language_BAF", "Head_RU_Camo", "USMC_Glasses"};
+		identityTypes[] = {"Language_BAF","USMC_Glasses"};
 		faceType = "Man";
 		
 		class HitHead {
@@ -61,6 +61,8 @@ class CfgVehicles {
 	class Soldier_Crew_PMC;
 	class Bandit2_DZ : Soldier_Crew_PMC {
         scope = public;
+		identityTypes[] = {"Language_BAF","Language_EN_EP1","USMC_Glasses","PMC_Glasses_PMC"};
+		faceType = "Man";
 		hiddenSelections[] = {"_middlearm", "_lowerroll", "_middleroll"};
 		displayName = "Assassin";
 		side = 1;

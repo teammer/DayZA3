@@ -1393,6 +1393,9 @@ class CfgVehicles {
 	class Soldier_Crew_PMC;	// External class reference
 	
 	class Survivor1_DZ : Soldier_Crew_PMC {
+        scope = 2;
+		identityTypes[] = {"Language_BAF","Language_EN_EP1","USMC_Glasses","PMC_Glasses_PMC"};
+		faceType = "Man";
 		displayName = $STR_CHAR_1;
 		side = TWest;
 		weapons[] = {"Throw", "Put"};
@@ -1405,6 +1408,9 @@ class CfgVehicles {
 	};
 	
 	class Survivor2_DZ : Soldier_Crew_PMC {
+        scope = 2;
+		identityTypes[] = {"Language_BAF","Language_EN_EP1","USMC_Glasses","PMC_Glasses_PMC"};
+		faceType = "Man";
 		displayName = $STR_CHAR_1;
 		side = TWest;
 		weapons[] = {"Throw", "Put"};
@@ -1417,6 +1423,9 @@ class CfgVehicles {
 	};
 	
 	class Survivor3_DZ : Survivor2_DZ {
+        scope = 2;
+		identityTypes[] = {"Language_BAF","Language_EN_EP1","USMC_Glasses","PMC_Glasses_PMC"};
+		faceType = "Man";
 		displayName = "Hero";
 		model = "\dayz\characters\man_hero";
 		HiddenSelections[] = {"camo1", "camo2", "camo3"};

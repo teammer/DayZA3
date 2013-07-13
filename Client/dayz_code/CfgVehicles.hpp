@@ -1,7 +1,7 @@
 class CfgVehicles {
 	class Citizen1;	// External class reference
 	class zZombie_Base : Citizen1 {
-		scope = public;
+		scope = 2;
 		glassesEnabled = 0;
 		vehicleClass = "Zombie";
 		displayName = "Zombie";
@@ -14,7 +14,11 @@ class CfgVehicles {
 		magazines[] = {};
 		sensitivity = 4;	// sensor sensitivity
 		sensitivityEar = 2;
-		identityTypes[] = {"zombie1", "zombie2"};
+		identityTypes[] = {"zombie1","zombie2"};
+		model = "\ca\characters2\civil\Villager\Villager";
+		hiddenSelections[] = {"Camo"};
+		hiddenSelectionsTextures[] = {"\ca\characters2\civil\villager\data\villager_v3_co.paa"};
+		faceType = "Man";
 		class TalkTopics {};
 		languages[] = {};
 		
@@ -604,6 +608,10 @@ class CfgVehicles {
 
 	class Soldier_Crew_PMC;
 	class Bandit1_DZ : Soldier_Crew_PMC {
+        scope = 2;
+		identityTypes[] = {"Language_BAF","Language_EN_EP1","USMC_Glasses","PMC_Glasses_PMC"};
+		faceType = "Man";
+		hiddenSelections[] = {"_middlearm", "_lowerroll", "_middleroll"};
 		displayName = "$STR_CHAR_2";
 		side = 1;
 		weapons[] = {"Throw","Put"};
@@ -619,6 +627,10 @@ class CfgVehicles {
 
 	class BAF_Soldier_Officer_W;
 	class Rocket_DZ: BAF_Soldier_Officer_W {
+        scope = 2;
+		identityTypes[] = {"Language_BAF","Language_EN_EP1","USMC_Glasses","PMC_Glasses_PMC"};
+		faceType = "Man";
+		hiddenSelections[] = {"_middlearm", "_lowerroll", "_middleroll"};
 		displayName = "Rocket";
 		side = 1;
 		weapons[] = {"Throw","Put"};
@@ -643,7 +655,24 @@ class CfgVehicles {
 	};
 	class BAF_Soldier_SniperH_W;
 	class Sniper1_DZ: BAF_Soldier_SniperH_W {
+        scope = 2;
+		identityTypes[] = {"Language_BAF","Language_EN_EP1","USMC_Glasses","PMC_Glasses_PMC"};
+		faceType = "Man";
 		displayName = "Sniper";
+        hiddenselections[] = {"Camo"};
+        hiddenselectionstextures[] = {"\ca\characters_W_baf\data\Ghillie_Overall2_co.paa","\ca\characters_W_baf\data\armour_dpm_co.paa","\ca\characters_W_baf\data\equip_dpm_co.paa"};
+        vehicleclass = "MenW";
+        
+        model = "\ca\characters_e\Ghillie\Ghillie_Overall";
+        picture = "\Ca\characters\data\Ico\i_null_CA.paa";
+        portrait = "\Ca\characters\data\portraits\comBarHead_common_sniper_ca";
+        accuracy = 3.9;
+        camouflage = 0.5;
+        textplural = "Snipers";
+        textsingular = "Sniper";
+        cancarrybackpack = 1;
+        faction = "BIS_BAF";
+        
 		side = 1;
 		weapons[] = {"Throw","Put"};
 		backpack = "";
@@ -652,9 +681,30 @@ class CfgVehicles {
 		respawnMagazines[] = {};
 		weaponSlots = "1	 + 	4	 + 12*		256	 + 2*	4096	 + 	2	 + 8*	16  + 12*131072";
 		canHideBodies = 1;
+        class Wounds {
+            mat[] = {"ca\characters_d_baf\Data\armour.rvmat","ca\characters_d_baf\Data\W1_armour.rvmat","ca\characters_d_baf\Data\W2_armour.rvmat","ca\characters_d_baf\Data\camo.rvmat", "ca\characters_d_baf\Data\W1_camo.rvmat","ca\characters_d_baf\Data\W2_camo.rvmat"};
+            tex[] = {};
+        };
 	};
 	class BAF_Soldier_L_W;
 	class Camo1_DZ: BAF_Soldier_L_W {
+        scope = 2;
+		identityTypes[] = {"Language_BAF","Language_EN_EP1","USMC_Glasses","PMC_Glasses_PMC"};
+		faceType = "Man";
+        hiddenselections[] = {"Camo","Camo2","Camo3"};
+        hiddenselectionstextures[] = {"\ca\characters_W_baf\data\camo_dpm_co.paa","\ca\characters_W_baf\data\armour_dpm_co.paa","\ca\characters_W_baf\data\equip_dpm_co.paa"};
+        vehicleclass = "MenW";
+        
+        icon = "\Ca\characters2\data\icon\i_soldier_CA.paa";
+        model = "\ca\characters_d_BAF\BAF_Soldier_light_BAF";
+        picture = "\Ca\characters\data\Ico\i_null_CA.paa";
+        portrait = "ca\characters_d_baf\Data\portraits\baf_soldier_CA";
+        accuracy = 2;
+        camouflage = 1.4;
+        cancarrybackpack = 1;
+        expansion = 2;
+        faction = "BIS_BAF";
+        
 		displayName = "Survivor";
 		side = 1;
 		weapons[] = {"Throw","Put"};
@@ -664,6 +714,10 @@ class CfgVehicles {
 		respawnMagazines[] = {};
 		weaponSlots = "1	 + 	4	 + 12*		256	 + 2*	4096	 + 	2	 + 8*	16  + 12*131072";
 		canHideBodies = 1;
+        class Wounds {
+            mat[] = {"ca\characters_d_baf\Data\armour.rvmat","ca\characters_d_baf\Data\W1_armour.rvmat","ca\characters_d_baf\Data\W2_armour.rvmat","ca\characters_d_baf\Data\camo.rvmat","ca\characters_d_baf\Data\W1_camo.rvmat", "ca\characters_d_baf\Data\W2_camo.rvmat"};
+            tex[] = {};
+        };
 	};	
 	class Bag_Base_EP1;
 	class Bag_Base_BAF;
