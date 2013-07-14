@@ -245,7 +245,7 @@ food[] = {
             "100Rnd_762x54_PK",
             "75Rnd_545x39_RPK",
             "9Rnd_45ACP_Mag",
-            "30Rnd_9x21_Mag",
+            "16Rnd_9x21_Mag",
             "30Rnd_65x39_caseless_mag"
 		},
 		{

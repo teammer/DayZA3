@@ -30,6 +30,7 @@ private ["_primweapon","_secweapon"];
 
 	_primweapon	= primaryWeapon player;
 	_secweapon	= secondaryWeapon player;
+    _weapons = [];
 
 	//Checks
 	if(!(_primweapon in _weapons) && _primweapon != "") then {

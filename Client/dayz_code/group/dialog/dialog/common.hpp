@@ -371,9 +371,9 @@ class w_RscButton : w_RscButtonBase {
 	class TextPos {
 	
 		left = 0.002;
-		top = 0.014;
+		top = 0.004;
 		right = 0.002;
-		bottom = 0.005;
+		bottom = -0.005;
 	};
 	
 	animTextureNormal = "\ca\ui\data\igui_button_normal_ca.paa";

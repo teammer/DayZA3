@@ -389,7 +389,7 @@ class CfgBuildingLoot {
 			{"WeaponHolder_PartVRotor","object"},
 			{"WeaponHolder_ItemJerrycan","object"},
 			{"WeaponHolder_ItemHatchet","object"},
-			{"ItemKnife","military"},
+			{"ItemKnife","magazine"},
 			{"ItemToolbox","magazine"},
 			{"ItemWire","magazine"},
 			{"ItemTankTrap","magazine"}
@@ -533,7 +533,7 @@ class CfgBuildingLoot {
 			{"","military"},
 			{"","medical"},
 			{"MedBox0","object"},
-			{"NVGoggles","weapon"},
+			{"NVGoggles","vest"},
 			{"AmmoBoxSmall_556","object"},
 			{"AmmoBoxSmall_762","object"},
 			{"Skin_Camo1_DZ","magazine"},
@@ -567,10 +567,9 @@ class CfgBuildingLoot {
 			0.05,	//Skin_Sniper1_DZ
 			0.03,	//G36C"
 			0.02,	//G36C_camo
-			//0.01,	//G36_C_SD_camo
 			0.02,	//G36A_camo
 			0.02,	//G36K_camo,
-            0.04
+            0.04,
 			0.03	//("100Rnd_762x54_PK","magazine"}
 		};
 	};
@@ -592,7 +591,7 @@ class CfgBuildingLoot {
 			{"","military"},
 			{"","medical"},
 			{"MedBox0","object"},
-			{"NVGoggles","weapon"},
+			{"NVGoggles","vest"},
 			{"AmmoBoxSmall_556","object"},
 			{"AmmoBoxSmall_762","object"},
 			{"Skin_Camo1_DZ","magazine"},
@@ -677,7 +676,7 @@ class CfgBuildingLoot {
 			{"M4A3_CCO_EP1","weapon"},
 			{"Binocular","weapon"},
 			{"ItemFlashlightRed","military"},
-			{"ItemKnife","military"},
+			{"ItemKnife","magazine"},
 			{"ItemGPS","vest"},
 			{"ItemMap","vest"},
 			{"","medical"},
@@ -688,7 +687,7 @@ class CfgBuildingLoot {
 			{"Sa58P_EP1","weapon"},
 			{"Sa58V_EP1","weapon"},
 			{"BAF_L85A2_RIS_Holo","weapon"},
-			{"NVGoggles","weapon"},
+			{"NVGoggles","vest"},
 			{"V_PlateCarrier2_rgr","vest"}, // 20
 			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
 			{"V_HarnessO_brn","vest"}, // 25.7
@@ -810,10 +809,10 @@ class CfgBuildingLoot {
 			{"M4A3_CCO_EP1","weapon"},
 			{"AmmoBoxSmall_556","object"},
 			{"AmmoBoxSmall_762","object"},
-			{"NVGoggles","weapon"},
+			{"NVGoggles","vest"},
 			{"Binocular","weapon"},
 			{"ItemFlashlightRed","military"},
-			{"ItemKnife","military"},
+			{"ItemKnife","magazine"},
 			{"ItemGPS","vest"},
 			{"ItemMap","vest"},
 			{"Binocular_Vector","military"},

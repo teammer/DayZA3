@@ -84,8 +84,8 @@ if (!isNull _nearLightR) then {
 
 _getTextZ =     getText (_config >> "displayName");
 //End of Code
-_hasKnife = 	"ItemKnife" in items player;
-_hasToolbox = 	"ItemToolbox" in items player;
+_hasKnife = 	"ItemKnife" in magazines player;
+_hasToolbox = 	"ItemToolbox" in magazines player;
 _hasTent = 		"ItemTent" in magazines player;
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 

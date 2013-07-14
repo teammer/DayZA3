@@ -11,6 +11,7 @@ class GroupManagement {
 	idd = gDialog;
 	movingEnable = true;
 	enableSimulation = true;
+    onUnload = "gActive = false;";
 	
 	class controlsBackground {
 		
@@ -47,7 +48,7 @@ class GroupManagement {
 		class CloseButton : w_RscButton {
 			idc = -1;
 			text = "Close";
-			onButtonClick = "closeDialog 0; groupManagmentActive = false;";
+			onButtonClick = "closeDialog 0; gActive = false;";
 			x = 0.02; y = 0.68;
 			w = 0.125; h = 0.033 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};

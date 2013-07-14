@@ -84,7 +84,7 @@ while {true} do {
 		};
 	};
 	
-	if (_humanity > -8000 and !_isAssassin) then {
+	if (_humanity < -12000 and !_isAssassin) then {
 		_isBandit = false;
         _isHero = false;
         _isGuardian = false;
@@ -95,7 +95,7 @@ while {true} do {
 		};
 	};
 	
-	if (_humanity > -8000 and _humanity < -2000 and !_isBandit) then {
+	if (_humanity > -12000 and _humanity < -2000 and !_isBandit) then {
 		_isBandit = true;
         _isHero = false;
         _isGuardian = false;
@@ -115,7 +115,7 @@ while {true} do {
 		};
 	};
 	
-	if (_humanity < 12000 and _humanity > 5000 and !_isHero) then {
+	if (_humanity < 15000 and _humanity > 5000 and !_isHero) then {
 		_isBandit = false;
         _isHero = true;
         _isGuardian = false;
@@ -126,7 +126,7 @@ while {true} do {
 		};
 	};
 	
-	if (_humanity > 12000 and !_isGuardian) then {
+	if (_humanity > 15000 and !_isGuardian) then {
 		_isBandit = false;
         _isHero = false;
         _isGuardian = true;
