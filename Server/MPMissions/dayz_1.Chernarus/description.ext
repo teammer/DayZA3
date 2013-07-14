@@ -1,7 +1,7 @@
 respawn = "BASE";
 respawndelay = 5;
 author = "Zoombies Development Team";
-onLoadName = "DayZA3_Chernarus";
+onLoadName = "DayZA3 Chernarus";
 OnLoadIntro = "Thank you for helping";
 OnLoadIntroTime = False;
 OnLoadMissionTime = False;
