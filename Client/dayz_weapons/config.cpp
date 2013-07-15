@@ -508,6 +508,7 @@ class cfgWeapons {
         mass = 50;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
+            mass = 50;
         };
 	};
 	class M24_des;	// External class reference
@@ -517,6 +518,7 @@ class cfgWeapons {
         mass = 50;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
+            mass = 50;
         };
 	};
 	class M4SPR;	// External class reference
@@ -527,6 +529,7 @@ class cfgWeapons {
         magazines[] = {"20Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_StanagSD", "30Rnd_556x45_G36", "30Rnd_556x45_G36SD"};
         class WeaponSlotsInfo {
             allowedslots[] = {901};
+            mass = 30;
         };
 	};
 	class SVD_Camo;	// External class reference
@@ -536,6 +539,7 @@ class cfgWeapons {
         mass = 50;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
+            mass = 50;
         };
 	};
 	class DMR;	// External class reference
@@ -545,6 +549,7 @@ class cfgWeapons {
         mass = 40;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
+            mass = 40;
         };
 	};
 	class huntingrifle;	// External class reference
@@ -554,6 +559,7 @@ class cfgWeapons {
         mass = 40;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
+            mass = 40;
         };
 	};
 	class LeeEnfield;	// External class reference
@@ -563,6 +569,7 @@ class cfgWeapons {
         mass = 30;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
+            mass = 30;
         };
 	};
 	class M14_EP1;	// External class reference
@@ -572,6 +579,7 @@ class cfgWeapons {
         mass = 40;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
+            mass = 40;
         };
 	};
 	class BAF_LRR_scoped;	// External class reference
@@ -582,6 +590,7 @@ class cfgWeapons {
         mass = 100;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
+            mass = 100;
         };
 	};
 	class M107;	// External class reference
@@ -589,6 +598,9 @@ class cfgWeapons {
 	class M107_DZ : M107 {
 		type = "1";
         mass = 100;
+        class WeaponSlotsInfo {
+            mass = 100;
+        };
 	};
 	class m107_TWS_EP1;	// External class reference
 	
