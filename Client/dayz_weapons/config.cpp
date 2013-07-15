@@ -511,9 +511,9 @@ class cfgWeapons {
             mass = 50;
         };
 	};
-	class M24_des;	// External class reference
+	class M24_des_EP1;	// External class reference
 	
-	class M24_des_DZ : M24_des {
+	class M24_des_DZ : M24_des_EP1 {
 		type = "1";
         mass = 50;
         class WeaponSlotsInfo {
