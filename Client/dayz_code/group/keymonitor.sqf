@@ -17,7 +17,6 @@ Bindings_A3 =
 		};
 		case 208:
 		{
-            closeDialog 0;
             [] execVM "\z\addons\dayz_code\ammo\listB.sqf";
 		};
 		case 38:

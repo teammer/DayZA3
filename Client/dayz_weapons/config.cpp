@@ -505,6 +505,7 @@ class cfgWeapons {
 	
 	class M24_DZ : M24 {
 		type = "1";
+        mass = 50;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
         };
@@ -513,6 +514,7 @@ class cfgWeapons {
 	
 	class M24_des_DZ : M24_des {
 		type = "1";
+        mass = 50;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
         };
@@ -521,6 +523,7 @@ class cfgWeapons {
 	
 	class M4SPR_DZ : M4SPR {
 		type = "1";
+        mass = 30;
         magazines[] = {"20Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_StanagSD", "30Rnd_556x45_G36", "30Rnd_556x45_G36SD"};
         class WeaponSlotsInfo {
             allowedslots[] = {901};
@@ -530,6 +533,7 @@ class cfgWeapons {
 	
 	class SVD_Camo_DZ : SVD_Camo {
 		type = "1";
+        mass = 50;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
         };
@@ -538,6 +542,7 @@ class cfgWeapons {
 	
 	class DMR_DZ : DMR {
 		type = "1";
+        mass = 40;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
         };
@@ -546,6 +551,7 @@ class cfgWeapons {
 	
 	class huntingrifle_DZ : huntingrifle {
 		type = "1";
+        mass = 40;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
         };
@@ -554,6 +560,7 @@ class cfgWeapons {
 	
 	class LeeEnfield_DZ : LeeEnfield {
 		type = "1";
+        mass = 30;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
         };
@@ -562,6 +569,7 @@ class cfgWeapons {
 	
 	class M14_EP1_DZ : M14_EP1 {
 		type = "1";
+        mass = 40;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
         };
@@ -571,6 +579,7 @@ class cfgWeapons {
 	class BAF_LRR_scoped_DZ : BAF_LRR_scoped {
 		type = "1";
         magazines[] = {"10Rnd_86x70_L115A1"};
+        mass = 100;
         class WeaponSlotsInfo {
             allowedslots[] = {901};
         };
@@ -579,6 +588,7 @@ class cfgWeapons {
 	
 	class M107_DZ : M107 {
 		type = "1";
+        mass = 100;
 	};
 	class m107_TWS_EP1;	// External class reference
 	

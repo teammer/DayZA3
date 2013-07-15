@@ -7,6 +7,7 @@
     #define c2_list 2504
     disableSerialization;
     
+	fnc_inString = 				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_inString.sqf";
     _cbArray = ["5Rnd_762x51_M24","30Rnd_556x45_Stanag","6Rnd_45ACP","17Rnd_9x19_glock17","WoodenArrow","2Rnd_shotgun_74Slug","2Rnd_shotgun_74Pellets","15Rnd_9x19_M9SD","15Rnd_9x19_M9","9Rnd_45ACP_Mag","7Rnd_45ACP_1911","16Rnd_9x21_Mag"];
     _cbArray2 = ["20Rnd_762x51_DMR","20Rnd_762x51_FNFAL","7Rnd_45ACP_1911","200Rnd_556x45_M249","30Rnd_9x19_UZI","Quiver","8Rnd_B_Beneli_Pellets","8Rnd_B_Beneli_74Slug","30Rnd_9x19_MP5","30Rnd_9x19_MP5SD","64Rnd_9x19_SD_Bizon","16Rnd_9x21_Mag","17Rnd_9x19_glock17","9Rnd_45ACP_Mag","15Rnd_9x19_M9SD","30Rnd_556x45_G36","30Rnd_556x45_G36SD","30Rnd_556x45_StanagSD"];
 
@@ -49,24 +50,19 @@
             case "30Rnd_556x45_Stanag":
             {
                 _result = "30Rnd_556x45_Stanag";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 6;
                 if (_input == "30Rnd_556x45_StanagSD") then {  _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))); };
+                if (_input == "30Rnd_556x45_G36") then {  _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))); };
+                if (_input == "30Rnd_556x45_G36SD") then {  _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))); };
+                
                 
                 [_result, _amount, _input, _required] call _createPile;
             };
             case "5Rnd_762x51_M24":
             {
                 _result = "5Rnd_762x51_M24";
-                _required = 1;
-                _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 4;
-                
-                [_result, _amount, _input, _required] call _createPile;
-            };
-            case "5Rnd_762x51_M24":
-            {
-                _result = "5Rnd_762x51_M24";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 4;
                 
                 [_result, _amount, _input, _required] call _createPile;
@@ -74,15 +70,18 @@
             case "6Rnd_45ACP":
             {
                 _result = "6Rnd_45ACP";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player)));
+                if (_input == "16Rnd_9x21_Mag") then {
+                _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 3;
+                };
                 
                 [_result, _amount, _input, _required] call _createPile;
             };
             case "17Rnd_9x19_glock17":
             {
                 _result = "17Rnd_9x19_glock17";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 2;
                 if (_input == "64Rnd_9x19_SD_Bizon") then {
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 4;
@@ -93,7 +92,7 @@
             case "15Rnd_9x19_M9":
             {
                 _result = "15Rnd_9x19_M9";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 2;
                 if (_input == "64Rnd_9x19_SD_Bizon") then {
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 4;
@@ -107,7 +106,7 @@
             case "9Rnd_45ACP_Mag":
             {
                 _result = "9Rnd_45ACP_Mag";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 2;
                 
                 [_result, _amounst, _input, _required] call _createPile;
@@ -115,7 +114,7 @@
             case "7Rnd_45ACP_1911":
             {
                 _result = "7Rnd_45ACP_1911";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 if (_input == "16Rnd_9x21_Mag") then {
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 2;
@@ -126,7 +125,7 @@
             case "15Rnd_9x19_M9SD":
             {
                 _result = "15Rnd_9x19_M9SD";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 2;
                 if (_input == "64Rnd_9x19_SD_Bizon") then {
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 4;
@@ -140,7 +139,7 @@
             case "30Rnd_556x45_G36SD":
             {
                 _result = "30Rnd_556x45_G36SD";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 
                 [_result, _amount, _input, _required] call _createPile;
@@ -148,7 +147,7 @@
             case "30Rnd_556x45_StanagSD":
             {
                 _result = "30Rnd_556x45_StanagSD";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 
                 [_result, _amount, _input, _required] call _createPile;
@@ -156,7 +155,7 @@
             case "30Rnd_556x45_G36":
             {
                 _result = "30Rnd_556x45_G36";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 
                 [_result, _amount, _input, _required] call _createPile;
@@ -164,7 +163,7 @@
             case "2Rnd_shotgun_74Pellets":
             {
                 _result = "2Rnd_shotgun_74Pellets";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 4;
                 
                 [_result, _amount, _input, _required] call _createPile;
@@ -172,7 +171,7 @@
             case "2Rnd_shotgun_74Slug":
             {
                 _result = "2Rnd_shotgun_74Slug";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 4;
                 
                 [_result, _amount, _input, _required] call _createPile;
@@ -180,7 +179,7 @@
             case "WoodenArrow":
             {
                 _result = "WoodenArrow";
-                _required = 1;
+                _required = ({_x == _input} count ((vestItems player) + (backpackItems player)));
                 _amount = ({_x == _input} count ((vestItems player) + (backpackItems player))) * 6;
                 
                 [_result, _amount, _input, _required] call _createPile;

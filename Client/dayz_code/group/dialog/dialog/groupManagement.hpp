@@ -11,7 +11,6 @@ class GroupManagement {
 	idd = gDialog;
 	movingEnable = true;
 	enableSimulation = true;
-    onUnload = "gActive = false;";
 	
 	class controlsBackground {
 		

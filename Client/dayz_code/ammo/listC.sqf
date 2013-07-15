@@ -7,6 +7,7 @@
     #define c2_list 2504
     disableSerialization;
     
+	closeDialog 0;
     _start = createDialog "combineManagement";
     _dialog = findDisplay Combine_Display;
     _playerListBox = _dialog displayCtrl c1_list;
@@ -28,7 +29,7 @@ while{combineActive} do
                 _index = _playerListBox lbAdd format["[%1] %2",({_x == _mag} count ((vestItems player) + (backpackItems player))),_name];
                 _playerListBox lbSetData [_index, _x]; 
                 _playerListBox lbSetPicture [_index, _pic]; 
-                if (!(_x in _cbArray) or (player getVariable["combattimeout", 0] >= time)) then {
+                if (!(_x in _cbArray)) then {
                     _playerListBox lbSetColor [_index, [0.8,0.1,0.1,1]];
                 };
             };

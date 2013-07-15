@@ -83,7 +83,6 @@ class breakManagement {
 	idd = 2551;
 	movingEnable = true;
 	enableSimulation = true;
-    onUnload = "breakActive = false; breakActive2 = false;";
 	
 	class controlsBackground {
 		class RscTitleBackground:a_RscText {
@@ -205,7 +204,7 @@ class breakManagement {
 			idc = -1;
 			text = "Close";
             style = 2;
-			onButtonClick = "closeDialog 0;";
+			onButtonClick = "closeDialog 0; breakActive = false; breakActive2 = false;";
 			x = 0.1;
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
@@ -229,7 +228,6 @@ class combineManagement {
 	idd = 2552;
 	movingEnable = true;
 	enableSimulation = true;
-    onUnload = "combineActive = false; combineActive2 = false;";
 	
 	class controlsBackground {
 		class RscTitleBackground:a_RscText {
@@ -350,7 +348,7 @@ class combineManagement {
 			idc = -1;
 			text = "Close";
             style = 2;
-			onButtonClick = "closeDialog 0;";
+			onButtonClick = "closeDialog 0; combineActive = false; combineActive2 = false;";
 			x = 0.1;
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);

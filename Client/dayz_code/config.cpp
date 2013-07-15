@@ -317,9 +317,8 @@ class CfgBuildingLoot {
 			{"","generic"},
 			{"LeeEnfield_DZ","weapon"},
 			{"revolver_EP1","weapon"},
-			
 			{"Winchester1866","weapon"},
-			{"WeaponHolder_ItemTent","object"},
+			{"ItemTent","magazine"},
 			{"","military"},
 			{"","trash"},
 			{"Crossbow_DZ","weapon"},
@@ -327,9 +326,8 @@ class CfgBuildingLoot {
 			{"PartWoodPile","magazine"},
 			{"Skin_Camo1_DZ","magazine"},
 			{"Skin_Sniper1_DZ","magazine"},
-			{"WeaponHolder_ItemCrowbar","object"},
+			{"MeleeCrowbar","weaponNA"},
 			{"MR43","weapon"},
-            
 			{"DZ_Assault_Pack_A3","backpack"},
 			{"DZ_Czech_Vest_Pouch_A3","backpack"},
 			{"DZ_ALICE_Pack_A3","backpack"},
@@ -360,7 +358,6 @@ class CfgBuildingLoot {
 			0.01,
 			0.08,
 			0.03,
-
             0.04,
             0.05,
             0.02,
@@ -381,14 +378,14 @@ class CfgBuildingLoot {
 			{"","generic"},
 			{"","trash"},
 			{"","military"},
-			{"WeaponHolder_PartGeneric","object"},
-			{"WeaponHolder_PartWheel","object"},
-			{"WeaponHolder_PartFueltank","object"},
-			{"WeaponHolder_PartEngine","object"},
-			{"WeaponHolder_PartGlass","object"},
-			{"WeaponHolder_PartVRotor","object"},
-			{"WeaponHolder_ItemJerrycan","object"},
-			{"WeaponHolder_ItemHatchet","object"},
+			{"PartGeneric","magazine"},
+			{"PartWheel","magazine"},
+			{"PartFueltank","magazine"},
+			{"PartEngine","magazine"},
+			{"PartGlass","magazine"},
+			{"PartVRotor","magazine"},
+			{"ItemJerrycan","magazine"},
+			{"MeleeHatchet","weaponNA"},
 			{"ItemKnife","magazine"},
 			{"ItemToolbox","magazine"},
 			{"ItemWire","magazine"},
@@ -419,7 +416,7 @@ class CfgBuildingLoot {
 		lootChance = 0.5;
 		lootPos[] = {};
 		itemType[] =	{
-			{"WeaponHolder_ItemJerrycan","object"},
+			{"ItemJerrycan","magazine"},
 			{"","generic"},
 			{"huntingrifle_DZ","weapon"},
 			{"LeeEnfield_DZ","weapon"},
@@ -427,9 +424,9 @@ class CfgBuildingLoot {
 			{"","trash"},
 			{"Crossbow_DZ","weapon"},
 			{"PartWoodPile","magazine"},
-			{"WeaponHolder_ItemHatchet","object"},
+			{"MeleeHatchet","weaponNA"},
 			{"MR43","weapon"},
-			{"WeaponHolder_ItemMachete"},
+			{"MeleeMachete","weaponNA"},
 			{"hgun_ACPC2_F","weapon"}
 		};
 		itemChance[] =	{
@@ -466,19 +463,16 @@ class CfgBuildingLoot {
 			{"","generic"},
 			{"LeeEnfield_DZ","weapon"},
 			{"revolver_EP1","weapon"},
-			
 			{"Winchester1866","weapon"},
-			{"WeaponHolder_ItemTent","object"},
+			{"ItemTent","magazine"},
 			{"","food"},
 			{"","trash"},
 			{"Crossbow_DZ","weapon"},
 			{"Binocular","weapon"},
 			{"PartWoodPile","magazine"},
 			{"MR43","weapon"},
-			
 			{"V_PlateCarrier2_rgr","vest"}, // 20
 			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
-			
 			{"DZ_Assault_Pack_A3","backpack"},
 			{"DZ_Czech_Vest_Pouch_A3","backpack"},
 			{"DZ_ALICE_Pack_A3","backpack"},
@@ -931,7 +925,7 @@ class CfgBuildingLoot {
 			{"ItemMatchbox","magazine"},
 			{"Crossbow_DZ","weapon"},
 			{"","military"},
-			{"WeaponHolder_ItemMachete", "object"},
+			{"MeleeMachete", "weaponNA"},
 			{"huntingrifle_DZ","weapon"},
 			{"","hunter"},
 			{"DZ_DJ_Pack_A3","backpack"}, // 24
@@ -1109,6 +1103,130 @@ class CfgBuildingLoot {
 		maxRoaming = 2;
 	};
 	class Land_Mil_Barracks_i: MilitarySpecial {
+        itemType[] = {
+			{"M9","weapon"},
+			{"M16A2","weapon"},
+			{"M16A2GL","weapon"},
+			{"M9SD_DZ","weapon"},
+			{"AK_74","weapon"},
+			{"M4A1_Aim","weapon"},
+			{"AKS_74_kobra","weapon"},
+			{"AKS_74_U","weapon"},
+			{"AK_47_M","weapon"},
+			{"M24_DZ","weapon"},
+			{"M24_des_DZ","weapon"},
+			{"M1014","weapon"},
+			{"DMR_DZ","weapon"},
+			{"M4A1","weapon"},
+			{"M14_EP1_DZ","weapon"},
+			{"UZI_EP1","weapon"},
+			{"Remington870_lamp","weapon"},
+			{"glock17_EP1","weapon"},
+			{"MP5A5","weapon"},
+			{"MP5SD_DZ","weapon"},
+			{"M4A3_CCO_EP1","weapon"},
+			{"Binocular","weapon"},
+			{"ItemFlashlightRed","military"},
+			{"ItemKnife","magazine"},
+			{"ItemGPS","vest"},
+			{"ItemMap","vest"},
+			{"","medical"},
+			{"","generic"},
+			{"","military"},
+			{"ItemEtool","magazine"},
+			{"ItemSandbag","magazine"},
+			{"Sa58P_EP1","weapon"},
+			{"Sa58V_EP1","weapon"},
+			{"BAF_L85A2_RIS_Holo","weapon"},
+			{"NVGoggles","vest"},
+			{"V_PlateCarrier2_rgr","vest"}, // 20
+			{"V_PlateCarrierGL_rgr","vest"}, // 21.7
+			{"V_HarnessO_brn","vest"}, // 25.7
+			{"V_HarnessOGL_brn","vest"}, // 28.6
+			{"DZ_ALICE_Pack_A3","backpack"}, // 16
+			{"DZ_TK_Assault_Pack_A3","backpack"}, // 16
+			{"DZ_British_ACU_A3","backpack"}, // 18
+			{"DZ_CivilBackpack_A3","backpack"}, // 2    4
+			{"DZ_Backpack_A3","backpack"}, // 24
+			{"DZ_DJ_Pack_A3","backpack"}, // 24
+			{"SCAR_L_CQC","weapon"},
+			{"SCAR_L_CQC_CCO_SD_DZ","weapon"},
+			{"BAF_LRR_scoped_DZ","weapon"},
+			{"M8_compact","weapon"},
+			{"M8_sharpshooter","weapon"},
+			{"UZI_SD_DZ","weapon"},
+			{"hgun_Rook40_F","weapon"},
+			{"hgun_P07_F","weapon"},
+			{"hgun_ACPC2_F","weapon"},
+			{"M4SPR_DZ","weapon"},
+			{"PK","weapon"},
+			{"RPK_74","weapon"},
+            {"arifle_MXC_F","weapon"},
+            {"G36_C_SD_eotech","weapon"},
+            {"G36C","weapon"}
+		};
+		itemChance[] =	{
+			0.05,
+			0.05,
+			0.01,
+			0.02,
+			0.15,
+			0.01,
+			0.08,
+			0.05,
+			0.05,
+			0.01,
+			0.01,
+			0.10,
+			0.01,
+			0.02,
+			0.01,
+			0.05,
+			0.08,
+			0.10,
+			0.04,
+			0.02,
+			0.01,
+			0.06,
+			0.10,
+			0.10,
+			0.01,
+			0.05,
+			0.10,
+			1.00,
+			2.50,
+			0.05,
+			0.02,
+			0.03,
+			0.03,
+			0.01,
+			0.04,
+            0.06,
+            0.04,
+            0.02,
+            0.01,
+            0.04,
+            0.03,
+            0.015,
+            0.02,
+			0.01,
+            0.008,
+			0.05,
+            0.01,
+            0.005,
+			0.10,
+            0.05,
+            0.02,
+            0.06,
+            0.06,
+            0.06,
+            0.05,
+            0.005,
+            0.01,
+            0.03,
+            0.01,
+            0.03
+		};
 		lootPos[] = {{5.39038,-1.75684,-1.09824},{1.46753,-0.131836,-1.09824},{1.29395,-2.16211,-1.09824},{-1.78394,-0.168945,-1.09824},{-1.80615,-1.97656,-1.09824},{-4.77881,0.0488281,-1.09824},{-5.39258,-2.11816,-1.09824},{-5.47046,2.58105,-1.09824},{-8.32593,-0.144531,-1.09824},{-9.14966,-2.55859,-1.09824},{-1.95288,2.57715,-1.09824},{5.46362,2.57813,-1.09824}};
 	};	//Qty: 2
 	class Land_A_TVTower_Base: Industrial {
@@ -1139,9 +1257,12 @@ class CfgBuildingLoot {
 	class Land_HouseV2_01A: Residential {
 		lootPos[] = {{-3.52881,-3.16895,-5.60346},{-1.62988,-3.25439,-5.66887}};
 	};
+	class Land_HouseV2_03B: Residential {
+		lootPos[] = {{8.27686, 1.19458, -5.52877},{-0.234863, -9.3894, -5.56337},{-8.43604, 3.13452, -5.63438}};
+	};
 	class Land_psi_bouda: Residential {
 		maxRoaming = 4;
-		lootPos[] = {{-1.77002,-1.45166,1.95942}};
+		lootPos[] = {{1.40967, -0.09375, -0.518358}};
 	}; // Qty: 183
 	class Land_KBud: Residential {
 		zombieChance = 0.3;
@@ -1173,11 +1294,11 @@ class CfgBuildingLoot {
 	}; // Qty: 3
 	class Land_HouseV_3I4: Residential {
 		maxRoaming = 3;
-		lootPos[] = {};
+		lootPos[] = {{6.52051, 2.70215, -3.15404},{-4.39331, 5.21387, -3.1841}};
 	}; // Qty: 103
-	class Land_Shed_W4: Residential {
+	class Land_Shed_W4: Industrial {
 		maxRoaming = 3;
-		lootPos[] = {};
+		lootPos[] = {{-0.512939, -6.86328, -1.45507}};
 	}; // Qty: 172
 	class Land_HouseV_3I1: Residential {
 		maxRoaming = 3;
@@ -1189,7 +1310,7 @@ class CfgBuildingLoot {
 	}; // Qty: 101
 	class Land_HouseV_1T: Residential {
 		maxRoaming = 3;
-		lootPos[] = {};
+		lootPos[] = {{3.47217, -2.13794, -3.22656},{-4.78027, 7.23071, -3.2254}};
 	}; // Qty: 90
 	class Land_telek1: Industrial {
 		maxRoaming = 3;
@@ -1198,9 +1319,9 @@ class CfgBuildingLoot {
 	class Land_Rail_House_01: Industrial {
 		lootPos[] = {{2.81152,3.61426,-1.28266},{-1.82178,3.10547,-1.28266},{0.487793,3.38867,-1.28266}};
 	}; // Qty: 9
-	class Land_HouseV_2I: Default {
+	class Land_HouseV_2I: Residential {
 		maxRoaming = 3;
-		lootPos[] = {};
+		lootPos[] = {{-6.22314, -0.326904, -2.94736}};
 	}; // Qty: 83
 	class Land_Misc_deerstand: Hunting {
 		zombieChance = 0.3;
@@ -1270,8 +1391,12 @@ class CfgBuildingLoot {
 		maxRoaming = 2;
 	};
 	class Land_Shed_W03: HouseRoaming {}; // Qty: 206
-	class Land_HouseV_1I3: HouseRoaming {}; // Qty: 117
-	class Land_HouseV_1L1: HouseRoaming {}; // Qty: 97
+	class Land_HouseV_1I3: HouseRoaming {
+        lootPos[] = {{2.15479, -0.999268, -2.1731}};
+    }; // Qty: 117
+	class Land_HouseV_1L1: HouseRoaming {
+        lootPos[] = {{1.63135, 5.57153, -1.0524},{-4.83789, -2.83911, -3.13687}};
+    }; // Qty: 97
 	class Land_HouseV_1I2: HouseRoaming {};
 	class Land_HouseV_2L: HouseRoaming {};
 	class Land_HouseV_2T1: HouseRoaming {};
@@ -1303,7 +1428,9 @@ class CfgBuildingLoot {
 		minRoaming = 2;
 		maxRoaming = 8;
 	}; // Qty: 3
-	class Land_Shed_W02: FarmRoaming {}; // Qty: 213
+	class Land_Shed_W02: FarmRoaming {
+        lootPos[] = {{-3.39941, -0.257324, 0.210454}};
+    }; // Qty: 213
 	//allow 
 	class Grave: HouseRoaming {
 		maxRoaming = 3;
@@ -1317,6 +1444,10 @@ class CfgBuildingLoot {
 	class GraveCrossHelmet: Military {	
 		maxRoaming = 4;
 	};
+    class Land_Ind_IlluminantTower: Military {
+		maxRoaming = 3;
+		lootPos[] = {{-0.120117, 0.208984, -9.70463},{-1.33496, -12.7471, -5.87254},{-7.12793, 8.06641, -5.87254},{9.53809, 5.27979, -5.87254}};
+    };
 };
 
 /*

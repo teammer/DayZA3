@@ -6,7 +6,7 @@
     #define c1_list 2503
     #define c2_list 2504
     disableSerialization;
-    
+    closeDialog 0;
     _start = createDialog "breakManagement";
     _dialog = findDisplay Break_Display;
     _playerListBox = _dialog displayCtrl b1_list;
