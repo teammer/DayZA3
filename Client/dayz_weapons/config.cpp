@@ -242,6 +242,7 @@ class cfgWeapons {
 	
 	class MeleeHatchet : MeleeWeapon {
 		scope = public;
+        type = 4;
 		model = "\dayz_weapons\models\Hatchet_weaponized";
 		picture = "\dayz_equip\textures\equip_hatchet_CA.paa";
 		displayName = $STR_EQUIP_NAME_41;
@@ -276,6 +277,7 @@ class cfgWeapons {
 	
 	class MeleeCrowbar : MeleeHatchet {
 		scope = public;
+        type = 4;
 		model = "\dayz_weapons\models\crowbar_weaponized";
 		picture = "\dayz_weapons\textures\equip_crowbar_CA.paa";
 		displayName = "Crowbar";

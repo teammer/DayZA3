@@ -68,6 +68,7 @@ class CfgWeapons {
 	class MeleeMachete: MeleeHatchet
 	{
 		scope=2;
+        type = 4;
 		autoreload=1;
 		magazineReloadTime=0;
 		model="\z\addons\dayz_communityassets\models\machete_weaponized.p3d";
