@@ -1,3 +1,4 @@
+
 class CfgWeapons {
 	class ItemCore;
 	class ItemMap_Debug: ItemCore {
@@ -27,6 +28,9 @@ class CfgWeapons {
 	class MeleeHatchet: MeleeWeapon
 	{
 		scope=2;
+        type = 4;
+        value = 10;
+        primary = 0;
 		autoreload=1;
 		magazineReloadTime=0;
 		model="\dayz_weapons\models\Hatchet_weaponized";
@@ -41,11 +45,13 @@ class CfgWeapons {
 			"OFP2_ManSkeleton",
 			"\dayz_weapons\anim\melee_hatchet_holding.rtm"
 		};
-            reloadtime = 0.8;
 	};	
 	class MeleeCrowbar: MeleeHatchet
 	{
 		scope=2;
+        type = 4;
+        value = 10;
+        primary = 0;
 		autoreload=1;
 		magazineReloadTime=0;
 		model="\dayz_weapons\models\crowbar_weaponized";
@@ -55,7 +61,6 @@ class CfgWeapons {
 		{
 			"Crowbar_Swing"
 		};
-            reloadtime = 0.8;
 	};	
 	class ItemCrowbar: ItemCore
 	{
@@ -69,6 +74,8 @@ class CfgWeapons {
 	{
 		scope=2;
         type = 4;
+        value = 10;
+        primary = 0;
 		autoreload=1;
 		magazineReloadTime=0;
 		model="\z\addons\dayz_communityassets\models\machete_weaponized.p3d";
@@ -78,7 +85,6 @@ class CfgWeapons {
 		{
 			"Machete_Swing"
 		};
-            reloadtime = 0.8;
 
 	};	
 	class ItemMachete: ItemCore

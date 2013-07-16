@@ -195,7 +195,6 @@ class CfgRecoils {
 
 class cfgWeapons {
 	class Rifle;	// External class reference
-	
 	class MeleeWeapon : Rifle {
 		distanceZoomMin = 50;
 		distanceZoomMax = 50;
@@ -225,7 +224,7 @@ class cfgWeapons {
 			swing1[] = {"dayz_weapons\sounds\swing_1", 1.77828, 1, 30};
 			soundBegin[] = {"swing0", 0.5, "swing1", 0.5};
 			drySound[] = {"", 1};
-			reloadTime = 0;
+			reloadTime = 0.7;
 			reloadMagazineSound[] = {"", 1};
 			showToPlayer = true;
 			minRange = 0;

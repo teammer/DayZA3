@@ -554,6 +554,48 @@ class FSM
        "" \n
        "dayzGearSave = false;" \n
        "removeAllAssignedItems player;" \n
+       "if (isNil 'player_gearSet') then {" \n
+       "player_gearSet = {" \n
+       "private['_inventory','_wpns','_mags','_idc','_isOK','_val','_item','_x','_vest1'];" \n
+       "_inventory = _this;" \n
+       "if (count _inventory > 0) then {" \n
+       "_wpns = _inventory select 0;" \n
+       "_mags = _inventory select 1;" \n
+       "{" \n
+       "if (_x == 'Crossbow') then { _x = 'Crossbow_DZ' };" \n
+       "if (_x in ['V_PlateCarrier1_rgr_AiA','V_PlateCarrier2_rgr','V_PlateCarrierGL_rgr','V_HarnessO_brn','V_HarnessOGL_brn']) then {" \n
+       "player addVest _x;" \n
+       "} else {" \n
+       "_isOK = 	isClass(configFile >> 'CfgWeapons' >> _x);" \n
+       "if (_isOK) then {" \n
+       "player addWeapon _x;" \n
+       "};" \n
+       "};" \n
+       "} forEach _wpns;" \n
+       "{" \n
+       "private['_item','_val'];" \n
+       "_idc = 109;" \n
+       "if (typeName _x == 'ARRAY') then {" \n
+       "_item = _x select 0;" \n
+       "_val = 	_x select 1;" \n
+       "} else {" \n
+       "_item = _x;" \n
+       "_val = -1;" \n
+       "};" \n
+       "if (_item == 'BoltSteel') then { _item = 'WoodenArrow' };" \n
+       "_isOK = 	isClass(configFile >> 'CfgMagazines' >> _item);" \n
+       "if (_isOK) then {" \n
+       "if (_val != -1) then {" \n
+       "player addMagazine [_item,_val];" \n
+       "} else {" \n
+       "player addMagazine _item;" \n
+       "};" \n
+       "};" \n
+       "_idc = _idc + 1;" \n
+       "} forEach _mags;" \n
+       "};" \n
+       "};" \n
+       "};" \n
        "_inventory call player_gearSet;" \n
        "" \n
        "//player addMagazine ""7Rnd_45ACP_1911"";" \n
@@ -675,7 +717,7 @@ class FSM
        "};" \n
        "" \n
        "//Record current weapon state" \n
-       "dayz_myWeapons = 		weapons player;		//Array of last checked weapons" \n
+       "dayz_myWeapons = 		[vest player] + weapons player;		//Array of last checked weapons" \n
        "dayz_myItems = 			items player;		//Array of last checked items" \n
        "dayz_myMagazines = 	magazines player;" \n
        "" \n

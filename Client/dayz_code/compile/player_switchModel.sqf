@@ -29,7 +29,7 @@ private ["_primweapon","_secweapon"];
 //	if ( count _magazines == 0 ) exitWith {cutText ["can't count magazines!", "PLAIN DOWN"]};
 
 	_primweapon	= primaryWeapon player;
-	_secweapon	= secondaryWeapon player;
+	_secweapon	= handgunWeapon player;
     _weapons = [];
 
 	//Checks
@@ -117,7 +117,6 @@ private ["_currentmag","_secmag","_magArray","_vestClass","_magazines","_otherit
 
     removeUniform _newUnit;
     removeHeadgear _newUnit;
-    removeGoggles _newUnit;
     removeVest _newUnit;
     removeAllAssignedItems _newUnit;
 
@@ -132,7 +131,7 @@ private ["_currentmag","_secmag","_magArray","_vestClass","_magazines","_otherit
 		_newUnit addWeapon _primweapon;		
 	};
 
-	if(_secweapon != (secondaryWeapon _newUnit) && _secweapon != "") then {
+	if(_secweapon != (handgunWeapon _newUnit) && _secweapon != "") then {
 		_newUnit addWeapon _secweapon;		
 	};
     
