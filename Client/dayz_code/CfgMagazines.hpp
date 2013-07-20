@@ -375,7 +375,7 @@ class CfgMagazines {
     
     class FoodhumanRaw : FoodmeatRaw {
         mass = 7;
-		displayName = "Cooked Human Flesh";
+		displayName = "Raw Human Flesh";
 		descriptionShort = "Raw flesh from a survivor's body.";
 		bloodRegen = 60;
     };

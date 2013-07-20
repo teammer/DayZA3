@@ -142,8 +142,7 @@ private ["_currentmag","_secmag","_magArray","_vestClass","_magazines","_otherit
             _newVest = vest _newUnit;
             WaitUntil{!isNil "_newVest"};
             {
-                if (typeName _x == "ARRAY") then {_newUnit addMagazine [_x select 0,_x select 1] } else { _newUnit addMagazine _x };
-                //sleep 0.05;
+                if (typeName _x == "ARRAY") then {_newUnit addMagazine [_x select 0,_x select 1]; } else { _newUnit addMagazine _x; };
             } forEach _magazines;
         };
 	};
