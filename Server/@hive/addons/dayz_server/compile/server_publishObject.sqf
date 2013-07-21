@@ -28,6 +28,10 @@ if (_object isKindOf "TentStorage") then {
 	_object addMPEventHandler ["MPKilled",{_this call vehicle_handleServerKilled;}];
 };
 
+if (_object isKindOf "ACampStorage") then {
+	_object addMPEventHandler ["MPKilled",{_this call vehicle_handleServerKilled;}];
+};
+
 dayz_serverObjectMonitor set [count dayz_serverObjectMonitor,_object];
 
 //diag_log ("PUBLISH: Created " + (_class) + " with ID " + _uid);

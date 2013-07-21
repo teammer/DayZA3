@@ -123,6 +123,31 @@ while {combineActive2} do {
                 _playerListBox lbSetPicture [_ind, _pic]; 
                 _playerListBox lbSetColor [_ind, [0.8,0.1,0.1,1]];
                 };
+                
+                _result = "9Rnd_45ACP_Mag";
+                _required = 1;
+                _count = ({_x == _data} count ((vestItems player) + (backpackItems player)));
+                _amount = 0;
+                if ((_count % _required) == 0) then {
+                    _amount = (_count / _required);
+                } else {
+                    _amount =  floor (_count / _required);
+                };
+                
+                if (_required <= ({_x == _data} count ((vestItems player) + (backpackItems player)))) then {
+                _name = getText(configFile >> "cfgMagazines" >> _result >> "displayName");
+                _pic = getText(configFile >> "cfgMagazines" >> _result >> "picture");
+                _ind = _playerListBox lbAdd format["[%1] %2",_amount,_name];
+                _playerListBox lbSetData [_ind, _result];
+                _playerListBox lbSetPicture [_ind, _pic]; 
+                } else {
+                _name = getText(configFile >> "cfgMagazines" >> _result >> "displayName");
+                _pic = getText(configFile >> "cfgMagazines" >> _result >> "picture");
+                _ind = _playerListBox lbAdd format["[%1] %2",0,_name];
+                _playerListBox lbSetData [_ind, _result];
+                _playerListBox lbSetPicture [_ind, _pic]; 
+                _playerListBox lbSetColor [_ind, [0.8,0.1,0.1,1]];
+                };
             };
             case "17Rnd_9x19_glock17":
             {

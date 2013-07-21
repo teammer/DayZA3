@@ -512,6 +512,17 @@ class cfgWeapons {
             mass = 50;
         };
 	};
+    class M40A3;
+    
+    class M40A3_DZ : M40A3 {
+		type = "1";
+        mass = 50;
+        class WeaponSlotsInfo {
+            allowedslots[] = {901};
+            mass = 50;
+        };
+    };
+    
 	class M24_des_EP1;	// External class reference
 	
 	class M24_des_DZ : M24_des_EP1 {

@@ -165,7 +165,7 @@ while {true} do {
 	if (time - dayz_panicCooldown < 120) then {
 		_hunger = _hunger * 2;
 	};
-	dayz_hunger = dayz_hunger + ((_hunger / 60) * 2);
+	dayz_hunger = dayz_hunger + (_hunger / 60);
 
 	//Thirst
 	_thirst = 27;

@@ -15,7 +15,7 @@ Bindings_A3 =
 		{
             [] execVM "\z\addons\dayz_code\group\dialog\groupMenu.sqf";
 		};
-		case 208:
+		case 199:
 		{
             [] execVM "\z\addons\dayz_code\ammo\listB.sqf";
 		};

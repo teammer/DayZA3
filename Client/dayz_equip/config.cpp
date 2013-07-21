@@ -1783,6 +1783,13 @@ class CfgVehicles {
 		transportMaxBackpacks = 5;
 	};
 	
+	class ACampStorage : ACamp {
+		vehicleClass = "Survival";
+		transportMaxMagazines = 100;
+		transportMaxWeapons = 20;
+		transportMaxBackpacks = 10;
+	};
+	
 	class CardboardBox : ReammoBox {
 		accuracy = 1000;	// accuracy needed to recognize type of this target
 		vehicleClass = "Survival";

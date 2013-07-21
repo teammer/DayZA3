@@ -20,7 +20,7 @@ while {alive player} do
 	_distance = _lastpos distance _curpos;
 	_difftime = (_curtime - _lasttime) max 0.001;
 	_speed = _distance / _difftime;
-	_topSpeed = 10;
+	_topSpeed = 150;
 	
 	if (vehicle player != player) then {
 		_topSpeed = getNumber (configFile >> "CfgVehicles" >> typeOf (vehicle player) >> "maxSpeed");

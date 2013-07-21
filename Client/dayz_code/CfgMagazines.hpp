@@ -18,6 +18,17 @@ class CfgMagazines {
 			};
 		};
 	};
+
+	class ItemATent : CA_Magazine {
+		scope = public;
+		count = 1;
+        mass = 20;
+		type = (256 * 3);
+		displayName = "Large Camping Tent";
+		model = "\dayz_equip\models\tentbag_gear.p3d";
+		picture = "\dayz_equip\textures\equip_tentbag_ca.paa";
+		descriptionShort = $STR_EQUIP_DESC_20;
+	};
 	
 	class ItemSandbag : CA_Magazine {
 		scope = public;

@@ -87,6 +87,7 @@ _getTextZ =     getText (_config >> "displayName");
 _hasKnife = 	"ItemKnife" in magazines player;
 _hasToolbox = 	"ItemToolbox" in magazines player;
 _hasTent = 		"ItemTent" in magazines player;
+_hasATent = 	"ItemATent" in magazines player;
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 
     
@@ -350,6 +351,16 @@ if (_canPickLightR and !dayz_hasLight) then {
 		player removeAction s_doTent;
 		s_doTent = -1;
 	};
+	
+	//Allow placing of tents
+	if(_vehicle == player and _hasATent) then {
+		if(s_doATent < 0) then {
+			s_doATent = player addAction [format["<t color='#FF0000'>Pitch Tent (Large)%1</t>"], "z\addons\dayz_code\actions\atent_pitch.sqf"];
+		};
+	} else	{
+		player removeAction s_doATent;
+		s_doATent = -1;
+	};
 		
 	//Allow changing of clothes
 	if(_vehicle == player and (_hasClothes1 or _hasClothes2 or _hasClothes3)) then {
@@ -386,7 +397,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 	_isHarvested = cursorTarget getVariable["meatHarvested",false];
 	_isTakeable = cursorTarget getVariable["clothesTaken",false];
 	_isVehicle = cursorTarget isKindOf "AllVehicles";
-	_isVehicletype = typeOf cursorTarget in ["ATV_US_EP1","ATV_CZ_EP1"];
+	_isVehicletype = typeOf cursorTarget in ["ATV_US_EP1","ATV_CZ_EP1","Old_bike_TK_CIV_EP1","Old_bike_TK_INS_EP1"];
 	_isMan = cursorTarget isKindOf "Man";
 	_ownerID = cursorTarget getVariable ["characterID","0"];
 	_isAnimal = cursorTarget isKindOf "Animal";
@@ -400,6 +411,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 	_isAlive = alive cursorTarget;
 	_canmove = canmove cursorTarget;
 	_text = getText (configFile >> "CfgVehicles" >> typeOf cursorTarget >> "displayName");
+    _isCustom = typeOf cursorTarget in ["Old_bike_TK_CIV_EP1","Old_bike_TK_INS_EP1","ATV_US_EP1","ATV_CZ_EP1","Tractor","VolhaLimo_TK_CIV_EP1","Volha_2_TK_CIV_EP1","Volha_1_TK_CIV_EP1","car_sedan","car_hatchback","Lada2_TK_CIV_EP1","Lada1_TK_CIV_EP1","Skoda","Lada1","Lada2","LadaLM","SkodaRed","SkodaGreen","SkodaBlue","datsun1_civil_3_open","datsun1_civil_1_open","hilux1_civil_3_open_EP1","hilux1_civil_1_open"];
 	
 	
 	_rawmeat = meatraw;
@@ -446,6 +458,76 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 		player removeAction s_player_flipveh;
 		s_player_flipveh = -1;
 	};
+    
+	//Custom Get in Back script
+	if ((_isCustom) and _isAlive and !r_player_onVehicleC and alive player) then {
+        _seat = 0;
+        _text = "";
+        _text2 = "";
+        _seatSide = "";
+        _type = typeOf cursorTarget;
+        if (_type in ["Tractor"]) then {
+            _text = "Get on ";
+            _text2 = " on top";
+        };
+        if (_type in ["ATV_US_EP1","ATV_CZ_EP1","Old_bike_TK_CIV_EP1","Old_bike_TK_INS_EP1"]) then {
+            _text = "Get on ";
+            _text2 = " on back";
+        };
+        if (_type in ["VolhaLimo_TK_CIV_EP1","Volha_2_TK_CIV_EP1","Volha_1_TK_CIV_EP1","car_sedan","car_hatchback"]) then {
+            _text = "Get on ";
+            _text2 = " on trunk";
+        };
+        if (_type in ["Lada2_TK_CIV_EP1","Lada1_TK_CIV_EP1","Skoda","Lada1","Lada2","LadaLM","SkodaRed","SkodaGreen","SkodaBlue"]) then {
+            _text = "Get on ";
+            _text2 = " on trunk";
+        };
+        if (_type in ["datsun1_civil_3_open","datsun1_civil_1_open","hilux1_civil_3_open_EP1","hilux1_civil_1_open"]) then {
+            _text = "Get in ";
+            _text2 = " in trunk";
+        };
+		if (s_player_getin1 < 0) then {
+            if (typeOf cursorTarget in ["Lada2_TK_CIV_EP1","Lada1_TK_CIV_EP1","Skoda","Lada1","Lada2","LadaLM","SkodaRed","SkodaGreen","SkodaBlue"]) then {
+                _seatSide = " (Left)";
+            };
+            if (typeOf cursorTarget in ["datsun1_civil_3_open","datsun1_civil_1_open","hilux1_civil_3_open_EP1","hilux1_civil_1_open"]) then {
+                _seatSide = " (Left)";
+            };
+			s_player_getin1 = player addAction [format["%1%2%3%4",_text,_type,_text2,_seatSide], "\z\addons\dayz_code\actions\player_getin.sqf",_seat, 0, true, true, "", ""];		
+		};	
+		if (s_player_getin2 < 0) then {
+            if (typeOf cursorTarget in ["Lada2_TK_CIV_EP1","Lada1_TK_CIV_EP1","Skoda","Lada1","Lada2","LadaLM","SkodaRed","SkodaGreen","SkodaBlue"]) then {
+                _seatSide = " (Right)";
+            };
+            if (typeOf cursorTarget in ["datsun1_civil_3_open","datsun1_civil_1_open","hilux1_civil_3_open_EP1","hilux1_civil_1_open"]) then {
+                _seatSide = " (Center)";
+            };
+			s_player_getin2 = player addAction [format["%1%2%3%4",_text,_type,_text2,_seatSide], "\z\addons\dayz_code\actions\player_getin.sqf",_seat, 1, true, true, "", ""];		
+		};	
+		if (s_player_getin3 < 0) then {
+            if (typeOf cursorTarget in ["datsun1_civil_3_open","datsun1_civil_1_open","hilux1_civil_3_open_EP1","hilux1_civil_1_open"]) then {
+                _seatSide = " (Right)";
+            };
+			s_player_getin3 = player addAction [format["%1%2%3%4",_text,_type,_text2,_seatSide], "\z\addons\dayz_code\actions\player_getin.sqf",_seat, 2, true, true, "", ""];		
+		};	
+	} else {
+		player removeAction s_player_getin1;
+		s_player_getin1 = -1;
+		player removeAction s_player_getin2;
+		s_player_getin2 = -1;
+		player removeAction s_player_getin3;
+		s_player_getin3 = -1;
+	};
+    
+	if (_isAlive and r_player_onVehicleC and alive player) then {
+		if (s_player_getout < 0) then {
+			s_player_getout = player addAction [format["Get out of %1",typeOf cursorTarget], "\z\addons\dayz_code\actions\player_getout.sqf", [], 0, true, true, "", ""];		
+		};	
+	} else {
+		player removeAction s_player_getout;
+		s_player_getout = -1;
+	};
+    
 	
 	//Allow player to fill jerrycan
 	if(_hasFuelE and _isFuel and _canDo) then {
@@ -510,6 +592,16 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 	} else {
 		player removeAction s_player_packtent;
 		s_player_packtent = -1;
+		};
+	
+	//Packing my ACampStorage
+	if(cursorTarget isKindOf "ACampStorage" and _canDo and _ownerID == dayz_characterID) then {
+		if ((s_player_packatent < 0) and (player distance cursorTarget < 3)) then {
+			s_player_packatent = player addAction [localize "str_actions_self_07", "\z\addons\dayz_code\actions\atent_pack.sqf",cursorTarget, 0, false, true, "",""];
+		};
+	} else {
+		player removeAction s_player_packatent;
+		s_player_packatent = -1;
 		};
 	
 	//Sleep

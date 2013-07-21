@@ -49,7 +49,7 @@ check_publishobject = {
 
 	_object = _this select 0;
 	_playername = _this select 1;
-	_allowedObjects = ["TentStorage", "Hedgehog_DZ", "Sandbag1_DZ","TrapBear","Wire_cat1"];
+	_allowedObjects = ["TentStorage","ACampStorage","Hedgehog_DZ", "Sandbag1_DZ","TrapBear","Wire_cat1"];
 	_allowed = false;
 
 	diag_log format ["DEBUG: Checking if Object: %1 is allowed published by %2", _object, _playername];

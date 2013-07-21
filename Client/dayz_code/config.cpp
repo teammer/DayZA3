@@ -331,7 +331,8 @@ class CfgBuildingLoot {
 			{"DZ_Assault_Pack_A3","backpack"},
 			{"DZ_Czech_Vest_Pouch_A3","backpack"},
 			{"DZ_ALICE_Pack_A3","backpack"},
-			{"DZ_TK_Assault_Pack_A3","backpack"}
+			{"DZ_TK_Assault_Pack_A3","backpack"},
+			{"ItemATent","magazine"}
 		};
 		itemChance[] =	{
 			0.01,
@@ -348,7 +349,7 @@ class CfgBuildingLoot {
 			0.06,
 			0.04,
 			0.01,
-			0.01,
+			0.04,
 			0.03,
 			0.5,
 			0.01,
@@ -361,7 +362,8 @@ class CfgBuildingLoot {
             0.04,
             0.05,
             0.02,
-            0.02
+            0.02,
+            0.01
 		};		
 	};
 	class Office: Residential {
@@ -476,7 +478,8 @@ class CfgBuildingLoot {
 			{"DZ_Assault_Pack_A3","backpack"},
 			{"DZ_Czech_Vest_Pouch_A3","backpack"},
 			{"DZ_ALICE_Pack_A3","backpack"},
-			{"DZ_TK_Assault_Pack_A3","backpack"}
+			{"DZ_TK_Assault_Pack_A3","backpack"},
+			{"ItemATent","magazine"}
 		};
 		itemChance[] =	{
 			0.15,
@@ -504,7 +507,8 @@ class CfgBuildingLoot {
             0.04,
             0.05,
             0.025,
-            0.025
+            0.025,
+            0.05
 		};
 	};
 	class HeliCrash: Default {
@@ -816,7 +820,7 @@ class CfgBuildingLoot {
 			{"PipeBomb","magazine"},
 			{"Sa58V_RCO_EP1","weapon"},
 			{"Sa58V_CCO_EP1","weapon"},
-			{"M40A3","weapon"},
+			{"M40A3_DZ","weapon"},
 			{"100Rnd_762x54_PK","magazine"},
 			{"V_PlateCarrier2_rgr","vest"}, // 20
 			{"V_PlateCarrierGL_rgr","vest"}, // 21.7

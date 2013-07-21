@@ -168,6 +168,9 @@ if (_characterID != "0") then {
 		*/
 		_currentWpn = 	currentMuzzle _character;
 		_currentAnim =	animationState _character;
+        if ((animationState player == "sitUnarm_L_idleLoop_inUH1Y") or (animationState player == "amovpsitmstpsnonwnondnon_ground") or (animationState player == "amovpercmstpsnonwnondnon")) then {
+            _currentAnim = "amovpercmstpsnonwnondnon";
+        };
 		_config = 		configFile >> "CfgMovesMaleSdr" >> "States" >> _currentAnim;
 		_onLadder =		(getNumber (_config >> "onLadder")) == 1;
 		_isTerminal = 	(getNumber (_config >> "terminal")) == 1;
@@ -234,7 +237,7 @@ if (_characterID != "0") then {
 		_pos = getPosATL _character;
 		{
 			[_x, "gear"] call server_updateObject;
-		} forEach nearestObjects [_pos, ["Car", "Helicopter", "Motorcycle", "Ship", "TentStorage"], 20];
+		} forEach nearestObjects [_pos, ["Car", "Helicopter", "Motorcycle", "Ship", "TentStorage","ACampStorage"], 20];
 		//[_charPos] call server_updateNearbyObjects;
 
 		//Reset timer
