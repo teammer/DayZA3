@@ -28,9 +28,6 @@ class CfgWeapons {
 	class MeleeHatchet: MeleeWeapon
 	{
 		scope=2;
-        type = 4;
-        value = 10;
-        primary = 0;
 		autoreload=1;
 		magazineReloadTime=0;
 		model="\dayz_weapons\models\Hatchet_weaponized";
@@ -49,9 +46,6 @@ class CfgWeapons {
 	class MeleeCrowbar: MeleeHatchet
 	{
 		scope=2;
-        type = 4;
-        value = 10;
-        primary = 0;
 		autoreload=1;
 		magazineReloadTime=0;
 		model="\dayz_weapons\models\crowbar_weaponized";
@@ -73,9 +67,6 @@ class CfgWeapons {
 	class MeleeMachete: MeleeHatchet
 	{
 		scope=2;
-        type = 4;
-        value = 10;
-        primary = 0;
 		autoreload=1;
 		magazineReloadTime=0;
 		model="\z\addons\dayz_communityassets\models\machete_weaponized.p3d";

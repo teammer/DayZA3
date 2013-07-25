@@ -687,8 +687,21 @@ class cfgWeapons {
 			position = "flash dir";
 			direction = "flash";
 			angle = 30;
-			scale[] = {1, 1, 0.5};
-			brightness = 0.1;
+			size = 1;
+			innerAngle = 30;
+			outerAngle = 80;
+			coneFadeCoef = 8;
+			intensity = 1500;
+			scale[] = {0};
+			useFlare = 1;
+			dayLight = 0;
+			flareSize = 0.75;
+			class Attenuation {
+				start = 1.0;
+				constant = 2;
+				linear = 0;
+				quadratic = 15.0;
+			};
 		};
 		
 		class ItemActions {
@@ -714,13 +727,26 @@ class cfgWeapons {
 		descriptionShort = $STR_EQUIP_DESC_6;
 		
 		class FlashLight {
-			color[] = {0.9, 0.0, 0.0, 0.9};
-			ambient[] = {0.1, 0.0, 0.0, 1};
+			color[] = {0.9, 0.9, 0.7, 0.9};
+			ambient[] = {0.1, 0.1, 0.1, 1};
 			position = "flash dir";
 			direction = "flash";
 			angle = 30;
-			scale[] = {1, 1, 0.5};
-			brightness = 0.08;
+			size = 1;
+			innerAngle = 30;
+			outerAngle = 80;
+			coneFadeCoef = 8;
+			intensity = 1500;
+			scale[] = {0};
+			useFlare = 1;
+			dayLight = 0;
+			flareSize = 0.75;
+			class Attenuation {
+				start = 1.0;
+				constant = 2;
+				linear = 0;
+				quadratic = 15.0;
+			};
 		};
 		
 		class ItemActions {

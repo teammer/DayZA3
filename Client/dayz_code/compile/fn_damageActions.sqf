@@ -171,8 +171,9 @@ if (_hasPatient and !r_drag_sqf and !r_action and !_inVehicle and !r_player_unco
 	if ((_unit isKindOf "Building")) then {
 		_type = TypeOf(_unit);
 		_typeVeh = getText(configFile >> "cfgVehicles" >> _type >> "displayName");
-		_isEngineer = _hasToolbox;//(_classbag isKindOf "BAF_AssaultPack_Engineer");
+		_isEngineer = _hasToolbox;
 		//CAN DISASSEMBLE
+        /*
 		if (_isEngineer and (_type in USEC_CanDisassemble)) then {
 			r_action = true;
 			_index = USEC_CanDisassemble find _type;
@@ -180,6 +181,7 @@ if (_hasPatient and !r_drag_sqf and !r_action and !_inVehicle and !r_player_unco
 			_action = _unit addAction [format[localize "str_actions_medical_12",_typeVeh], "\z\addons\dayz_code\actions\disassemble.sqf",[_unit,_inventory], 0, true, true];
 			r_player_actions set [count r_player_actions,_action];
 		};
+        */
 		//Upgrade Wire
 		if (_isEngineer and (_type == "usec_wire_cat1") and _hasWire) then {
 			r_action = true;

@@ -311,7 +311,7 @@ class CfgBuildingLoot {
 			{"Makarov","weapon"},
 			{"Colt1911","weapon"},
 			{"hgun_ACPC2_F","weapon"},
-			{"ItemFlashlight","generic"},
+			{"MeleeFlashlight","weaponNA"},
 			{"ItemKnife","magazine"},
 			{"ItemMatchbox","magazine"},
 			{"","generic"},
@@ -459,7 +459,7 @@ class CfgBuildingLoot {
 			{"Makarov","weapon"},
 			{"Colt1911","weapon"},
 			{"hgun_ACPC2_F","weapon"},
-			{"ItemFlashlight","generic"},
+			{"MeleeFlashlight","weaponNA"},
 			{"ItemKnife","magazine"},
 			{"ItemMatchbox","magazine"},
 			{"","generic"},
@@ -673,7 +673,7 @@ class CfgBuildingLoot {
 			{"MP5SD_DZ","weapon"},
 			{"M4A3_CCO_EP1","weapon"},
 			{"Binocular","weapon"},
-			{"ItemFlashlightRed","military"},
+			{"MeleeFlashlightRed","weaponNA"},
 			{"ItemKnife","magazine"},
 			{"ItemGPS","vest"},
 			{"ItemMap","vest"},
@@ -708,6 +708,7 @@ class CfgBuildingLoot {
 			{"M4SPR_DZ","weapon"},
 			{"PK","weapon"},
 			{"RPK_74","weapon"},
+			{"Rangefinder","weapon"},
             {"arifle_MXC_F","weapon"}
 		};
 		itemChance[] =	{
@@ -768,6 +769,7 @@ class CfgBuildingLoot {
             0.05,
             0.005,
             0.01,
+            0.01,
             0.03
 		};
 	};
@@ -809,11 +811,11 @@ class CfgBuildingLoot {
 			{"AmmoBoxSmall_762","object"},
 			{"NVGoggles","vest"},
 			{"Binocular","weapon"},
-			{"ItemFlashlightRed","military"},
+			{"MeleeFlashlightRed","weaponNA"},
 			{"ItemKnife","magazine"},
 			{"ItemGPS","vest"},
 			{"ItemMap","vest"},
-			{"Binocular_Vector","military"},
+			{"Rangefinder","weapon"},
 			{"","medical"},
 			{"","generic"},
 			{"","military"},
@@ -924,7 +926,7 @@ class CfgBuildingLoot {
 		lootPos[] = {};
 		itemType[] =	{
 			{"ItemMap","vest"},
-			{"ItemFlashlight","generic"},
+			{"MeleeFlashlight","weaponNA"},
 			{"ItemKnife","magazine"},
 			{"ItemMatchbox","magazine"},
 			{"Crossbow_DZ","weapon"},
@@ -1130,7 +1132,7 @@ class CfgBuildingLoot {
 			{"MP5SD_DZ","weapon"},
 			{"M4A3_CCO_EP1","weapon"},
 			{"Binocular","weapon"},
-			{"ItemFlashlightRed","military"},
+			{"MeleeFlashlightRed","weaponNA"},
 			{"ItemKnife","magazine"},
 			{"ItemGPS","vest"},
 			{"ItemMap","vest"},
@@ -1167,6 +1169,7 @@ class CfgBuildingLoot {
 			{"RPK_74","weapon"},
             {"arifle_MXC_F","weapon"},
             {"G36_C_SD_eotech","weapon"},
+			{"Rangefinder","weapon"},
             {"G36C","weapon"}
 		};
 		itemChance[] =	{
@@ -1228,6 +1231,7 @@ class CfgBuildingLoot {
             0.005,
             0.01,
             0.03,
+            0.01,
             0.01,
             0.03
 		};
@@ -1354,7 +1358,33 @@ class CfgBuildingLoot {
 		lootPos[] = {{1.18213,-1.65039,-1.17793},{0.24707,0.799316,-1.17803}};
 	}; // Qty: 1
 	class MASH_EP1: MASH {};
+    
+    class datsun02Wreck : Industrial {
+        lootChance = 1;
+        lootPos[] = {{3.63232, 0.685059, -1.20839},{0.371582, -4.27441, -0.902832}};
+    };
 
+    class Land_Barrack2_EP1: Military {
+		zombieClass[] = {"zZombie_Base","z_hunter","z_teacher","z_villager1","z_villager2","z_villager3","z_soldier","z_policeman"};
+		maxRoaming = 8;
+        minRoaming = 6;
+		lootChance = 0.6;
+		lootPos[] = {{-1.65381, -2.50244, -0.693359},{1.81885, -2.52539, -0.693451},{1.02002, 0.336426, -0.691864},{-1.6333, 4.04199, -0.689697}};
+    };
+    
+    class GUE_WarfareBFieldhHospital: Hospital {
+        maxRoaming = 4;
+        minRoaming = 2;
+        lootPos[] = {{2.12598, -1.92639, 0.449432},{1.104, 0.94104, 0.449493},{-3.29883, 0.789063, 0.449432}};
+    };
+    
+    class USMC_WarfareBAntiAirRadar: Military {
+        minRoaming = 10;
+        maxRoaming = 20;
+		zombieChance = 0.7;
+        lootPos[] = {{-5.18359, -7.29639, -16.1406},{-5.41113, -0.918457, -16.1405},{1.64746, 3.8374, -16.1408}};
+    };
+    
 	class UH1Wreck_DZ: Military {
 		zombieClass[] = {"z_soldier_pilot","z_soldier_heavy"};
 		zombieChance = 0.3;

@@ -41,6 +41,7 @@ _hasAntibiotic =	"ItemAntibiotic" in magazines player;
 _hasClothes1 = 		"Skin_Sniper1_DZ" in magazines player; //Ghillie
 _hasClothes2 = 		"Skin_Camo1_DZ" in magazines player; //Camo
 _hasClothes3 = 		"Skin_Survivor2_DZ" in magazines player; //Survivor
+_hasHatchet =       "MeleeHatchet" in weapons player;
 _hasMRE =		"FoodMRE" in magazines player;
 //FOOD
 //_hasFood = 			["FoodCanBakedBeans", "FoodCanSardines", "FoodCanFrankBeans", "FoodCanPasta", "FoodSteakCooked"];
@@ -82,7 +83,6 @@ if (!isNull _nearLightR) then {
   };
 };
 
-_getTextZ =     getText (_config >> "displayName");
 //End of Code
 _hasKnife = 	"ItemKnife" in magazines player;
 _hasToolbox = 	"ItemToolbox" in magazines player;
@@ -276,13 +276,13 @@ if (_canPickLightR and !dayz_hasLight) then {
 		
 		player removeAction dayz_hunger2;
 		dayz_hunger2 = -1;
-		dayz_hunger3 = player addAction [format["<t color='#FF0000'>Eat%1</t>"], "\z\addons\dayz_code\actions\player_eat.sqf",[_getTextZ], 1, false, true, "", "player == player"];
+		dayz_hunger3 = player addAction [format["<t color='#FF0000'>Eat%1</t>"], "\z\addons\dayz_code\actions\player_eat.sqf",[], 1, false, true, "", "player == player"];
 		
 		}; if ((r_player_blood >= 10000) and (dayz_hunger2 < 0)) then {
 		player removeAction dayz_hunger3;
 		dayz_hunger3 = -1;
 		if(dayz_hunger >= 270) then {
-			dayz_hunger2 = player addAction [format["<t color='#FF0000'>Eat%1</t>"], "\z\addons\dayz_code\actions\player_eat.sqf",[_getTextZ], 1, false, true, "", "player == player"];
+			dayz_hunger2 = player addAction [format["<t color='#FF0000'>Eat%1</t>"], "\z\addons\dayz_code\actions\player_eat.sqf",[], 1, false, true, "", "player == player"];
 		};
 		};
 	} else	{
@@ -303,7 +303,7 @@ if (_canPickLightR and !dayz_hasLight) then {
 	//Allow player to slurp slurp
 	if(_vehicle == player and _hasDrink) then {
     	if((dayz_thirst >= 180) and (dayz_thirst2 < 0)) then {
-        	dayz_thirst2 = player addAction [format["<t color='#FF0000'>Drink%1</t>"], "\z\addons\dayz_code\actions\player_drink2.sqf",[_getTextZ], 1, false, true, "", "player == player"];
+        	dayz_thirst2 = player addAction [format["<t color='#FF0000'>Drink%1</t>"], "\z\addons\dayz_code\actions\player_drink2.sqf",[], 1, false, true, "", "player == player"];
     	};
 	} else {
     	player removeAction dayz_thirst2;
@@ -313,7 +313,7 @@ if (_canPickLightR and !dayz_hasLight) then {
 	//Allow player to fill water bottles
 	if(_vehicle == player and _canFill and _hasbottleitemE) then {
     	if((s_player_fillwater2 < 0)) then {
-        	s_player_fillwater2 = player addAction [format["<t color='#FF0000'>Fill Bottle%1</t>"], "\z\addons\dayz_code\actions\water_fill.sqf",[_getTextZ], 1, false, true, "", "player == player"];
+        	s_player_fillwater2 = player addAction [format["<t color='#FF0000'>Fill Bottle%1</t>"], "\z\addons\dayz_code\actions\water_fill.sqf",[], 1, false, true, "", "player == player"];
     	};
 	} else {
     	player removeAction s_player_fillwater2;
@@ -326,13 +326,13 @@ if (_canPickLightR and !dayz_hasLight) then {
 		
 		player removeAction dayz_mre;
 		dayz_mre = -1;
-		dayz_mre2 = player addAction [format["<t color='#FF0000'>Use MRE%1</t>"], "\z\addons\dayz_code\actions\player_mre.sqf",[_getTextZ], 1, false, true, "", "player == player"];
+		dayz_mre2 = player addAction [format["<t color='#FF0000'>Use MRE%1</t>"], "\z\addons\dayz_code\actions\player_mre.sqf",[], 1, false, true, "", "player == player"];
 		
 		}; if ((r_player_blood >= 10000) and (dayz_mre < 0)) then {
 		player removeAction dayz_mre2;
 		dayz_mre2 = -1;
 		if((dayz_hunger >= 270) or (dayz_thirst >= 180)) then {
-			dayz_mre2 = player addAction [format["<t color='#FF0000'>Use MRE%1</t>"], "\z\addons\dayz_code\actions\player_mre.sqf",[_getTextZ], 1, false, true, "", "player == player"];
+			dayz_mre2 = player addAction [format["<t color='#FF0000'>Use MRE%1</t>"], "\z\addons\dayz_code\actions\player_mre.sqf",[], 1, false, true, "", "player == player"];
 		};
 		};
 	} else {
@@ -684,7 +684,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 		s_player_studybody = -1;
 	};
 
-	//Dog
+	/*
 	if (_isDog and _isAlive and (_hasRawMeat) and _canDo and _ownerID == "0" and player getVariable ["dogID", 0] == 0) then {
 		if (s_player_tamedog < 0) then {
 			s_player_tamedog = player addAction [localize "str_actions_tamedog", "\z\addons\dayz_code\actions\tame_dog.sqf", cursorTarget, 1, false, true, "", ""];
@@ -693,7 +693,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 		player removeAction s_player_tamedog;
 		s_player_tamedog = -1;
 	};
-	
+	*/
 	if (_isDog and _ownerID == dayz_characterID and _isAlive and _canDo) then {
 		_dogHandle = player getVariable ["dogID", 0];
 		if (s_player_feeddog < 0 and _hasRawMeat) then {
@@ -766,9 +766,10 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 	s_player_fillfuel = -1;
 	player removeAction s_player_studybody;
 	s_player_studybody = -1;
-	//Dog
+	/*
 	player removeAction s_player_tamedog;
 	s_player_tamedog = -1;
+    */
 	player removeAction s_player_feeddog;
 	s_player_feeddog = -1;
 	player removeAction s_player_waterdog;

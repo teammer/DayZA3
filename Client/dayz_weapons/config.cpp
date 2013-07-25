@@ -241,7 +241,6 @@ class cfgWeapons {
 	
 	class MeleeHatchet : MeleeWeapon {
 		scope = public;
-        type = 4;
 		model = "\dayz_weapons\models\Hatchet_weaponized";
 		picture = "\dayz_equip\textures\equip_hatchet_CA.paa";
 		displayName = $STR_EQUIP_NAME_41;
@@ -276,7 +275,6 @@ class cfgWeapons {
 	
 	class MeleeCrowbar : MeleeHatchet {
 		scope = public;
-        type = 4;
 		model = "\dayz_weapons\models\crowbar_weaponized";
 		picture = "\dayz_weapons\textures\equip_crowbar_CA.paa";
 		displayName = "Crowbar";
@@ -382,8 +380,21 @@ class cfgWeapons {
 			position = "flash dir";
 			direction = "flash";
 			angle = 30;
-			scale[] = {1, 1, 0.5};
-			brightness = 0.1;
+			size = 1;
+			innerAngle = 30;
+			outerAngle = 80;
+			coneFadeCoef = 8;
+			intensity = 1500;
+			scale[] = {0};
+			useFlare = 1;
+			dayLight = 0;
+			flareSize = 0.75;
+			class Attenuation {
+				start = 1.0;
+				constant = 2;
+				linear = 0;
+				quadratic = 15.0;
+			};
 		};
 	};
 	class GrenadeLauncher;	// External class reference

@@ -37,6 +37,12 @@ while {true} do {
 		
 	//reset position
 	_randomSpot = true;
+    if (isNil "_mylastPos") then {
+        _mylastPos = getPosATL player;
+    };
+    if !(isNil "dayz_mylastPos") then {
+        _mylastPos = dayz_mylastPos;
+    };
 	_tempPos = getPosATL player;
 	_distance = _debug distance _tempPos;
 	if (_distance < 2000) then {

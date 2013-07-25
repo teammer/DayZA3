@@ -109,6 +109,7 @@ if (!isDedicated) then {
 		dayz_loadScreenMsg = "";
 		diag_log "DEBUG: loadscreen guard started.";
 		_display = uiNameSpace getVariable "BIS_loadingScreen";
+        waitUntil{ !isNil "_display" };
 		_control1 = _display displayctrl 8400;
 		_control2 = _display displayctrl 102;
 	// 40 sec timeout

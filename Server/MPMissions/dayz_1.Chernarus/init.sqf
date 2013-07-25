@@ -42,7 +42,6 @@ if ((!isServer) && (player != player)) then
 
 if (isServer) then {
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
-	[] execVM "\z\addons\dayz_server\init\player_removeGear.sqf";
 };
 
 if (!isDedicated) then {

@@ -20,7 +20,7 @@ while{breakActive} do
     {
         _isOk = isClass (configFile >> "CfgMagazines" >> _x);
         if (_isOk) then {
-            if (!(_x in _magArray)) then {
+            if (!(_x in _magArray) and (_x in _cbArray)) then {
                 _magArray set[count _magArray,_x];
                 _mag = _x;
                 _name = getText(configFile >> "cfgMagazines" >> _x >> "displayName");
