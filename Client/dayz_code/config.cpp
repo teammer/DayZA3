@@ -41,7 +41,7 @@ class CfgMods
 		hidePicture = 0;
 		hideName = 0;
 		action = "http://www.zoombiesmod.com";
-		version = "0.1.6";
+		version = "0.1.6.1";
 		hiveVersion = 0.96; //0.93
 	};
 	class DZ_InitWorld
@@ -1168,7 +1168,7 @@ class CfgBuildingLoot {
 			{"PK","weapon"},
 			{"RPK_74","weapon"},
             {"arifle_MXC_F","weapon"},
-            {"G36_C_SD_eotech","weapon"},
+            {"G36_C_SD_eotech_DZ","weapon"},
 			{"Rangefinder","weapon"},
             {"G36C","weapon"}
 		};

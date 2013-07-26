@@ -144,6 +144,7 @@ class CfgWeapons {
     class M4A1_AIM_SD_camo;
     class MP5SD;
     class SCAR_L_CQC_CCO_SD;
+    class G36_C_SD_eotech;
     class M9DZ_DZ : M9SD {
         magazines[] = {"15Rnd_9x19_M9SD","15Rnd_9x19_M9"};
     };
@@ -161,5 +162,8 @@ class CfgWeapons {
     };
     class SCAR_L_CQC_CCO_SD_DZ : SCAR_L_CQC_CCO_SD {
         magazines[] = {"30Rnd_556x45_Stanag","30Rnd_556x45_StanagSD","20Rnd_556x45_Stanag","30Rnd_556x45_G36","100Rnd_556x45_BetaCMag","30Rnd_556x45_G36SD"};
+    };
+    class G36_C_SD_eotech_DZ : G36_C_SD_eotech {
+        magazines[] = {"30Rnd_556x45_G36SD","30Rnd_556x45_G36","30Rnd_556x45_Stanag","30Rnd_556x45_StanagSD","20Rnd_556x45_Stanag","100Rnd_556x45_BetaCMag"};
     };
 };

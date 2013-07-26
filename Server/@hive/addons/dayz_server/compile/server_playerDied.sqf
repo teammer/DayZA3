@@ -1,49 +1,45 @@
-private["_characterID","_minutes","_newObject","_playerID","_key","_playerName","_playerID","_myGroup","_group","_victim", "_killer", "_weapon", "_message", "_distance","_loc_message","_victimName","_killerName","_killerPlayerID"];
+private["_characterID","_minutes","_newObject","_playerID","_key","_playerName","_playerID","_myGroup","_group","_newObject", "_killer", "_weapon", "_message", "_distance","_loc_message","_newObjectName","_killerName","_killerPlayerID"];
 //[unit, weapon, muzzle, mode, ammo, magazine, projectile]
 _characterID = 	_this select 0;
 _minutes =		_this select 1;
 _newObject = 	_this select 2;
 _playerID = 	_this select 3;
 _playerName = 	name _newObject;
-/*
-_victim removeAllEventHandlers "MPHit";
 
-_victim = _this select 2;
-_victimName = _victim getVariable["bodyName", "nil"];
-_killer = _victim getVariable["AttackedBy", "nil"];
-_killerName = _victim getVariable["AttackedByName", "nil"];
-if (_killerName != "nil") then
+_newObject removeAllEventHandlers "MPHit";
+
+_newObjectName = _newObject getVariable["bodyName", "nil"];
+_killer = _newObject getVariable["AttackedBy", "nil"];
+_killerName = _newObject getVariable["AttackedByName", "nil"];
+if ((_killerName != "nil") and (_newObjectName != "nil")) then
 {
-	_weapon = _victim getVariable["AttackedByWeapon", "nil"];
-	_distanceNum = _victim getVariable["AttackedFromDistance", "nil"];
+	_weapon = _newObject getVariable["AttackedByWeapon", "nil"];
+	_distanceNum = _newObject getVariable["AttackedFromDistance", 0];
 	_displayname = getText (configFile >> 'CfgWeapons' >> _weapon >> 'displayName');
     if ((!isNil "_distanceNum") and (!isNil "_weapon")) then {
-        if((_weapon != "nil") and (_weapon != "") and (_distanceNum != "nil") and (_distanceNum > 0)) then {
+        if((_weapon != "nil") and (_weapon != "") and (_distanceNum > 0)) then {
             _distance = round _distanceNum;
-            if (_victimName == _killerName) then 
+            if (_newObjectName == _killerName) then 
             {
-                _message = format["%1 killed himself",_victimName];
-                _loc_message = format["PKILL: %1 killed himself", _victimName];
+                _message = format["%1 killed himself",_newObjectName];
+                _loc_message = format["PKILL: %1 killed himself", _newObjectName];
             }
             else 
             {
                 _killerPlayerID = getPlayerUID _killer;
-                _message = format["%1 was killed by %2 ( %3 | %4m )",_victimName, _killerName, _displayname, _distance];
-                _loc_message = format["PKILL: %1 (%5) was killed by %2 (%6) with weapon %3 from %4m", _victimName, _killerName, _weapon, _distance, _playerID, _killerPlayerID];
+                _message = format["%1 was killed by %2 ( %3 | %4m )",_newObjectName, _killerName, _displayname, str _distance];
+                _loc_message = format["PKILL: %1 (%5) was killed by %2 (%6) with weapon %3 from %4m", _newObjectName, _killerName, _weapon, _distance, _playerID, _killerPlayerID];
             };
 
-            
-            diag_log _loc_message;
             [[[_message], { cutText [format['%1',(_this select 0)],'PLAIN DOWN']; }], "BIS_fnc_spawn", true, false] call BIS_fnc_MP;
         };
     };
-	_victim setVariable["AttackedBy", "nil", true];
-	_victim setVariable["AttackedByName", "nil", true];
-	_victim setVariable["AttackedByWeapon", "nil", true];
-	_victim setVariable["AttackedFromDistance", "nil", true];
+	_newObject setVariable["AttackedBy", "nil", true];
+	_newObject setVariable["AttackedByName", "nil", true];
+	_newObject setVariable["AttackedByWeapon", "nil", true];
+	_newObject setVariable["AttackedFromDistance", 0, true];
 };
 
-dayz_disco = dayz_disco - [_playerID];
 */
 
 _newObject setVariable["processedDeath",time];
