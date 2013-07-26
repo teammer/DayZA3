@@ -22,6 +22,7 @@ while {true} do {
 	_refObj = 	vehicle player;
 	_size = 	(sizeOf typeOf _refObj) * 0.6;
 	_vel = 		velocity player;
+    _mylastPos =    [];
 	_speed = 	round((_vel distance [0,0,0]) * 3.5);
     _typeOf =    typeOf player;
 	_saveTime = 5;
