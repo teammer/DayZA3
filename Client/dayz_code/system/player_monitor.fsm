@@ -771,7 +771,7 @@ class FSM
        "dayz_skilllevel = _days;  //total alive dayz" \n
        "" \n
        "//load in medical details" \n
-       "r_player_dead = 		player getVariable[""USEC_isDead"",false];" \n
+       "" \n
        "r_player_unconscious = 	player getVariable[""NORRN_unconscious"", false];" \n
        "r_player_infected =	player getVariable[""USEC_infected"",false];" \n
        "r_player_injured = 	player getVariable[""USEC_injured"",false];" \n
@@ -1071,7 +1071,7 @@ class FSM
        "player addWeapon ""Flare"";" \n
        "" \n
        "//load in medical details" \n
-       "r_player_dead = 		player getVariable[""USEC_isDead"",false];" \n
+       "" \n
        "r_player_unconscious = 	player getVariable[""NORRN_unconscious"", false];" \n
        "r_player_infected =		player getVariable[""USEC_infected"",false];" \n
        "r_player_injured = 		player getVariable[""USEC_injured"",false];" \n

@@ -62,6 +62,7 @@ _canPickLightY = false;
 _canPickLightB = false;
 _canPickLightR = false;
 
+
 if (!isNull _nearLightG) then {
   if (_nearLightG distance player < 1) then {
     _canPickLightG = isNull (_nearLightG getVariable ["owner",objNull]);
@@ -90,6 +91,7 @@ _hasTent = 		"ItemTent" in magazines player;
 _hasATent = 	"ItemATent" in magazines player;
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 
+_isWater = 		(surfaceIsWater getPosATL player) or dayz_isSwimming;
     
 _canFill = 		count (nearestObjects [position player, ["Land_pumpa","Land_water_tank"], 4]) > 0;
 _isPond = 		false;
@@ -122,7 +124,7 @@ if (!_canFill) then {
 	} forEach _objectsPond;
 };
 
-_canDo = (!r_drag_sqf and !r_player_unconscious and !_onLadder);
+_canDo = (!r_drag_sqf and !r_player_unconscious and !_onLadder and !_isWater);
 
 //Off topic functions
 /*
@@ -424,6 +426,9 @@ if (_canPickLightR and !dayz_hasLight) then {
             };
             _type = getText (configFile >> "CfgVehicles" >> _type >> "displayname");
             if (s_player_getin1 < 0) then {
+                if (typeOf cursorTarget in ["ATV_US_EP1","ATV_CZ_EP1","Old_bike_TK_CIV_EP1","Old_bike_TK_INS_EP1"]) then {
+                    s_player_getin1 = player addAction [format["%1%2%3%4",_text,_type,_text2,_seatSide], "\z\addons\dayz_code\actions\player_getin.sqf",0, 0, true, true, "", ""];	
+                };
                 if (typeOf cursorTarget in ["Lada2_TK_CIV_EP1","Lada1_TK_CIV_EP1","Skoda","Lada1","Lada2","LadaLM","SkodaRed","SkodaGreen","SkodaBlue","VolhaLimo_TK_CIV_EP1","Volha_2_TK_CIV_EP1","Volha_1_TK_CIV_EP1","car_sedan","car_hatchback"]) then {
                     _seatSide = " (Left)";
                     s_player_getin1 = player addAction [format["%1%2%3%4",_text,_type,_text2,_seatSide], "\z\addons\dayz_code\actions\player_getin.sqf",0, 0, true, true, "", ""];	
@@ -444,14 +449,14 @@ if (_canPickLightR and !dayz_hasLight) then {
                 };
                 if (typeOf cursorTarget in ["datsun1_civil_3_open","datsun1_civil_1_open","hilux1_civil_3_open_EP1","hilux1_civil_1_open"]) then {
                     _seatSide = " (Center)";
-                    s_player_getin2 = player addAction [format["%1%2%3%4",_text,_type,_text2,_seatSide], "\z\addons\dayz_code\actions\player_getin.sqf",1, 0, true, true, "", ""];		
+                    s_player_getin2 = player addAction [format["%1%2%3%4",_text,_type,_text2,_seatSide], "\z\addons\dayz_code\actions\player_getin.sqf",2, 0, true, true, "", ""];		
                 };
             };	
             if (s_player_getin3 < 0) then {
                 _seatSide = "";
                 if (typeOf cursorTarget in ["datsun1_civil_3_open","datsun1_civil_1_open","hilux1_civil_3_open_EP1","hilux1_civil_1_open"]) then {
                     _seatSide = " (Right)";
-                    s_player_getin3 = player addAction [format["%1%2%3%4",_text,_type,_text2,_seatSide], "\z\addons\dayz_code\actions\player_getin.sqf",2, 0, true, true, "", ""];		
+                    s_player_getin3 = player addAction [format["%1%2%3%4",_text,_type,_text2,_seatSide], "\z\addons\dayz_code\actions\player_getin.sqf",1, 0, true, true, "", ""];		
                 };
             };	
         } else {

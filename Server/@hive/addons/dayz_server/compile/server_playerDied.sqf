@@ -11,6 +11,8 @@ _newObject removeAllEventHandlers "MPHit";
 _newObjectName = _newObject getVariable["bodyName", "nil"];
 _killer = _newObject getVariable["AttackedBy", "nil"];
 _killerName = _newObject getVariable["AttackedByName", "nil"];
+r_player_sendDead = [_newObjectName];
+publicVariable "r_player_sendDead";
 if ((_killerName != "nil") and (_newObjectName != "nil")) then
 {
 	_weapon = _newObject getVariable["AttackedByWeapon", "nil"];

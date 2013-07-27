@@ -184,3 +184,4 @@ dayz_recordLogin = {
 	_key call server_hiveWrite;
 };
 	[] execVM "\z\addons\dayz_server\init\group\currentInvites.sqf";
+    #include "server_buildings.sqf";

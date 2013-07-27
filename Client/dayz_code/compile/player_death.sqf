@@ -37,6 +37,9 @@ _array = _this;
 if (count _array > 0) then {
 	_source = _array select 0;
 	_method = _array select 1;
+    if (isNil "_method") then {
+        _method = "unknown";
+    };
 	if (!isNull _source) then {
 		if (_source != player) then {
 			_canHitFree = 	player getVariable ["freeTarget",false];
@@ -69,15 +72,12 @@ if (count _array > 0) then {
 };
 
 terminate dayz_musicH;
-terminate dayz_lootCheck;
 terminate dayz_slowCheck;
 terminate dayz_animalCheck;
 terminate dayz_monitor1;
 terminate dayz_medicalH;
 terminate dayz_gui;
-terminate dayz_zedCheck;
 terminate dayz_locationCheck;
-terminate dayz_combatCheck;
 terminate dayz_spawnCheck;
 
 //Reset (just in case)
@@ -95,6 +95,7 @@ r_player_dead = true;
 3 fadeSound 0;
 0 cutText ["", "BLACK",10];
 dayz_DeathActioned = true;
+r_player_dead = true;
 sleep 1;
 
 TitleText[localize "str_player_12","PLAIN DOWN",5];
@@ -104,6 +105,7 @@ dayz_originalPlayer enableSimulation true;
 addSwitchableUnit dayz_originalPlayer;
 setPlayable dayz_originalPlayer;
 selectPlayer dayz_originalPlayer;
+r_player_dead = true;
 
 _myGroup = group _body;
 [_body] joinSilent dayz_firstGroup;
@@ -111,10 +113,6 @@ deleteGroup _myGroup;
 
 3 cutRsc ["default", "PLAIN",3];
 4 cutRsc ["default", "PLAIN",3];
-
-if (count _array > 0) then {
-	_body setVariable ["deathType",_method,true];
-};
 
 _body setVariable["combattimeout", 0, true];
 
