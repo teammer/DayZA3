@@ -60,8 +60,9 @@ while {true} do {
 	};
 
 	//Add player actions
-	[] call fnc_usec_damageActions;
-	[] call fnc_usec_selfActions;
+	[] spawn fnc_usec_damageActions;
+	[] spawn fnc_usec_selfActions;
+    [] spawn fnc_usec_selfActionsA3;
 	
 	//Low Blood Effects
 	if (!r_player_unconscious) then {

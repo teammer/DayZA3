@@ -14,7 +14,6 @@ private ["_start","_dialog","_myGroup","_playerListBox","_groupListBox","_uid","
 closeDialog 0;
 _start = createDialog "GroupManagement";			
 _dialog = findDisplay gDialog;
-_display displayAddEventHandler ["KeyDown", "_return = false; if(gActive && (_this select 1) == 1) then {_return = true;}; _return"];
 gActive = true;
 _groupInvite = _dialog displayCtrl gInviteButton;
 _groupDisband = _dialog displayCtrl gDisbandButton;

@@ -4,6 +4,9 @@ _class 			= _this;
 _position 		= getPosATL player;
 _dir 			= getDir player;
 _currentAnim 	= animationState player;
+if (_currentAnim in ["situnarm_l_idleloop_inuh1y","amovpsitmstpsnonwnondnon_ground","amovpercmstpsnonwnondnon"]) then {
+    _currentAnim = "amovpercmstpsnonwnondnon";
+};
 //_currentCamera	= cameraView;
 
 
@@ -204,6 +207,7 @@ private ["_currentmag","_secmag","_magArray","_vestClass","_magazines","_otherit
 //	player switchCamera = _currentCamera;
 	if(_currentWpn != "") then {_newUnit selectWeapon _currentWpn;};
 	[[[player, _currentanim], { (_this select 0) switchMove (_this select 1); }], "BIS_fnc_spawn", true, false] call BIS_fnc_MP;
+    player switchMove _currentanim;
 	//dayz_originalPlayer attachTo [_newUnit];
 	player disableConversation true;
 	

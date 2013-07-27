@@ -997,7 +997,12 @@ class FSM
        "reload player;" \n
        "" \n
        "if (_currentAnim != """") then {" \n
+       "if !(_currentAnim  in [""situnarm_l_idleloop_inuh1y"",""amovpsitmstpsnonwnondnon_ground"",""amovpercmstpsnonwnondnon""]) then {" \n
        "	[[[player, _currentanim], { (_this select 0) switchMove (_this select 1); }], 'BIS_fnc_spawn', true, false] call BIS_fnc_MP;" \n
+       "    player switchMove _currentanim;" \n
+       "} else {" \n
+       "    player switchMove ""amovpercmstpsnonwnondnon"";" \n
+       "};" \n
        "};" \n
        "if (_currentWpn != """") then {" \n
        "	player selectWeapon _currentWpn;" \n

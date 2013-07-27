@@ -40,8 +40,6 @@ if ((_killerName != "nil") and (_newObjectName != "nil")) then
 	_newObject setVariable["AttackedFromDistance", 0, true];
 };
 
-*/
-
 _newObject setVariable["processedDeath",time];
 _newObject setVariable ["bodyName", _playerName, true];
 

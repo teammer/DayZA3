@@ -1807,6 +1807,7 @@ class CfgVehicles {
 		transportMaxMagazines = 50;
 		transportMaxWeapons = 10;
 		transportMaxBackpacks = 5;
+        maximumload = 360;
 	};
 	
 	class ACampStorage : ACamp {
@@ -1814,6 +1815,7 @@ class CfgVehicles {
 		transportMaxMagazines = 100;
 		transportMaxWeapons = 20;
 		transportMaxBackpacks = 10;
+        maximumload = 720;
 	};
 	
 	class CardboardBox : ReammoBox {

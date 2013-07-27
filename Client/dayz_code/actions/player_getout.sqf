@@ -32,9 +32,5 @@ player setPosATL _pos;
 
 r_player_currentCar = nil;
 r_player_onVehicleC = false;
-player removeAction s_player_getin1;
-s_player_getin1 = -1;
-player removeAction s_player_getin2;
-s_player_getin2 = -1;
-player removeAction s_player_getin3;
-s_player_getin3 = -1;
+player removeAction s_player_getout;
+s_player_getout = -1;

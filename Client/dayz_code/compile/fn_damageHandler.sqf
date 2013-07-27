@@ -143,7 +143,8 @@ if (_damage > 0.4) then {	//0.25
 			//Make hit worse
 			if (_unitIsPlayer) then {
 				r_player_blood = r_player_blood - 50;
-				call fnc_usec_selfActions;
+				[] spawn fnc_usec_selfActions;
+                [] spawn fnc_usec_selfActionsA3;
 			};
 		};
 		if (_hitInfection) then {

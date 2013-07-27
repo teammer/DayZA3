@@ -25,6 +25,12 @@ Bindings_A3 =
                 dayz_lightOn = !dayz_lightOn;
             };
 		};
+        case 14:
+        {
+            if (r_player_onVehicleC and alive player) then {
+                [] execVM "\z\addons\dayz_code\actions\player_getout.sqf";
+            };
+        };
 	};
     _return
 };

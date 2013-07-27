@@ -82,7 +82,13 @@ _player setDir _dir;
 r_player_onVehicleC = true;
 r_player_currentCar = _carrier;
 _carrier switchCamera "EXTERNAL"; 
-hintSilent parseText "<t size='1.20' font='Bitstream' color='#F20C0C'>[SYSTEM]</t><br/><t size='1' font='Bitstream'>Go to first person to get the eject option!</t><br/>";
+hintSilent parseText "<t size='1.20' font='Bitstream' color='#F20C0C'>[SYSTEM]</t><br/><t size='1' font='Bitstream'>Hit 'Backspace' to eject!</t><br/>";
+player removeAction s_player_getin1;
+s_player_getin1 = -1;
+player removeAction s_player_getin2;
+s_player_getin2 = -1;
+player removeAction s_player_getin3;
+s_player_getin3 = -1;
 [] spawn {
     while { (r_player_onVehicleC and alive player)} do
     {

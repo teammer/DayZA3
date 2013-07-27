@@ -22,7 +22,7 @@ while {true} do {
 	_refObj = 	vehicle player;
 	_size = 	(sizeOf typeOf _refObj) * 0.6;
 	_vel = 		velocity player;
-    _mylastPos =    [];
+    _mylastPos =    getPosATL player;
 	_speed = 	round((_vel distance [0,0,0]) * 3.5);
     _typeOf =    typeOf player;
 	_saveTime = 5;
@@ -38,12 +38,6 @@ while {true} do {
 		
 	//reset position
 	_randomSpot = true;
-    if (isNil "_mylastPos") then {
-        _mylastPos = getPosATL player;
-    };
-    if !(isNil "dayz_mylastPos") then {
-        _mylastPos = dayz_mylastPos;
-    };
 	_tempPos = getPosATL player;
 	_distance = _debug distance _tempPos;
 	if (_distance < 2000) then {
@@ -62,7 +56,6 @@ while {true} do {
 		_mylastPos = _tempPos;
 	};
 	
-	dayz_mylastPos = _mylastPos;
 	dayz_areaAffect = _size;
 	
 	//CheckVehicle
@@ -364,20 +357,7 @@ while {true} do {
 		player setVariable["lastPos",[]];
 	};
 	
-	_lastPos = getPosATL player;	
-	if (player == vehicle player) then {
-		if (_mylastPos distance _lastPos > 200) then {
-			if (alive player) then {
-				player setPosATL _mylastPos;
-			};
-		};
-	} else {
-		if (_mylastPos distance _lastPos > 800) then {
-			if (alive player) then {
-				player setPosATL _mylastPos;
-			};
-		};
-	};
+	_lastPos = getPosATL player;
     _currentWep = currentWeapon player;
 
     if ((_currentWep == "MeleeHatchet") or (_currentWep == "MeleeMachete") or (_currentWep == "MeleeCrowbar")) then {

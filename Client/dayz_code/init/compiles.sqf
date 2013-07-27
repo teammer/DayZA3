@@ -15,6 +15,7 @@ if (!isDedicated) then {
 	fnc_usec_damageActions =	compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_damageActions.sqf";		//Checks which actions for nearby casualty
 	fnc_inAngleSector =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_inAngleSector.sqf";		//Checks which actions for nearby casualty
 	fnc_usec_selfActions =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_selfActions.sqf";		//Checks which actions for self
+	fnc_usec_selfActionsA3 =	compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_selfActionsA3.sqf";		//Checks which actions for self A3
 	fnc_usec_unconscious =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_unconscious.sqf";
 	player_temp_calculation	=	compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_temperatur.sqf";		//Temperatur System	//TeeChange
 	player_weaponFiredNear =	compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_weaponFiredNear.sqf";
@@ -219,30 +220,44 @@ if (!isDedicated) then {
 	};
 		
 	player_CombatRoll = {
-		DoRE = ({isPlayer _x} count (player nearEntities ["AllVehicles",100]) > 1);
-		if (canRoll && animationState player in ["amovpercmrunslowwrfldf","amovpercmrunsraswrfldf","amovpercmevaslowwrfldf","amovpercmevasraswrfldf"]) then {
-			canRoll = false;
-			null = [] spawn {
-				if (DoRE) then {
-                    [[[player], { (_this select 0) switchMove 'ActsPercMrunSlowWrflDf_FlipFlopPara'; }], "BIS_fnc_spawn", true, false] call BIS_fnc_MP;
-				} else {
-                    player switchMove 'ActsPercMrunSlowWrflDf_FlipFlopPara';
-				};
-				sleep 0.3;
-				player setVelocity [(velocity player select 0) + 1.5 * sin direction player, (velocity player select 1) + 1.5 * cos direction player, (velocity player select 2) + 4];
-				sleep 1;
-				canRoll = true;
-			};
-			_handled = true;
-		};
-	};
+        DoRE = ({isPlayer _x} count (player nearEntities ["AllVehicles",100]) > 1);
+        if (canRoll) then {
+            [] spawn {
+                canRoll = false;
+                if ( animationState player in ["amovpercmrunsraswrfldf","amovpknlmevasraswrfldf","amovpercmrunslowwrfldf"] ) exitWith {
+                    if (DoRE) then {
+                        player switchMove 'AovrPercMrunSrasWrflDf';
+                        [[[player], { (_this select 0) switchMove 'AovrPercMrunSrasWrflDf'; }], "BIS_fnc_spawn", true, false] call BIS_fnc_MP;
+                    } else {
+                        player switchMove 'AovrPercMrunSrasWrflDf';
+                    };
+                    sleep 0.8;
+                    canRoll = true;
+                };
+                if ( animationState player in ["amovpercmevasraswrfldf","amovpercmevaslowwrfldf"] ) exitWith {
+                    if (DoRE) then {
+                        player switchMove 'ActsPercMrunSlowWrflDf_FlipFlopPara';
+                        [[[player], { (_this select 0) switchMove 'ActsPercMrunSlowWrflDf_FlipFlopPara'; }], "BIS_fnc_spawn", true, false] call BIS_fnc_MP;
+                    } else {
+                        player switchMove 'ActsPercMrunSlowWrflDf_FlipFlopPara';
+                    };
+                    sleep 0.3;
+                    player setVelocity [(velocity player select 0) + 1.5 * sin direction player, (velocity player select 1) + 1.5 * cos direction player, (velocity player select 2) + 4];
+                    sleep 1;
+                    canRoll = true;
+                };
+                canRoll = true;
+            };
+            _handled = true;
+        };
+    };
     
 	dayz_spaceInterrupt = {
 		private ["_dikCode", "_handled"];
 		_dikCode = 	_this select 1;
 		_handled = false;
 		if (_dikCode in (actionKeys "GetOver")) then {
-			if (!r_fracture_legs and (time - dayz_lastCheckBit > 4)) then {
+			if (!r_fracture_legs and (time - dayz_lastCheckBit > 1.5)) then {
 				_inBuilding = [player] call fnc_isInsideBuilding;
 				_nearbyObjects = nearestObjects[getPosATL player, ["ACampStorage","TentStorage", "Hedgehog_DZ", "Sandbag1_DZ","TrapBear","Wire_cat1"], 4];
 				

@@ -39,7 +39,7 @@ meatcooked = [
     "FoodhumanCooked"
 ];
 //Eating
-no_output_food = ["FoodPistachio", "FoodNutmix"]+meatcooked+meatraw;
+no_output_food = ["FoodPistachio", "FoodNutmix", "AngelCookies"]+meatcooked+meatraw;
 food_with_output=[
     "FoodCanBakedBeans",
     "FoodCanSardines",
@@ -264,6 +264,7 @@ r_player_inpain = 		false;
 r_player_loaded = 		false;
 r_player_cardiac = 		false;
 r_fracture_legs =		false;
+r_player_dead =         false;
 r_fracture_arms =		false;
 r_player_vehicle =		player;
 r_player_currentCar =	player;
